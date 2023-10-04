@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="footer clearfix">
           <div className="col-sm-3">
             <div className="footer_left">
-              <img src="img/new.png" />
+              <img src="img/32.png" />
             </div>
           </div>
           <div className="col-sm-6">
@@ -34,7 +34,7 @@ export const Footer = () => {
           </div>
           <div className="col-sm-3">
             <div className="footer_left">
-              <img src="https://images.unsplash.com/photo-1610173827002-62c0f1f05d04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
+              <img src="Img/32.png" />
             </div>
           </div>
         </div>

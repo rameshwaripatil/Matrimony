@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Home = () => {
   return (
-    <div className="home">
+    <div >
 
 
 
@@ -16,7 +16,7 @@ export const Home = () => {
       </ol>
       <div className="carousel-inner">
         <div className="item">
-          <img src="img/2.jpg" alt="First slide" />
+          <img src="https://images.unsplash.com/photo-1610173827002-62c0f1f05d04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="First slide" />
           <div className="carousel-caption">                      </div>
         </div>
         <div className="item">
