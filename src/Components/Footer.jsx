@@ -9,7 +9,7 @@ export const Footer = () => {
         <div className="footer clearfix">
           <div className="col-sm-3">
             <div className="footer_left">
-              <img src="img/32.png" />
+              <img src="img/new.png" />
             </div>
           </div>
           <div className="col-sm-6">
@@ -34,7 +34,7 @@ export const Footer = () => {
           </div>
           <div className="col-sm-3">
             <div className="footer_left">
-              <img src="img/52.png" />
+              <img src="https://images.unsplash.com/photo-1610173827002-62c0f1f05d04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" />
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@ export const Footer = () => {
         <div className="footer_bottom clearfix">
           <div className="col-sm-7">
             <div className="footer_bottom_left">
-              <p> © 2013 Your Website Name. All Rights Reserved | Design by <a href="http://www.templateonweb.com">TemplateOnWeb</a></p>
+              <p> © 2013 Your Website Name. All Rights Reserved | Design by <a href="http://www.templateonweb.com">Sandip Gadekar</a></p>
             </div>
           </div>
           <div className="col-sm-5">
@@ -59,6 +59,11 @@ export const Footer = () => {
       </div>
     </div>
   </section>
+  <div id="toTop" className="btn btn-info" style={{display: 'block'}}><span className="glyphicon glyphicon-chevron-up" />  Top</div>
+
+
 </div>
+
+
   )
 }

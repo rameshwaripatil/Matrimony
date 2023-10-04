@@ -1,11 +1,12 @@
 import React from 'react'
-import { Header } from './Components/Header'
-import { Footer } from './Components/Footer'
+import { Master } from './Website/Layout/Master'
+import './App.css'
 
 const App = () => {
   return (
-    <div> <Header/>
-    <Footer/>
+    <div> 
+      <Master/>
+      
      </div>
 
   )
