@@ -2,8 +2,7 @@ import React from 'react'
 import { Master } from './Website/Layout/Master'
 
 const App = () => {
-  return (
-
+  return(
     <div>
       <Master/>
      </div>
