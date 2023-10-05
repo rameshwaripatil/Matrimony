@@ -1,11 +1,19 @@
 import React from 'react'
 import { Master } from './Website/Layout/Master'
+import { BrowserRouter,Routes, Route } from 'react-router-dom'
+import { Home } from './Website/Components/Home'
 
 const App = () => {
   return(
-    <div>
-      <Master/>
-     </div>
+    // <div>
+    //   <Master/>
+    //  </div>
+
+     <BrowserRouter>
+     <Routes>
+      <Route path="/"  element={<Master Rcf={Home}/>} />
+     </Routes>
+     </BrowserRouter>
   )
 
 }
