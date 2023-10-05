@@ -4,8 +4,6 @@ export const Home = () => {
   return (
     <div >
 
-
-
 <div className="center_main clerfix">
   <section id="center">
     <div id="carousel-example-generic" className="carousel slide" data-ride="carousel">
