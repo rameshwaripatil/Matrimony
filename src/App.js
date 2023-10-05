@@ -1,13 +1,11 @@
 import React from 'react'
-import { Footer } from './website/Components/Footer'
-import { Header } from './Website/Components/Header'
+import { Master } from './Website/Layout/Master'
 
 const App = () => {
   return (
 
     <div>
-      <Header></Header>
-    <Footer></Footer>
+      <Master/>
      </div>
   )
 
