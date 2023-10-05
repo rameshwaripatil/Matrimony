@@ -29,7 +29,7 @@
     <title>Matrimony💝</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
     <script src="js/jquery-2.1.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
   </head>
@@ -45,73 +45,6 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-
     -->
-
-    
-<script>
-  $(document).ready(function(){
-    $('body').append('<div id="toTop" class="btn btn-info"><span class="glyphicon glyphicon-chevron-up"></span> Back to Top</div>');
-    $(window).scroll(function () {
-      if ($(this).scrollTop() != 0) {
-        $('#toTop').fadeIn();
-      } else {
-        $('#toTop').fadeOut();
-      }
-    }); 
-  $('#toTop').click(function(){
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
-  });
-  });
-  
-  </script>
-  
-  <script>
-  $(document).ready(function(){
-      $(".dropdown").hover(            
-          function() {
-              $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideDown(0);
-              $(this).toggleClass('open');        
-          },
-          function() {
-              $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true,true).slideUp(0);
-              $(this).toggleClass('open');       
-          }
-      );
-    
-    /*****Fixed Menu******/
-    var secondaryNav = $('.cd-secondary-nav'),
-       secondaryNavTopPosition = secondaryNav.offset().top;
-      $(window).on('scroll', function(){
-        if($(window).scrollTop() > secondaryNavTopPosition ) {
-          secondaryNav.addClass('is-fixed');	
-        } else {
-          secondaryNav.removeClass('is-fixed');
-        }
-      });	
-      
-  });
-    </script>
-    
-    
-  <script>
-    $(document).ready(function(){
-    var my_posts = $("[rel=tooltip]");
-  
-    var size = $(window).width();
-    for(i=0;i<my_posts.length;i++){
-      the_post = $(my_posts[i]);
-  
-      if(the_post.hasClass('invert') && size >=767 ){
-        the_post.tooltip({ placement: 'left'});
-        the_post.css("cursor","pointer");
-      }else{
-        the_post.tooltip({ placement: 'rigth'});
-        the_post.css("cursor","pointer");
-      }
-    }
-  });
-    </script>
   </body>
 </html>

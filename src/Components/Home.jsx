@@ -20,7 +20,7 @@ export const Home = () => {
           <div className="carousel-caption">                      </div>
         </div>
         <div className="item">
-          <img src="img/3.jpg" alt="Second slide" />
+          <img src="public/img/3.jpg" alt="Second slide" />
           <div className="carousel-caption">                      </div>
         </div>
         <div className="item active">
