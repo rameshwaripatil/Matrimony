@@ -6,7 +6,6 @@ import About from './Website/pages/About'
 
 const App = () => {
   return(
-    
 
      <BrowserRouter>
      <Routes>
