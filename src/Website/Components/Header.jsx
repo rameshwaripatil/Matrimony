@@ -41,9 +41,9 @@ const Header = () => {
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
                 <li><a className="color_1 active_1" href="/">Home</a></li>                  
-                <li><a className="color_1" href="about.html">About Us</a></li>
+                <li><a className="color_1" href="/about">About Us</a></li>
                 <li><a className="color_1" href="services.html">Services</a></li>
-                <li><a className="color_1" href="register.html">Register</a></li>
+                <li><a className="color_1" href="/register">Register</a></li>
                 <li><a className="color_1" href="contact.html">Contact Us</a></li>
                 <li><a className="color_1" href="pages.html">Typography</a></li>
                 <li className="dropdown">
