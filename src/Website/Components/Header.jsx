@@ -55,7 +55,7 @@ const Header = () => {
                     <li><a href="services.html">Services</a></li>
                     <li><a href="register.html">Register</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="pages.html">Typography</a></li>
+                    {/* <li><a href="pages.html">Typography</a></li> */}
                   </ul>
                 </li>
               </ul>
