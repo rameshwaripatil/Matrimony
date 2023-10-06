@@ -7,7 +7,7 @@ const Services = () => {
      <div class="row">
       <div class="col-sm-12">
        <div class="about_heading">
-         <h5><a href="#">Home</a> <span>//</span>Our Services</h5>
+         <h5><a href="#">Home</a> <span></span>Our Services</h5>
          <h1>Our <span>  Services</span> </h1>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
        </div>
