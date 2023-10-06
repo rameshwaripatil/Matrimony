@@ -41,11 +41,11 @@ const Header = () => {
             </div>
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul className="nav navbar-nav navbar-right">
-              <Link  to="/"> <li><a className="color_1 active_1" href="/">Home</a></li>      </Link>              
-              <li> <Link  to="/about"> <a className="color_1" href="/about">About Us</a></Link> </li>
-                <Link  to="/services"><li><a className="color_1" href="services">Services</a></li> </Link>
-                <Link  to="/register"> <li><a className="color_1" href="/register">Register</a></li>  </Link>
-                <Link  to="/contact"> <li><a className="color_1" href="contact">Contact Us</a></li>  </Link>
+              <li> <Link  to="/"> <a className="color_1 active_1" href="/">Home</a>    </Link>   </li>             
+              <li> <Link  to="/about"> <a className="color_1" href="/about">About Us</a></Link> </li> 
+              <li>  <Link  to="/services"><a className="color_1" href="services">Services</a> </Link></li>
+              <li>  <Link  to="/register"> <a className="color_1" href="/register">Register</a> </Link></li>
+              <li>  <Link  to="/contact"> <a className="color_1" href="contact">Contact Us</a>  </Link></li>
                 {/* <Link  to="/services">  <li><a className="color_1" href="pages.html">Typography</a></li>  </Link> */}
                 <li className="dropdown">
                   <a className="dropdown-toggle color_1" data-toggle="dropdown" href="services.html" aria-expanded="false">Dropdown
