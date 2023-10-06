@@ -15,11 +15,11 @@ export const Footer = () => {
           <div className="col-sm-6">
             <div className="footer_right">
               <p>
-                <a href="#">Home</a>
-                <a href="#">About Us</a>
-                <a href="#">Services</a>
-                <a href="#">Register</a>
-                <a href="#">Contact Us</a>
+              <Link to="/">  <a href="#">Home</a> </Link>
+              <Link to="/about">  <a href="#">About Us</a> </Link>
+              <Link to="/Services"> <a href="#">Services</a> </Link>
+              <Link to="/register"> <a href="#">Register</a> </Link>
+              <Link to="/contact"> <a href="#">Contact Us</a> </Link>
               </p>
               <div className="footer_right_inner clearfix">
                 <ul className="social-network social-circle">
