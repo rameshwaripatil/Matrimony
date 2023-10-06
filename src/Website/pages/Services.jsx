@@ -18,7 +18,7 @@ const Services = () => {
            <h5>03 Feb 2015</h5>
            <div class="services_inner_1 clearfix">
             <div class="col-sm-6 space_left services_inner_1_inner">
-              <img src="img/40.jpg" width="100%">
+              <img src="img/40.jpg" width="100%"/>
             </div>
             <div class="col-sm-6 space_left services_inner_1_inner_1">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
@@ -32,7 +32,7 @@ const Services = () => {
            <h5>04 Feb 2016</h5>
            <div class="services_inner_1 clearfix">
             <div class="col-sm-6 space_left services_inner_1_inner">
-              <img src="img/41.jpg" width="100%">
+              <img src="img/41.jpg" width="100%"/>
             </div>
             <div class="col-sm-6 space_left services_inner_1_inner_1">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
@@ -48,7 +48,7 @@ const Services = () => {
            <h5>04 Mar 2016</h5>
            <div class="services_inner_1 clearfix">
             <div class="col-sm-6 space_left services_inner_1_inner">
-              <img src="img/42.jpg" width="100%">
+              <img src="img/42.jpg" width="100%"/>
             </div>
             <div class="col-sm-6 space_left services_inner_1_inner_1">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
@@ -62,7 +62,7 @@ const Services = () => {
            <h5>06 Jan 2016</h5>
            <div class="services_inner_1 clearfix">
             <div class="col-sm-6 space_left services_inner_1_inner">
-              <img src="img/43.jpg" width="100%">
+              <img src="img/43.jpg" width="100%"/>
             </div>
             <div class="col-sm-6 space_left services_inner_1_inner_1">
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
