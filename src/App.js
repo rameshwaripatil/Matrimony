@@ -5,10 +5,7 @@ import { Home } from './Website/Components/Home'
 
 const App = () => {
   return(
-    // <div>
-    //   <Master/>
-    //  </div>
-
+  
      <BrowserRouter>
      <Routes>
       <Route path="/"  element={<Master Rcf={Home}/>} />
