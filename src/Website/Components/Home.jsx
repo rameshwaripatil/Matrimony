@@ -324,6 +324,155 @@ export const Home = () => {
 
 
 
+<div className="contact_home_main clearfix">
+  <section id="contact_top">
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-12" />
+      </div>
+    </div>
+  </section>
+  <section id="contact_bottom">
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-12" />
+      </div>
+    </div>
+  </section>
+  <section id="contact_home">
+    <div className="container">
+      <div className="row">
+        <div className="col-sm-12">
+          <div className="services_home clearfix">
+            <h1 className="text-center"><span>Attend</span>   Now</h1>
+            <h2 className="text-center"><i className="fa fa-arrows-h" /></h2>
+          </div>
+          <div className="col-sm-6">
+            <div className="contact_home_1 clearfix">
+              <div className="col-sm-6">
+                <div className="contact_home_1_inner">
+                  <input type="text" className="form-control" placeholder="First name *" />
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="contact_home_1_inner">
+                  <input type="text" className="form-control" placeholder="Last name *" />
+                </div>
+              </div>
+            </div>
+            <div className="contact_home_1 clearfix">
+              <div className="col-sm-6">
+                <div className="contact_home_1_inner">
+                  <input type="text" className="form-control" placeholder="Email *" />
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="contact_home_1_inner">
+                  <input type="text" className="form-control" placeholder="Mobile *" />
+                </div>
+              </div>
+            </div>
+            <div className="contact_home_1 clearfix">
+              <div className="col-sm-6">
+                <div className="contact_home_1_inner">
+                  <input type="text" className="form-control" placeholder="Location *" />
+                </div>
+              </div>
+              <div className="col-sm-6">
+                <div className="contact_home_1_inner_1 clerfix">
+                  <div className="col-sm-5 space_left">
+                    <input type="text" className="form-control" placeholder="Captcha Code *" />
+                  </div>
+                  <div className="col-sm-5 space_left">
+                    <h4>FBGRE</h4>
+                  </div>
+                  <div className="col-sm-2" />
+                </div>
+              </div>
+              <div className="contact_home_2 col-sm-12 clearfix">
+                <textarea className="form-control" placeholder="Describe Your Details" defaultValue={""} />
+                <p><a href="#">SUBMIT</a></p>
+              </div>
+            </div>
+          </div>
+          <div className="col-sm-6">
+            <div className="contact_home_3">
+              <a href="#"><img src="img/48.jpg" /></a>
+            </div>
+          </div>	  	  	  
+        </div>
+      </div>
+    </div>	
+  </section>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<section id="success">
+  <div className="container">
+    <div className="row">
+      <div className="col-sm-12">
+        <div className="services_home clearfix">
+          <h1 className="text-center"><span>Consec</span>Tetur</h1>
+          <h2 className="text-center"><i className="fa fa-arrows-h" /></h2>
+        </div>
+        <div className="col-sm-4">
+          <div className="success_inner clearfix">
+            <div className="success_2">
+              <p><img src="img/49.jpg" /></p>
+            </div>
+            <div className="success_3">
+              <h2><a href="#">Dignissim Lacinia</a></h2>
+              <p><a href="#">"Nibh Elementum Imperdiet.Duis Sagittis<br /> Torquent Per Conubia Nostra."</a></p>
+            </div> 
+          </div>	 
+        </div>
+        <div className="col-sm-4">
+          <div className="success_inner clearfix">
+            <div className="success_2">
+              <p><img src="img/50.jpg" /></p>
+            </div>
+            <div className="success_3">
+              <h2><a href="#">Elementum </a></h2>
+              <p><a href="#">"Nibh Elementum Imperdiet.Duis Sagittis<br /> Torquent Per Conubia Nostra."</a></p>
+            </div> 
+          </div>	 
+        </div>
+        <div className="col-sm-4">
+          <div className="success_inner clearfix">
+            <div className="success_2">
+              <p><img src="img/51.jpg" /></p>
+            </div>
+            <div className="success_3">
+              <h2><a href="#"> Cursus Dapibus</a></h2>
+              <p><a href="#">"Nibh Elementum Imperdiet.Duis Sagittis<br /> Torquent Per Conubia Nostra."</a></p>
+            </div> 
+          </div>	 
+        </div>
+      </div>
+      <div className="col-sm-12 space_all">
+        <div className="col-sm-10" />
+        <div className="col-sm-2">
+          <div className="success_4">
+            <p><a href="#">View More</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
 
 
     </div>
