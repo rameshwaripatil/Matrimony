@@ -66,12 +66,11 @@ const Register = () => {
               <div className="col-sm-6 register_right_inner_1 space_left">
                 <select className="form-control">
                   <option value="Religion">Religion</option>
-                  <option>Lorem</option>
-                  <option>Ipsum </option>
-                  <option>Dolor</option>
-                  <option>Amet</option>
-                  <option>Consectetur </option>
-                  <option>Elit</option>
+                  <option>Hindu</option>
+                  <option>Muslim </option>
+                  <option>Christan</option>
+                  <option>Sikh</option>
+                  <option>Buddha </option>
                 </select>
               </div>
             </div>
