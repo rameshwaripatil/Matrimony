@@ -4,6 +4,7 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom'
 import { Home } from './Website/Components/Home'
 import About from './Website/pages/About'
 import Contact from './Website/pages/Contact'
+import Services from './Website/pages/Services'
 
 const App = () => {
   return(
@@ -13,6 +14,8 @@ const App = () => {
       <Route path="/"  element={<Master Rcf={Home}/>} />
       <Route path="/about"  element={<Master Rcf={About}/>} />
       <Route path="/contact"  element={<Master Rcf={Contact}/>} />
+      <Route path="/Services"  element={<Master Rcf={Services}/>} />
+
 
 
      </Routes>
