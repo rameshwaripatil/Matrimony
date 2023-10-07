@@ -4,8 +4,9 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom'
 import { Home } from './Website/Components/Home'
 import About from './Website/pages/About'
 import Contact from './Website/pages/Contact'
-import Services from './Website/pages/Services'
 import Register from './Website/pages/Register'
+import Grooms from './Website/pages/Grooms'
+import Brides from './Website/pages/Brides'
 
 const App = () => {
   return(
@@ -15,8 +16,11 @@ const App = () => {
       <Route path="/"  element={<Master Rcf={Home}/>} />
       <Route path="/about"  element={<Master Rcf={About}/>} />
       <Route path="/contact"  element={<Master Rcf={Contact}/>} />
-      <Route path="/Services"  element={<Master Rcf={Services}/>} />
       <Route path="/register"  element={<Master Rcf={Register}/>} />
+      <Route path="/grooms"  element={<Master Rcf={Grooms}/>} />
+      <Route path="/brides"  element={<Master Rcf={Brides}/>} />
+
+
 
 
 
