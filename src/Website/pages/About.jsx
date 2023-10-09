@@ -132,14 +132,14 @@ const About = () => {
 			 <div class="team_1 clearfix">
 			   <div class="grid clearfix">
 							<figure class="effect-jazz">
-								<img src="img/35.jpg" alt="img25"/>
+								<img src="img/143.jpeg" alt="img25"/>
 		
 			     </figure>
 							
 			  </div>
 			 </div>
 			 <div class="team_inner clearfix text-center">
-			 <h3>Praesent Mauris</h3>
+			 <h3>Sandip Gadekar</h3>
 			 <h4>OWNER and Founder</h4>	
              <ul>
 			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>

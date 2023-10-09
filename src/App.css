@@ -167,3 +167,36 @@ body {
   }
 }
 
+.button {
+  /* Your button styles */
+  background-color: red; /* Example color */
+  color: white; /* Example color */
+  padding: 10px 20px;
+  margin-left: 50px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  background: red;
+  border-radius: 50%;
+  opacity: 0;
+  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.button:hover::before {
+  width: 300px;
+  height: 300px;
+  opacity: 1;
+}

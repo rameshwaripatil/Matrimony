@@ -11,7 +11,7 @@ const Header = () => {
               <div className="top clearfix">
                 <div className="col-sm-6">
                   <div className="top_left">
-                    <p>Eternal Bonds, Endless Love: Start Your Journey</p>
+                    <p>Endless Love : Start Your Journey</p>
                   </div>
                 </div>
                 <div className="col-sm-6">
@@ -24,7 +24,7 @@ const Header = () => {
             </div>
           </div>
         </section>
-        <section id="header" className="cd-secondary-nav">
+        <section id="header" className="cd-secondary-nav fixed-top">
           <div className="container">
             <div className="row">
               <div className="col-sm-12">
@@ -50,8 +50,10 @@ const Header = () => {
                       <li>  <Link to="/brides"><a className="color_1" href="services">Brides</a> </Link></li>
 
 
-                      <li>  <Link to="/register"> <a className="color_1" href="/register">Register</a> </Link></li>
                       <li>  <Link to="/contact"> <a className="color_1" href="contact">Contact Us</a>  </Link></li>
+                      <li> <button className='button' >  <Link to="/register"> <a className="color_1" href="/register">Login</a> </Link></button> </li>
+                      <li> <button className='button' >  <Link to="/register"> <a className="color_1" href="/register">Register</a> </Link></button> </li>
+
                       {/* <Link  to="/services">  <li><a className="color_1" href="pages.html">Typography</a></li>  </Link> */}
                       {/* <li className="dropdown">
                         <a className="dropdown-toggle color_1" data-toggle="dropdown" href="services.html" aria-expanded="false">Dropdown
