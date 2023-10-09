@@ -77,7 +77,15 @@ export const Home = () => {
 </section>
 <Services/>
 
+<<<<<<< HEAD
 {/* <section id="arrange">
+=======
+
+
+
+
+<section id="arrange">
+>>>>>>> 19bf4f3cd7a3cf5689297454092ac77b3c57a62f
   <div className="container">
     <div className="row">
       <div className="col-sm-12">
@@ -120,7 +128,11 @@ export const Home = () => {
       </div>
     </div>
   </div>
+<<<<<<< HEAD
 </section> */}
+=======
+</section> 
+>>>>>>> 19bf4f3cd7a3cf5689297454092ac77b3c57a62f
 
 
 <SuccessfullMarriges/>
