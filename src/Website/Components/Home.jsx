@@ -72,7 +72,7 @@ export const Home = () => {
     </div>
   </div>
 </section>
-<section id="arrange">
+{/* <section id="arrange">
   <div className="container">
     <div className="row">
       <div className="col-sm-12">
@@ -115,7 +115,7 @@ export const Home = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 
 
