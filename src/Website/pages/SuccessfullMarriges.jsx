@@ -30,7 +30,7 @@ const SuccessfullMarriges = () => {
               <a><i className="fa fa-google-plus" /></a>
               <a><i className="fa fa-linkedin" /></a>
               <a><i className="fa fa-rss" /></a>
-              <a className="pull-right">Continuar Lendo</a>
+              <a className="pull-right">Ravi-Priya</a>
             </div>
           </div>
         </li>
@@ -49,7 +49,7 @@ const SuccessfullMarriges = () => {
               <a><i className="fa fa-google-plus" /></a>
               <a><i className="fa fa-linkedin" /></a>
               <a><i className="fa fa-rss" /></a>
-              <a className="pull-right">Vanve-Khade Family</a>
+              <a className="pull-right">Monal-Amit</a>
             </div>
           </div>
         </li>
@@ -57,18 +57,18 @@ const SuccessfullMarriges = () => {
           <div className="timeline-badge primary"><a><i className="glyphicon glyphicon-record" rel="tooltip" title id data-original-title="11 hours ago via Twitter" style={{cursor: 'pointer'}} /></a></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <img className="img-responsive" src="img/10.jpg" />              
+              <img className="img-responsive" src="img/sidkia.jpg" />              
             </div>
-            <div className="timeline-body">
+            {/* <div className="timeline-body">
               <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>              
-            </div>           
+            </div>            */}
             <div className="timeline-footer">
               <a><i className="fa fa-facebook" /></a>
               <a><i className="fa fa-twitter" /></a>
               <a><i className="fa fa-google-plus" /></a>
               <a><i className="fa fa-linkedin" /></a>
               <a><i className="fa fa-rss" /></a>
-              <a className="pull-right">Continuar Lendo</a>
+              <a className="pull-right">Siddharth-Kiara </a>
             </div>
           </div>
         </li>        
@@ -76,18 +76,18 @@ const SuccessfullMarriges = () => {
           <div className="timeline-badge primary"><a><i className="glyphicon glyphicon-record invert" rel="tooltip" title id data-original-title="11 hours ago via Twitter" style={{cursor: 'pointer'}} /></a></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <img className="img-responsive" src="img/54.jpg"  />              
+              <img className="img-responsive" src="img/ranbir.jpg"  />              
             </div>
-            <div className="timeline-body">
+            {/* <div className="timeline-body">
               <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>              
-            </div>            
+            </div>             */}
             <div className="timeline-footer">
               <a><i className="fa fa-facebook" /></a>
               <a><i className="fa fa-twitter" /></a>
               <a><i className="fa fa-google-plus" /></a>
               <a><i className="fa fa-linkedin" /></a>
               <a><i className="fa fa-rss" /></a>
-              <a className="pull-right">Continuar Lendo</a>
+              <a className="pull-right">Ranbir-Alia</a>
             </div>
           </div>
         </li>
@@ -95,18 +95,18 @@ const SuccessfullMarriges = () => {
           <div className="timeline-badge primary"><a><i className="glyphicon glyphicon-record" rel="tooltip" title id data-original-title="11 hours ago via Twitter" style={{cursor: 'pointer'}} /></a></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <img className="img-responsive" src="img/11.jpg"  />              
+              <img className="img-responsive" src="img/rupali.jpg"  />              
             </div>
-            <div className="timeline-body">
+            {/* <div className="timeline-body">
               <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>              
-            </div>            
+            </div>             */}
             <div className="timeline-footer">
               <a><i className="fa fa-facebook" /></a>
               <a><i className="fa fa-twitter" /></a>
               <a><i className="fa fa-google-plus" /></a>
               <a><i className="fa fa-linkedin" /></a>
               <a><i className="fa fa-rss" /></a>
-              <a className="pull-right">Continuar Lendo</a>
+              <a className="pull-right">Vinayak-Rupali</a>
             </div>
           </div>
         </li>
@@ -116,16 +116,16 @@ const SuccessfullMarriges = () => {
             <div className="timeline-heading">
               <img className="img-responsive" src="img/72.jpg"  />
             </div>
-            <div className="timeline-body">
+            {/* <div className="timeline-body">
               <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
-            </div>
+            </div> */}
             <div className="timeline-footer primary">
               <a><i className="fa fa-facebook" /></a>
               <a><i className="fa fa-twitter" /></a>
               <a><i className="fa fa-google-plus" /></a>
               <a><i className="fa fa-linkedin" /></a>
               <a><i className="fa fa-rss" /></a>
-              <a className="pull-right">Continuar Lendo</a>
+              <a className="pull-right">Virat-Anushka </a>
             </div>
           </div>
         </li>
