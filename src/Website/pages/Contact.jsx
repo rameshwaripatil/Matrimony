@@ -5,7 +5,7 @@ const Contact = () => {
    <div>
   <div className="about_main clearfix">
     <section id="about">
-      <img src="img/46.jpg" width="100%" />
+      <img src="img/44.jpg" width="100%" />
     </section>
     <section id="about_top">
       <div className="container">

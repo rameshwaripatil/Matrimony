@@ -4,7 +4,7 @@ const About = () => {
   return (
    <div>
 <section id="about">
-	<img src="img/33.jpg" width="100%"/>
+	<img src="img/44.jpg" width="100%"/>
 	</section>
     <section id="about_heading_main" class="clearfix">
  <div class="container">
