@@ -16,7 +16,7 @@ const Header = () => {
                 </div>
                 <div className="col-sm-6">
                   <div className="top_right clearfix text-right">
-                    <span className="span_1"><i className="fa fa-phone-square" />  +91 - 1243-545-423</span>
+                    <span className="span_1"><i className="fa fa-phone-square" />  +91 - 9960-046-879</span>
                     <span className="span_2"> <i className="fa fa-whatsapp" />  +91 - 7057-921-848 </span>
                   </div>
                 </div>
@@ -37,7 +37,7 @@ const Header = () => {
                       <span className="icon-bar" />
                       <span className="icon-bar" />
                     </button>
-                    <a className="navbar-brand" href="index.html">Jab We Met </a>
+                    <a className="navbar-brand" href="index.html">Jab-We-Met </a>
                   </div>
                   <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul className="nav navbar-nav navbar-right">

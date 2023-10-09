@@ -2,6 +2,7 @@ import React from 'react'
 import Download from '../pages/Download'
 import SuccessfullMarriges from '../pages/SuccessfullMarriges'
 import Services from '../pages/Services'
+import VideoLinkButton from '../pages/VideoLinkButton'
 
 export const Home = () => {
   return (
@@ -46,11 +47,11 @@ export const Home = () => {
 
 
 
+<VideoLinkButton/>
 
 
 
-
-<section id="outdoor">
+{/* <section id="outdoor">
   <div className="container">
     <div className="row">
       <div className="col-sm-12">
@@ -74,7 +75,7 @@ export const Home = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 <Services/>
 
 {/* <section id="arrange">
