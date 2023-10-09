@@ -1,4 +1,5 @@
 import React from 'react'
+import Download from '../pages/Download'
 
 export const Home = () => {
   return (
@@ -59,7 +60,7 @@ export const Home = () => {
           <div className="outdoor_2 clearfix">
             <div className="grid clearfix">
               <figure className="effect-apollo">
-                <img src="img/12.jpg" alt="img22" />
+                <img src="img/64.jpg" alt="img22" />
                 <figcaption>
                   <h2>Matrimonial <span>Website</span></h2>
                   <p> Duis sagittis ipsum   mauris  fusce nec tellus </p>
@@ -72,6 +73,10 @@ export const Home = () => {
     </div>
   </div>
 </section>
+
+
+
+
 <section id="arrange">
   <div className="container">
     <div className="row">
@@ -126,7 +131,7 @@ export const Home = () => {
     <div className="row">
       <div className="col-sm-12">
         <div className="services_home">
-          <h1 className="text-center"><span>Our</span>  Services</h1>
+          <h1 className="text-center"><span>Our</span>  Successfull Marriges</h1>
           <h2 className="text-center"><i className="fa fa-arrows-h" /></h2>
         </div>
       </div>
@@ -135,11 +140,11 @@ export const Home = () => {
           <div className="timeline-badge primary"><a><i className="glyphicon glyphicon-record" rel="tooltip" title id data-original-title="11 hours ago via Twitter" style={{cursor: 'pointer'}} /></a></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <img className="img-responsive" src="img/8.jpg" />        
+              <img className="img-responsive" src="img/61.jpg" />        
             </div>
-            <div className="timeline-body">
+            {/* <div className="timeline-body">
               <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>             
-            </div>           
+            </div>            */}
             <div className="timeline-footer">
               <a><i className="fa fa-facebook" /></a>
               <a><i className="fa fa-twitter" /></a>
@@ -154,7 +159,7 @@ export const Home = () => {
           <div className="timeline-badge primary"><a><i className="glyphicon glyphicon-record invert" rel="tooltip" title id data-original-title="11 hours ago via Twitter" style={{cursor: 'pointer'}} /></a></div>
           <div className="timeline-panel">
             <div className="timeline-heading">
-              <img className="img-responsive" src="img/9.jpg"  />
+              <img className="img-responsive" src="img/44.jpg"  />
             </div>
             <div className="timeline-body">
               <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipiscings elitis. Pra lá , depois divoltis porris, paradis. Paisis, filhis, espiritis santis. Mé faiz elementum girarzis, nisi eros vermeio, in elementis mé pra quem é amistosis quis leo. Manduma pindureta quium dia nois paga. Sapien in monti palavris qui num significa nadis i pareci latim. Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis.</p>
@@ -471,7 +476,7 @@ export const Home = () => {
 </section>
 
 
-
+<Download/>
 
 
 
