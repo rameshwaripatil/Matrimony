@@ -276,7 +276,7 @@ export const Home = () => {
   </div>
 </section>
 
-<section id="photo_gallery">
+{/* <section id="photo_gallery">
   <div className="container">
     <div className="row">
       <div className="col-sm-12">
@@ -291,7 +291,6 @@ export const Home = () => {
               <li data-target="#Carousel" data-slide-to={1} />
               <li data-target="#Carousel" data-slide-to={2} className />
             </ol>
-            {/* Carousel items */}
             <div className="carousel-inner">
               <div className="item active">
                 <div className="row">
@@ -299,25 +298,25 @@ export const Home = () => {
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/14.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/15.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/16.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
-                </div>{/*.row*/}
-              </div>{/*.item*/}
+                </div>
+              </div>
               <div className="item">
                 <div className="row">
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/17.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/18.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/19.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/20.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
-                </div>{/*.row*/}
-              </div>{/*.item*/}
+                </div>
+              </div>
               <div className="item">
                 <div className="row">
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/21.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/22.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/23.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
                   <div className="col-sm-3"><a href="#" className="thumbnail"><img src="img/24.jpg" alt="Image" style={{maxWidth: '100%'}} /></a></div>
-                </div>{/*.row*/}
+                </div>
               </div>
-            </div>{/*.carousel-inner*/}
+            </div>
             <a data-slide="prev" href="#Carousel" className="left carousel-control">‹</a>
             <a data-slide="next" href="#Carousel" className="right carousel-control">›</a>
           </div>
@@ -325,11 +324,11 @@ export const Home = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
+<Download/>
 
-
-<div className="contact_home_main clearfix">
+{/* <div className="contact_home_main clearfix">
   <section id="contact_top">
     <div className="container">
       <div className="row">
@@ -409,7 +408,7 @@ export const Home = () => {
       </div>
     </div>	
   </section>
-</div>
+</div> */}
 
 
 
@@ -421,7 +420,7 @@ export const Home = () => {
 
 
 
-<section id="success">
+{/* <section id="success">
   <div className="container">
     <div className="row">
       <div className="col-sm-12">
@@ -473,10 +472,10 @@ export const Home = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 
-<Download/>
+
 
 
 
