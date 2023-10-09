@@ -16,7 +16,7 @@ const Header = () => {
                 </div>
                 <div className="col-sm-6">
                   <div className="top_right clearfix text-right">
-                    <span className="span_1"><i className="fa fa-phone-square" />  +91 - 9960-046-879</span>
+                    {/* <span className="span_1"><i className="fa fa-phone-square" />  +91 - 9960-046-879</span> */}
                     <span className="span_2"> <i className="fa fa-whatsapp" />  +91 - 7057-921-848 </span>
                   </div>
                 </div>
@@ -37,10 +37,12 @@ const Header = () => {
                       <span className="icon-bar" />
                       <span className="icon-bar" />
                     </button>
-                    <a className="navbar-brand" href="index.html">Jab-We-Met </a>
                   </div>
                   <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
                     <ul className="nav navbar-nav navbar-right">
+                    <a className="navbar-brand" href="index.html">Jab-We-Met </a>
+
                       <li> <Link to="/"> <a className="color_1 active_1" href="/">Home</a>    </Link>   </li>
                       <li> <Link to="/about"> <a className="color_1" href="/about">About Us</a></Link> </li>
                       {/* <li>  <Link  to="/services"><a className="color_1" href="services">Services</a> </Link></li> */}
@@ -51,7 +53,7 @@ const Header = () => {
                       <li>  <Link to="/register"> <a className="color_1" href="/register">Register</a> </Link></li>
                       <li>  <Link to="/contact"> <a className="color_1" href="contact">Contact Us</a>  </Link></li>
                       {/* <Link  to="/services">  <li><a className="color_1" href="pages.html">Typography</a></li>  </Link> */}
-                      <li className="dropdown">
+                      {/* <li className="dropdown">
                         <a className="dropdown-toggle color_1" data-toggle="dropdown" href="services.html" aria-expanded="false">Dropdown
                           <span className="caret" /></a>
                         <ul className="dropdown-menu">
@@ -69,7 +71,7 @@ const Header = () => {
                             Register
                           </button>   </Link> </li>
                         </ul>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </nav>
