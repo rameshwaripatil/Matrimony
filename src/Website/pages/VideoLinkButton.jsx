@@ -3,10 +3,11 @@ import React from 'react';
 const VideoLinkButton = () => {
     const backgroundStyle = {
         backgroundImage: 'url("https://c1.wallpaperflare.com/preview/979/135/785/5968a02795f49.jpg")',  // Replace with the actual path to your image
-        backgroundSize: 'cover',
+        backgroundSize: '100% 100%',  // Make the background image responsive
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '100vh', // Set the height as needed
+        height: '100vh',
+        // Set the height as needed
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -37,16 +38,16 @@ const VideoLinkButton = () => {
                                         fill="currentColor"
                                     />
                                 </svg>
-                                <span className="visually-hidden">Play</span>
+                                <h2 className="visually-hidden">Play</h2>
                             </a>
                         </div>
-                        <h2 className="banner__video--title text-white mb-15">
+                        <h1 className="banner__video--title text-white mb-15">
                             All Service we All
-                        </h2>
-                        <p className="banner__video--info text-white">
+                        </h1>
+                        <h4 className="banner__video--info text-white">
                             Get Your Quote or Call:{' '}
-                            <a href="tel:+88021544142">(+91 7020403671)</a>
-                        </p>
+                            <a href="tel:+917057921848">(+91 7057921848)</a>
+                        </h4>
                         <a
                             className="banner__video--btn primary__btn"
                             href="/register"

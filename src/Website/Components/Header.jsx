@@ -31,6 +31,7 @@ const Header = () => {
                 <nav className="navbar navbar-default" role="navigation">
                   {/* Brand and toggle get grouped for better mobile display */}
                   <div className="navbar-header">
+
                     <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span className="sr-only">Toggle navigation</span>
                       <span className="icon-bar" />
@@ -39,9 +40,9 @@ const Header = () => {
                     </button>
                   </div>
                   <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <a className="navbar-brand d-bl" href="index.html">Jab-We-Met                </a>
 
                     <ul className="nav navbar-nav navbar-right">
-                    <a className="navbar-brand" href="index.html">Jab-We-Met </a>
 
                       <li> <Link to="/"> <a className="color_1 active_1" href="/">Home</a>    </Link>   </li>
                       <li> <Link to="/about"> <a className="color_1" href="/about">About Us</a></Link> </li>

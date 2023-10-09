@@ -30,7 +30,7 @@ const SuccessfullMarriges = () => {
               <a><i className="fa fa-google-plus" /></a>
               <a><i className="fa fa-linkedin" /></a>
               <a><i className="fa fa-rss" /></a>
-              <a className="pull-right">Ravi-Priya</a>
+              <a className="pull-right">Ravi-</a>
             </div>
           </div>
         </li>
