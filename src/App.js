@@ -7,6 +7,8 @@ import Contact from './Website/pages/Contact'
 import Register from './Website/pages/Register'
 import Grooms from './Website/pages/Grooms'
 import Brides from './Website/pages/Brides'
+import "./App.css"
+
 
 const App = () => {
   return(
