@@ -11,7 +11,7 @@ export const Footer = () => {
         <div className="footer clearfix">
           <div className="col-sm-3">
             <div className="footer_left">
-              <img src="img/32.png" />
+              <img src="img/61.png" />
             </div>
           </div>
           <div className="col-sm-6">
@@ -19,7 +19,7 @@ export const Footer = () => {
               <p>
               <Link to="/">  <a href="#">Home</a> </Link>
               <Link to="/about">  <a href="#">About Us</a> </Link>
-              <Link to="/Services"> <a href="#">Services</a> </Link>
+              <Link to="/Services"> <a href="#">Service</a> </Link>
               <Link to="/register"> <a href="#">Register</a> </Link>
               <Link to="/contact"> <a href="#">Contact Us</a> </Link>
               </p>
@@ -36,7 +36,7 @@ export const Footer = () => {
           </div>
           <div className="col-sm-3">
             <div className="footer_left">
-              <img src="Img/32.png" />
+              <img src="Img/62.png" />
             </div>
           </div>
         </div>
