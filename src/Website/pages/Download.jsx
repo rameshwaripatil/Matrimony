@@ -18,7 +18,8 @@ const Download = () => {
                                         <div class="image__with--text__content--footer d-flex">
                                             <img class="display-block" src="img/logo.webp" alt="text-shape"/>
                                             </div>
-                                            
+
+                       
                                             </div>
                                             </div>
                                             </div>
