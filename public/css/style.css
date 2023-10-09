@@ -1033,6 +1033,7 @@ border-bottom:1px solid #ee0b42;
 /*********************footer****************/
 .footer_main{
   position:relative;
+  margin-top: 700px;
   }
 #footer{
   position:absolute;
