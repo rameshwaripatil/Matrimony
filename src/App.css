@@ -47,7 +47,6 @@
 .video-link-button {
   display: inline-block;
   padding: 15px 20px;
-  background-image: url('path/to/your/background-image.jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
   color: white;
