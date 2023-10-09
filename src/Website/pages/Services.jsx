@@ -22,6 +22,7 @@ const Services = () => {
                           <p class="services__card--desc mb-15">Individuals interested in finding a partner register with the marriage bureau by providing their per...</p>
                           </div>
                           </a>
+              
                           </article>
                           </div>
                           <div class="col custom-col mb-30">
