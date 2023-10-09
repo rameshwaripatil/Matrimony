@@ -36,11 +36,7 @@ export const Footer = () => {
           </div>
           <div className="col-sm-3">
             <div className="footer_left">
-<<<<<<< HEAD
               <img src="Img/62.png" />
-=======
-              <img src="Img/61.jpg" />
->>>>>>> bbfa0c877bcc546f794bbd57ab7a4df1a0eb7ac0
             </div>
           </div>
         </div>
