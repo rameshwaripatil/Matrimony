@@ -75,8 +75,6 @@ export const Home = () => {
     </div>
   </div>
 </section>
-
-
 <Services/>
 
 {/* <section id="arrange">
