@@ -55,6 +55,7 @@ const VideoLinkButton = () => {
                         <a
                             className="banner__video--btn primary__btn"
                             href="/register"
+                            style={{marginTop: '500px'}}
                         >
                             Register Now
                         </a>
