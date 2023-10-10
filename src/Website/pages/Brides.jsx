@@ -1,95 +1,14 @@
-// BridePage.js
-
-import React, { useState } from 'react';
+import React from 'react'
 
 const Brides = () => {
-  const [brideInfo, setBrideInfo] = useState({
-    name: '',
-    age: '',
-    bio: '',
-    location: '',
-    occupation: '',
-    hobbies: '',
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setBrideInfo({ ...brideInfo, [name]: value });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Bride Information Submitted:', brideInfo);
-    // Add logic to save bride information to the database or perform other actions
-  };
-
   return (
-    <div className="bride-page-container">
-      <h2>Bride's Page</h2>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Name:
-          <input
-            type="text"
-            name="name"
-            value={brideInfo.name}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Age:
-          <input
-            type="text"
-            name="age"
-            value={brideInfo.age}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Location:
-          <input
-            type="text"
-            name="location"
-            value={brideInfo.location}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Occupation:
-          <input
-            type="text"
-            name="occupation"
-            value={brideInfo.occupation}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Hobbies:
-          <input
-            type="text"
-            name="hobbies"
-            value={brideInfo.hobbies}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Bio:
-          <textarea
-            name="bio"
-            value={brideInfo.bio}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
-        <button type="submit">Save Information</button>
-      </form>
-    </div>
-  );
-};
+    <div>
 
-export default Brides;
+<section className="breadcrumb__section breadcrumb__bg"><div className="container"><div className="row row-cols-1"><div className="col"><div className="breadcrumb__content"><h1 className="breadcrumb__content--title mb-10 text-white">Brides</h1><ul className="breadcrumb__content--menu d-flex"><li className="breadcrumb__content--menu__items"><a className="text-white" href="/brides/\">Home</a></li><li className="breadcrumb__content--menu__items"><span className="text__secondary text-white">Brides</span></li></ul></div></div></div></div></section>
+
+<section className="team__section my-4"><div><div><div className="container p-3"><h3> Cast : </h3></div><div className="container-fluid " style={{marginTop: 10, marginBottom: 10}}><div className="row"><div className="col-md-9 offset-md-2  "><div className="alice-carousel"><div><div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}><ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1415.7px, 0px, 0px)'}}><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/2/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item" style={{width: '235.95px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/2/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __active __target" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/2/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li></ul></div></div></div></div></div></div></div></div><div className="text-center mt-4 ml-2"><a className="btn btn-outline-danger btn-lg" href="/brides">View all</a></div><div className="container"><div className="section__heading text-center mb-50 " /><div className="team__container"><div className="row row-cols-md-2 row-cols-sm-2 row-cols-2 mb--n30"><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/1695346740.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>2002-03-15 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 6in - 167cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>21 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>B.s.c ( ..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Working..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/4">View Profile</a></div></div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/16963447891.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>2000-03-19 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 7in - 170cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>23 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>B.C.S Di..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Private..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Karjat..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/5">View Profile</a></div></div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/16963449301.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>1994-05-08 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 5in - 165cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>29 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>B.A..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Working..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Dhule..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/6">View Profile</a></div></div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/16958796841.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>1995-12-28 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 1in - 154cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>27 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>M.Com..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Private..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Miraj..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/7">View Profile</a></div></div></article></div></div></div></div></div></section>
+    </div>
+  )
+}
+
+export default Brides
