@@ -133,7 +133,7 @@ const SuccessfullMarriges = () => {
           <div className="timeline-badge primary"><a><i className="glyphicon glyphicon-record invert" rel="tooltip" title id data-original-title="11 hours ago via Twitter" style={{cursor: 'pointer'}} /></a></div>
           <div className="timeline-panel">
             <div className="timeline-body">
-              <p><b>All the credits go to <a href="#">Rafamaciel</a></b></p>
+              <p><b>All the credits go to <a href="#">Sandip Gadekar</a></b></p>
               <p>I only make it responsive and remove the empty spaces to be more like Facebook timeline!</p>
             </div>
             <div className="timeline-footer primary">

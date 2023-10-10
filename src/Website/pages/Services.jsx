@@ -2,6 +2,10 @@ import React from 'react'
 const Services = () => {
   return (
    <div>
+ <div className="services_home">
+          <h1 className="text-center"><span>Our</span>  Services</h1>
+          <h2 className="text-center"><i className="fa fa-arrows-h" /></h2>
+        </div>
   <div className="container">
     <div className="box">
       <div className="imgBox">
