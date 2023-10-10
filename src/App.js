@@ -8,6 +8,8 @@ import Register from './Website/pages/Register'
 import Grooms from './Website/pages/Grooms'
 import Brides from './Website/pages/Brides'
 import "./App.css"
+import Search from './Website/pages/Search'
+import Membarship from './Website/pages/Membarship'
 
 
 const App = () => {
@@ -21,6 +23,10 @@ const App = () => {
       <Route path="/register"  element={<Master Rcf={Register}/>} />
       <Route path="/grooms"  element={<Master Rcf={Grooms}/>} />
       <Route path="/brides"  element={<Master Rcf={Brides}/>} />
+      <Route path="/search"  element={<Master Rcf={Search}/>} />
+      <Route path="/membarship"  element={<Master Rcf={Membarship}/>} />
+
+
 
 
 

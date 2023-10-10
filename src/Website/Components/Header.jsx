@@ -49,6 +49,10 @@ const Header = () => {
                       {/* <li>  <Link  to="/services"><a className="color_1" href="services">Services</a> </Link></li> */}
                       <li>  <Link to="/grooms"><a className="color_1" href="services">Grooms</a> </Link></li>
                       <li>  <Link to="/brides"><a className="color_1" href="services">Brides</a> </Link></li>
+                      <li>  <Link to="/search"><a className="color_1" href="services">Search</a> </Link></li>
+                      <li>  <Link to="/membarship"><a className="color_1" href="services">Membarship</a> </Link></li>
+
+
 
 
                       <li>  <Link to="/contact"> <a className="color_1" href="contact">Contact Us</a>  </Link></li>
