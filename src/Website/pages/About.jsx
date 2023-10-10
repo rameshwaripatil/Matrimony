@@ -34,7 +34,7 @@ const About = () => {
 			<section class="image__with--text__section section--padding">
 				<div class="container">
 					<div class="row row-cols-md-2 row-cols-1  align-items-center">
-						<div class="col-lg-6"><div class="image__with--text__thumbnail">
+						<div class="col-lg-5"><div class="image__with--text__thumbnail">
 							<img class="display-block" src="img/wed12.jpg" alt="drone-image" style={{ height: "500px", width: "450px" }} />
 						</div></div><div class="col"><div class="image__with--text__content">
 							<h3 class="image__with--text__title mb-18">Download our mobile app &amp; find start searching your life partner in a tap.</h3>
