@@ -107,7 +107,7 @@ const About = () => {
 			<section class="about__section section--padding border-bottom">
 				<div class="container">
 					<div class="row row-cols-lg-2 row-cols-md-2 row-cols-1 align-items-center">
-						<div class="col-lg-6">
+						<div class="col-lg-5">
 							<div class="about__content">
 								<h2 class="about__content--title mb-18">Our motto is to help people in finding real happiness and that comes with the good partner.</h2>
 								<div class="about__content--step mb-25">
