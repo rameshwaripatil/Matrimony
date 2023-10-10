@@ -282,4 +282,101 @@ button:hover {
   margin-top: 20px;
   background-color: #fff;
   box-shadow: 0 0 36px rgba(0,0,0,.16);
+<<<<<<< HEAD
 }
+=======
+
+
+
+
+
+
+/* Add your global styles here */
+
+.team__section {
+  margin-top: 4rem;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.section__heading {
+  margin-bottom: 50px;
+}
+
+.section__heading--maintitle {
+  color: #333; /* Change color as needed */
+  margin-bottom: 10px;
+}
+
+.section__heading--desc {
+  color: #555; /* Change color as needed */
+}
+
+.team__container {
+  margin-bottom: -30px;
+}
+
+.custom-col {
+  margin-bottom: 30px;
+}
+
+.team__card {
+  background-color: #fff;
+  border: 1px solid #ddd; /* Change border color as needed */
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 
+    inset 0px -23px 25px 0px rgba(0, 0, 0, 0.17),
+    inset 0px -36px 30px 0px rgba(0, 0, 0, 0.15),
+    inset 0px -79px 40px 0px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.06),
+    0px 4px 2px rgba(0, 0, 0, 0.09),
+    0px 8px 4px rgba(0, 0, 0, 0.09),
+    0px 16px 8px rgba(0, 0, 0, 0.09),
+    0px 32px 16px rgba(0, 0, 0, 0.09);
+}
+
+
+.team__card--thumbnail__img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.team__card--thumbnail__img:hover {
+  transform: scale(1.1);
+}
+
+
+.team__card--thumbnail__img {
+  width: 100%;
+  height: auto;
+}
+
+.team__card--content {
+  padding: 20px;
+}
+
+.banner__video--btn {
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.primary__btn {
+  background: green; /* Change button background color as needed */
+}
+
+/* Responsive styles */
+@media (max-width: 767px) {
+  .custom-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+} 
+>>>>>>> 008fe7ab09422f2fa1adf79748f3401075bf899d
