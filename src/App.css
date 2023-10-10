@@ -378,3 +378,58 @@ button:hover {
     max-width: 100%;
   }
 } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Custom Styles for Search Component */
+
+.container {
+  margin-top: 20px;
+}
+
+.table_card {
+  border-radius: 10px;
+}
+
+.text-center {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  color: #fff; /* Label text color */
+}
+
+.form-select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ced4da; /* Bootstrap default border color */
+  border-radius: 5px;
+  background-color: #343a40; /* Bootstrap dark background color */
+  color: #fff; /* Select text color */
+}
+
+/* Add more custom styles as needed */
+
+/* Additional Styles for Regional Filters */
+.table_card:nth-child(2) {
+  margin-top: 20px;
+}
+
+/* Adjust the background color, text color, etc., based on your design */
