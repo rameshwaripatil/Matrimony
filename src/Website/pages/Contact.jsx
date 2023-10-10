@@ -11,7 +11,7 @@ const Contact = () => {
           </div>
           <div class="main__contact--area" style={{marginTop:"20px"}}>
             <div class="row align-items-center row-md-reverse">
-              <div class="col-lg-5 bg-danger ">
+              <div class="col-lg-5 bg-danger " style={{background:""}}>
                 <div class="contact__info border-radius-10">
                   <div class="contact__info--items"style={{paddingTop:"20px"}}>
                     <h3 class="contact__info--content__title text-white mb-15">Contact Us</h3>
@@ -23,7 +23,7 @@ const Contact = () => {
                       </div>
                       <div class="contact__info--content">
                         <p class="contact__info--content__desc text-white">Change the design through a range <br/>
-                          <a href="tel:7020403671">7020403671</a>
+                          <a href="tel:7020403671">7057921848</a>
                         </p>
                       </div>
                     </div>
@@ -37,7 +37,7 @@ const Contact = () => {
                       </div>
                       <div class="contact__info--content">
                         <p class="contact__info--content__desc text-white">
-                          <a href="mailto:md.royalmarriagebureau@gmail.com">md.royalmarriagebureau@gmail.com</a><br />
+                          <a href="mailto:md.royalmarriagebureau@gmail.com">md.jabwemet@gmail.com</a><br />
                         </p>
                       </div>
                     </div>
