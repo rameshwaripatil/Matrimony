@@ -6,7 +6,9 @@ const Contact = () => {
   <div className="about_main clearfix">
     <section id="about">
       <img src="img/44.jpg" width="100%" />
+      
     </section>
+    
     <section id="about_top">
       <div className="container">
         <div className="row">
@@ -41,7 +43,7 @@ const Contact = () => {
             <div className="contact_inner text-center">
               <h1><i className="fa fa-map-marker" /></h1>
               <h2>Address</h2>
-              <h3>MATRIMONIAL WEBSITE</h3>
+              <h3>Jab-We-Met MATRIMONIAL</h3>
               <p>
                 Office No. B-10, 1st Floor, Lorem Amet,<br />
                 Consectetur Adipiscing, Integer  Zone, <br />
@@ -54,7 +56,7 @@ const Contact = () => {
               <h1><i className="fa fa-envelope" /></h1>
               <h2>Email</h2>
               <p>
-                <a href="#"> info@gmail.com</a><br />
+                <a href="#"> sandipgadekar143@gmail.com</a><br />
                 <a href="#">info@gmail.com</a><br />
                 <a href="#">info@gmail.com</a><br />
                 <a href="#">info@gmail.com</a>

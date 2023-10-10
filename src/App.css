@@ -135,7 +135,8 @@ body {
   padding: 1.5rem;
   display: flex;
   justify-content: center;
-  background-color: #fff;
+  background-color: pink;
+  border:5px solid black;
   z-index: 1;
   align-items: flex-end;
   text-align: center;
@@ -167,40 +168,61 @@ body {
   }
 }
 
+
+
 .button {
-  /* Your button styles */
-  background-color: red; /* Example color */
-  color: black; /* Example color */
-  padding: 10px 20px;
-  margin-left: 50px;
-  border: none;
-  
-  border-radius: 5px;
-  text-decoration: none;
-  cursor: pointer;
   position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
   overflow: hidden;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
 }
 
-.button::before {
+.button:hover {
+  border-color: red;
+}
+
+.color_1 {
+  color: black;
+  text-decoration: none;
+}
+
+.color_1:hover {
+  color: red;
+}
+
+/* Add this for a pulsating animation effect on hover */
+.button:hover::before {
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  color: black;
-  transform: translate(-50%, -50%);
   width: 0;
   height: 0;
-  background: red;
+  background-color: red;
   border-radius: 50%;
-  opacity: 0;
-  transition: width 0.3s ease-out, height 0.3s ease-out, opacity 0.3s ease-out;
+  transform: translate(-50%, -50%);
+  animation: pulse 0.5s ease-in-out infinite;
 }
 
-.button:hover::before {
-  width: 300px;
-  height: 300px;
-  opacity: 1;
+@keyframes pulse {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
+  50% {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+  }
+  100% {
+    width: 0;
+    height: 0;
+    opacity: 0.5;
+  }
 }
 
 
