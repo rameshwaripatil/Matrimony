@@ -42,13 +42,9 @@ const Contact = () => {
                           <path id="ic_phone_forwarded_24px" d="M26.676,16.564l7.892-7.782L26.676,1V5.669H20.362v6.226h6.314Zm3.157,7a18.162,18.162,0,0,1-5.635-.887,1.627,1.627,0,0,0-1.61.374l-3.472,3.424a23.585,23.585,0,0,1-10.4-10.257l3.472-3.44a1.48,1.48,0,0,0,.395-1.556,17.457,17.457,0,0,1-.9-5.556A1.572,1.572,0,0,0,10.1,4.113H4.578A1.572,1.572,0,0,0,3,5.669,26.645,26.645,0,0,0,29.832,32.128a1.572,1.572,0,0,0,1.578-1.556V25.124A1.572,1.572,0,0,0,29.832,23.568Z" transform="translate(-3 -1)" fill="currentColor">
                           </path></svg>
                       </div>
-                      <div class="contact__info--content"
+                      <div class="contact__info--content">
                         <p class="contact__info--content__desc text-white">Change the design through a range<br/>
                           <a href="tel:7020403671">7020403671</a>
-
-                        <p class="contact__info--content__desc text-white">Change the design through a range <br/>
-                          <a href="tel:7020403671">7057921848</a>
-
                         </p>
                       </div>
                     </div>
@@ -133,6 +129,7 @@ const Contact = () => {
               </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
       
