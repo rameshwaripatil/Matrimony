@@ -14,7 +14,8 @@ const About = () => {
 	};
 	return (
 		<div>
-			    <section id="about">
+
+			      <section id="about">
 				<img src="img/44.jpg" width="100%" />
 			 </section>    
 
@@ -29,7 +30,7 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-			 </section>    
+			 </section>      
 
 			<section class="image__with--text__section section--padding">
 				<div class="container">
