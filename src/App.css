@@ -76,17 +76,19 @@ html {
   font-size: 62.5%;
 }
 
-body {
-  width: 100vw;
+/* body {
+  width: 100%;
   min-height: 100vh;
   background-color: #f0f0f0;
   font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .container {
+  width: 100%;
+
   position: relative;
   display: flex;
   justify-content: center;
