@@ -4,26 +4,27 @@ import { Link } from 'react-router-dom';
 const Header = () => {
   return (
     <div>
-      <section id="top">
-        <div className="container">
-          <div className="row">
-            <div className="top clearfix">
-              <div className="col-sm-6">
-                <div className="top_left">
-                  <p>Endless Love: Start Your Journey</p>
+   <section id="top">
+    <div class="container">
+        <div class="row">
+            <div class="top clearfix">
+                <div class="col-sm-6">
+                    <div class="top_left">
+                        <p>Endless Love : Start Your Journey</p>
+                    </div>
                 </div>
-              </div>
-              <div className="col-sm-6">
-                <div className="top_right clearfix text-right">
-                  <span className="span_2"> <i className="fa fa-whatsapp" /> +91 - 7057-921-848 </span>
+                <div class="col-sm-6">
+                    <div class="top_right clearfix text-right">
+                        <span class="span_2"> <i class="fa fa-whatsapp" /> +91 - 7057-921-848 </span>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
         </div>
-      </section>
+    </div>
+</section>
+
       <section id="header" className="cd-secondary-nav fixed-top">
-        <div className="container">
+        <div className="container fixed-top">
           <div className="row">
             <div className="col-md-12">
               <nav className="navbar navbar-default" role="navigation">
@@ -35,10 +36,11 @@ const Header = () => {
                     <span className="icon-bar" />
                     <span className="icon-bar" />
                   </button>
-                  <a className="navbar-brand d-bl" href="index.html">Jab-We-Met</a>
+                  {/* <a className="navbar-brand d-bl" href="index.html">Jab-We-Met</a> */}
                 </div>
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul className="nav navbar-nav navbar-right">
+                    <li> <img  src="https://cdn3.mycity4kids.com/images/article-images/web/headersV2/img-20160911-57d5b330917a6.jpg" style={{height:"70px"}}/> </li>
                     <li> <Link to="/"> <a className="color_1 active_1" href="/">Home</a> </Link> </li>
                     <li> <Link to="/about"> <a className="color_1" href="/about">About Us</a></Link> </li>
                     <li> <Link to="/grooms"><a className="color_1" href="services">Grooms</a> </Link></li>
@@ -46,7 +48,7 @@ const Header = () => {
                     <li> <Link to="/search"><a className="color_1" href="services">Search</a> </Link></li>
                     <li> <Link to="/membarship"><a className="color_1" href="services">Membership</a> </Link></li>
                     <li> <Link to="/contact"> <a className="color_1" href="contact">Contact Us</a> </Link></li>
-                    <li> <button className='button'> <Link to="/register"> <a className="color_1" href="/register">Login</a> </Link></button> </li>
+                    <li> <button className='button'> <Link to="/login"> <a className="color_1" href="/login">Login</a> </Link></button> </li>
                     <li> <button className='button'> <Link to="/register"> <a className="color_1" href="/register">Register</a> </Link></button> </li>
                   </ul>
                 </div>

@@ -19,7 +19,7 @@ const Register = () => {
     <div className="register clearfix">
       <div className="col-sm-5 space_left">
         <div className="register_left">
-          <div className="card-image"><img src="img/45.jpg" width="100%" /></div>
+          <div className="card-image"><img src="https://images.unsplash.com/photo-1654156577076-e0350ba86cc1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c291dGglMjBpbmRpYW4lMjB3ZWRkaW5nfGVufDB8fDB8fHww&w=1000&q=80" style={{height:"700px"}} width="100%" /></div>
         </div>
       </div>
       <div className="col-sm-7">
