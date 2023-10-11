@@ -10,8 +10,7 @@ const Grooms = () => {
       </div><div className="container-fluid " style={{marginTop: 10, marginBottom: 10}}>
         <div className="row">
           <div className="col-md-9 offset-md-2  ">
-            <div className="alice-carousel">
-              <div>
+            <div className="alice-carousel"><div>
                 <div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}>
                   <ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1459.2px, 0px, 0px)'}}>
                     <li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
