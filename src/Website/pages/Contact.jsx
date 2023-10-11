@@ -2,16 +2,33 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>
+    <div className="contact">
+      <section class="breadcrumb__section breadcrumb__bg">
+        <div class="container">
+          <div class="row row-cols-1">
+            <div class="col">
+              <div class="breadcrumb__content">
+                <h1 class="breadcrumb__content--title mb-10 text-white">Contact Us</h1>
+                <ul class="breadcrumb__content--menu d-flex">
+                  <li class="breadcrumb__content--menu__items">
+                    <a class="text-white" href="/contact/\">Home</a></li>
+                    <li class="breadcrumb__content--menu__items">
+                      <span class="text__secondary text-white">Contact Us</span>
+                      </li></ul>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                      </section>
       <section class="contact__section section--padding" >
         <div class="container">
           <div class="section__heading text-center mb-40 " style={{marginTop:"20px"}}>
-            <h2 class="section__heading--maintitle text__secondary mb-10">Get In Touch</h2>
-            <p class="section__heading--desc">Have a question for us or feedback? Please click on the most appropriate category and fill out the form to reach us.</p>
+            <h2 class="section__heading--maintitle text__secondary mb-10" className='text-danger'><b>Get In Touch</b></h2>
+            <p class="section__heading--desc" style={{marginTop:"20px"}}>Have a question for us or feedback? Please click on the most appropriate <br></br>category and fill out the form to reach us.</p>
           </div>
           <div class="main__contact--area" style={{marginTop:"20px"}}>
             <div class="row align-items-center row-md-reverse">
-              <div class="col-lg-5 bg-danger ">
+              <div class="col-lg-5 bg-danger">
                 <div class="contact__info border-radius-10">
                   <div class="contact__info--items"style={{paddingTop:"20px"}}>
                     <h3 class="contact__info--content__title text-white mb-15">Contact Us</h3>
@@ -22,7 +39,7 @@ const Contact = () => {
                           </path></svg>
                       </div>
                       <div class="contact__info--content">
-                        <p class="contact__info--content__desc text-white">Change the design through a range <br/>
+                        <p class="contact__info--content__desc text-white">Change the design through a range<br/>
                           <a href="tel:7020403671">7020403671</a>
                         </p>
                       </div>
@@ -97,7 +114,7 @@ const Contact = () => {
                       <div class="col-lg-12">
                         <div class="contact__form--list mb-10">
                           <label class="contact__form--label text-center" for="input5">Write Your Message<span class="contact__form--label__star">*</span></label><br/>
-                          <textarea class="contact__form--textarea" id="input5" placeholder="Write Your Message" type="text" name="massage"></textarea>
+                          <textarea class="contact__form--textarea" id="input5" placeholder="Write Your Message" type="text" name="massage" style={{width:"550px",height:"100px"}}></textarea>
                         </div>
                       </div>
                     </div>
@@ -110,6 +127,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      
     </div>
 
   )
