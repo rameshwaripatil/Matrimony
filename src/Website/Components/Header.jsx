@@ -40,7 +40,7 @@ const Header = () => {
                 </div>
                 <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul className="nav navbar-nav navbar-right">
-                    <li> <img  src="https://cdn3.mycity4kids.com/images/article-images/web/headersV2/img-20160911-57d5b330917a6.jpg" style={{height:"70px"}}/> </li>
+                    <li> <img  src="https://cdn3.mycity4kids.com/images/article-images/web/headersV2/img-20160911-57d5b330917a6.jpg" style={{height:"70px", marginRight:"50px"}}/> </li>
                     <li> <Link to="/"> <a className="color_1 active_1" href="/">Home</a> </Link> </li>
                     <li> <Link to="/about"> <a className="color_1" href="/about">About Us</a></Link> </li>
                     <li> <Link to="/grooms"><a className="color_1" href="services">Grooms</a> </Link></li>
