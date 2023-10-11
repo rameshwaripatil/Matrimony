@@ -432,3 +432,120 @@ button:hover {
 }
 
 /* Adjust the background color, text color, etc., based on your design */
+
+
+
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section__heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section__heading--maintitle {
+  color: #333;
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.section__heading--desc {
+  color: #666;
+  font-size: 1.2em;
+}
+
+.counterup--inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.single__counterup {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.counterup__icon {
+  margin-bottom: 15px;
+}
+
+.counterup__icon svg {
+  width: 65px;
+  height: 61px;
+}
+
+.counterup__title {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.counterup__number {
+  color: #555;
+  font-size: 2em;
+}
+
+/* Add additional styles as needed */
+
+
+
+
+
+
+
+
+
+/* Style for the Login Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Style for the Login Form */
+.login-form {
+  width: 500px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for Form Elements */
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Style for the Submit Button */
+button {
+  background-color: black;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: red;
+}

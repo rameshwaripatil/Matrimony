@@ -10,6 +10,7 @@ import Brides from './Website/pages/Brides'
 import "./App.css"
 import Search from './Website/pages/Search'
 import Membarship from './Website/pages/Membarship'
+import Login from './Website/pages/Login'
 
 
 const App = () => {
@@ -25,6 +26,8 @@ const App = () => {
       <Route path="/brides"  element={<Master Rcf={Brides}/>} />
       <Route path="/search"  element={<Master Rcf={Search}/>} />
       <Route path="/membarship"  element={<Master Rcf={Membarship}/>} />
+      <Route path="/login"  element={<Master Rcf={Login}/>} />
+
 
 
 
