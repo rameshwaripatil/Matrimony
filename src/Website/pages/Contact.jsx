@@ -2,16 +2,37 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div>
+    <div className="contact">
+      <section class="breadcrumb__section breadcrumb__bg">
+        <div class="container">
+          <div class="row row-cols-1">
+            <div class="col">
+              <div class="breadcrumb__content">
+                <h1 class="breadcrumb__content--title mb-10 text-white">Contact Us</h1>
+                <ul class="breadcrumb__content--menu d-flex">
+                  <li class="breadcrumb__content--menu__items">
+                    <a class="text-white" href="/contact/\">Home</a></li>
+                    <li class="breadcrumb__content--menu__items">
+                      <span class="text__secondary text-white">Contact Us</span>
+                      </li></ul>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+                      </section>
       <section class="contact__section section--padding" >
         <div class="container">
           <div class="section__heading text-center mb-40 " style={{marginTop:"20px"}}>
-            <h2 class="section__heading--maintitle text__secondary mb-10">Get In Touch</h2>
-            <p class="section__heading--desc">Have a question for us or feedback? Please click on the most appropriate category and fill out the form to reach us.</p>
+            <h2 class="section__heading--maintitle text__secondary mb-10" className='text-danger'><b>Get In Touch</b></h2>
+            <p class="section__heading--desc" style={{marginTop:"20px"}}>Have a question for us or feedback? Please click on the most appropriate <br></br>category and fill out the form to reach us.</p>
           </div>
           <div class="main__contact--area" style={{marginTop:"20px"}}>
             <div class="row align-items-center row-md-reverse">
+
+              <div class="col-lg-5 bg-danger">
+
               <div class="col-lg-5 bg-danger " style={{background:""}}>
+
                 <div class="contact__info border-radius-10">
                   <div class="contact__info--items"style={{paddingTop:"20px"}}>
                     <h3 class="contact__info--content__title text-white mb-15">Contact Us</h3>
@@ -21,9 +42,13 @@ const Contact = () => {
                           <path id="ic_phone_forwarded_24px" d="M26.676,16.564l7.892-7.782L26.676,1V5.669H20.362v6.226h6.314Zm3.157,7a18.162,18.162,0,0,1-5.635-.887,1.627,1.627,0,0,0-1.61.374l-3.472,3.424a23.585,23.585,0,0,1-10.4-10.257l3.472-3.44a1.48,1.48,0,0,0,.395-1.556,17.457,17.457,0,0,1-.9-5.556A1.572,1.572,0,0,0,10.1,4.113H4.578A1.572,1.572,0,0,0,3,5.669,26.645,26.645,0,0,0,29.832,32.128a1.572,1.572,0,0,0,1.578-1.556V25.124A1.572,1.572,0,0,0,29.832,23.568Z" transform="translate(-3 -1)" fill="currentColor">
                           </path></svg>
                       </div>
-                      <div class="contact__info--content">
+                      <div class="contact__info--content"
+                        <p class="contact__info--content__desc text-white">Change the design through a range<br/>
+                          <a href="tel:7020403671">7020403671</a>
+
                         <p class="contact__info--content__desc text-white">Change the design through a range <br/>
                           <a href="tel:7020403671">7057921848</a>
+
                         </p>
                       </div>
                     </div>
@@ -97,7 +122,7 @@ const Contact = () => {
                       <div class="col-lg-12">
                         <div class="contact__form--list mb-10">
                           <label class="contact__form--label text-center" for="input5">Write Your Message<span class="contact__form--label__star">*</span></label><br/>
-                          <textarea class="contact__form--textarea" id="input5" placeholder="Write Your Message" type="text" name="massage"></textarea>
+                          <textarea class="contact__form--textarea" id="input5" placeholder="Write Your Message" type="text" name="massage" style={{width:"550px",height:"100px"}}></textarea>
                         </div>
                       </div>
                     </div>
@@ -110,6 +135,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      
     </div>
 
   )
