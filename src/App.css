@@ -329,7 +329,7 @@ button:hover {
 
 .team__card {
   background-color: #fff;
-  border: 1px solid #ddd; /* Change border color as needed */
+  border: 1px solid red; /* Change border color as needed */
   border-radius: 5px;
   overflow: hidden;
   box-shadow: 
@@ -343,7 +343,9 @@ button:hover {
     0px 32px 16px rgba(0, 0, 0, 0.09);
 }
 
-
+.team_1{
+  border: 1px solid red;
+}
 .team__card--thumbnail__img {
   width: 100%;
   height: auto;
@@ -356,7 +358,7 @@ button:hover {
 
 
 .team__card--thumbnail__img {
-  width: 100%;
+  width: 340px;
   height: auto;
 }
 
