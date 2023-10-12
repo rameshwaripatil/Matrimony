@@ -1,0 +1,109 @@
+.all-title-bol {
+    background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)) ,url('https://jssmatrimony.com/assets/images/jss_matrimony_slider01.jpg');
+    background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 5%;
+  background-size: cover;
+  height: 600px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+
+
+}
+/* .row-cols-md-2 {
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  } */
+  
+  .account__login {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .account__login--header {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+  
+  .account__login--header__title {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .account__login--header__desc {
+    color: #666;
+  }
+  
+  .account__login--input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .account__login--remember__forgot {
+    margin-bottom: 15px;
+  }
+  
+  .login__remember--label {
+    color: #333;
+  }
+  
+  .account__login--btn {
+    background-color: #f41010;
+    color: #fff;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .account__login--btn:hover {
+    background-color: #358eed;
+  }
+  
+.account__login--divide__text {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: #666;
+    font-size: 18px;
+    margin: 10px 0; 
+  }
+  
+  
+  .account__login--signup__text {
+    text-align: center;
+    color: #666;
+    margin-top: 15px;
+  }
+  
+  .account__login--forgot {
+    color: #ce0707;
+  }
+  
+  .account__login--forgot:hover {
+  
+    color: #0056b3;
+  }
+.account__login--middle-line {
+    flex-grow: 1;
+    border-top: 1px solid #c61d1d;
+    margin: 0 10px;
+  };
+  
