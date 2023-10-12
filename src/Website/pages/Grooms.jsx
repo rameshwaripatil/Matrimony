@@ -2,7 +2,8 @@ import React from 'react'
 
 const Grooms = () => {
   return (
-    <div>
+
+    <>
 
       <main class="main__content_wrapper"><section class="my-5"><div class="container card"><div class="team__card row p-5 mt-4"><div class="text-center mt-3"><h2 class="text-danger">Basic Filters</h2></div><div class="col-md-4 px-1 my-3"><label class="form-label">Gender</label><select aria-label="Default select example" name="gender" class="form-select form-select-lg"><option value="0">Select Gender</option><option value="2">Male</option><option value="1">Female</option><option value="3">Other</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label"> Caste</label><select name="cast" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Caste</option><option value="1">Not Assign</option>
         <option value="720">Muslim - Pathan</option><option value="721">Muslim - Qureshi</option><option value="722">Muslim - Rajput</option><option value="723">Muslim - Rowther</option><option value="724">Muslim - Shafi</option><option value="725">Muslim - Sheikh</option><option value="726">Muslim - Siddiqui</option><option value="727">Muslim - Syed</option><option value="728">Muslim - UnSpecified</option><option value="729">Muslim - Ansari</option><option value="730">Muslim - Arain</option><option value="731">Muslim - Awan</option><option value="732">Muslim - Bohra</option><option value="733">Muslim - Dekkani</option><option value="734">Muslim - Dudekula</option><option value="735">Muslim - Hanafi</option><option value="736">Muslim - Jat</option><option value="737">Muslim - Khoja</option><option value="738">Muslim - Lebbai</option><option value="739">Muslim - Malik</option><option value="740">Muslim - Mapila</option><option value="741">Muslim - Maraicar</option><option value="742">Muslim - Memon</option><option value="743">Muslim - Mughal</option><option value="744">Muslim - Others</option><option value="745">Muslim - Pathan</option><option value="746">Muslim - Qureshi</option><option value="747">Muslim - Rajput</option><option value="748">Muslim - Rowther</option><option value="749">Muslim - Shafi</option><option value="750">Muslim - Sheikh</option><option value="751">Muslim - Siddiqui</option><option value="752">Muslim - Syed</option><option value="753">Muslim - UnSpecified</option><option value="754">Muslim - Ansari</option><option value="755">Muslim - Arain</option><option value="756">Muslim - Awan</option><option value="757">Muslim - Bohra</option><option value="758">Muslim - Dekkani</option><option value="759">Muslim - Dudekula</option><option value="760">Muslim - Hanafi</option><option value="761">Muslim - Jat</option><option value="762">Muslim - Khoja</option><option value="763">Muslim - Lebbai</option><option value="764">Muslim - Malik</option><option value="765">Muslim - Mapila</option><option value="766">Muslim - Maraicar</option><option value="767">Muslim - Maraicar</option><option value="768">Muslim - Memon</option><option value="769">Muslim - Mughal</option><option value="770">Muslim - Others</option><option value="771">Muslim - Pathan</option><option value="772">Muslim - Qureshi</option><option value="773">Muslim - Rajput</option><option value="774">Muslim - Rowther</option><option value="775">Muslim - Shafi</option><option value="776">Muslim - Sheikh</option><option value="777">Muslim - Siddiqui</option><option value="778">Muslim - Syed</option><option value="779">Muslim - UnSpecified</option><option value="780">Born Again</option><option value="781">Brethren</option><option value="782">Church of South India</option><option value="783">Evangelist</option><option value="784">Jacobite</option><option value="785">Knanaya</option><option value="786">Knanaya Catholic</option><option value="787">Knanaya Jacobite</option><option value="788">Latin Catholic</option><option value="789">Malankara Catholic</option><option value="790">Marthoma</option><option value="791">Pentecost</option><option value="792">Roman Catholic</option><option value="793">Seventh-day Adventist</option><option value="794">Syrian Catholic</option><option value="795">Syrian Jacobite</option><option value="796">Syrian Orthodox</option><option value="797">Syro Malabar</option><option value="798">Christian - Others</option><option value="799">Sikh - Ahluwalia</option><option value="800">Sikh - Arora</option><option value="801">Sikh - Bhatia</option><option value="802">Sikh - Bhatra</option><option value="803">Sikh - Ghumar</option><option value="804">Sikh - Intercaste</option><option value="805">Sikh - Jat</option><option value="806">Sikh - Kamboj</option><option value="807">Sikh - Khatri</option><option value="808">Sikh - Kshatriya</option><option value="809">Sikh - Lubana</option><option value="810">Sikh - Majabi</option><option value="811">Sikh - Nai</option><option value="812">Sikh - Others</option><option value="813">Sikh - Rajput</option><option value="814">Sikh - Ramdasia</option><option value="815">Sikh - Ramgharia</option><option value="816">Sikh - Ravidasia</option><option value="817">Sikh - Saini</option><option value="818">Sikh - Tonk Kshatriya</option><option value="819">Sikh - Unspecified</option><option value="820">Jain - Agarwal</option><option value="821">Jain - Bania</option><option value="822">Jain - Intercaste</option><option value="823">Jain - Jaiswal</option><option value="824">Jain - KVO</option><option value="825">Jain - Khandelwal</option><option value="826">Jain - Kutchi</option><option value="827">Jain - Oswal</option><option value="828">Jain - Others</option><option value="829">Jain - Porwal</option><option value="830">Jain - Unspecified</option><option value="831">Jain - Vaishya</option><option value="832">Jain - Agarwal</option><option value="833">Jain - Bania</option><option value="834">Jain - Intercaste</option><option value="835">Jain - Jaiswal</option><option value="836">Jain - KVO</option><option value="837">Jain - Khandelwal</option><option value="838">Jain - Kutchi</option><option value="839">Jain - Oswal</option><option value="840">Jain - Others</option><option value="841">Jain - Porwal</option><option value="842">Jain - Unspecified</option><option value="843">Jain - Vaishya</option><option value="844">Other Caste</option><option value="845">Intercaste</option><option value="846">Irani</option><option value="847">Parsi</option><option value="848">Other Caste</option><option value="849">Other Caste</option><option value="850">Other Caste</option><option value="851">Maratha</option><option value="852">Fhull Mali</option><option value="853">wadar</option><option value="854">Burud</option><option value="855">Nathpanti Devari Gosavi</option><option value="856">Dhangar</option><option value="857">Brahmin - Niyogi</option></select></div>
@@ -14,7 +15,129 @@ const Grooms = () => {
           <div class="col-md-12 text-center"><button class="btn btn-success mb-2 btn-lg">Search</button></div></div></div></section></main>
 
 
-    </div>
+
+<div><h2 class="text-center text-danger mt-4">Our Grooms</h2>
+<section className="team__section my-4">
+  <div><div>
+      <div className="container p-3">
+        <h3> Cast : </h3>
+      </div><div className="container-fluid " style={{marginTop: 10, marginBottom: 10}}>
+        <div className="row">
+          <div className="col-md-9 offset-md-2  ">
+            <div className="alice-carousel"><div>
+                <div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}>
+                  <ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1459.2px, 0px, 0px)'}}>
+                    <li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a>
+                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
+                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
+                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
+                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a>
+                    </li><li className="alice-carousel__stage-item" style={{width: '243.2px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a>
+                    </li><li className="alice-carousel__stage-item __active __target" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
+                    </li><li className="alice-carousel__stage-item __active" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
+                    </li><li className="alice-carousel__stage-item __active" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
+                    </li><li className="alice-carousel__stage-item __active" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a>
+                    </li><li className="alice-carousel__stage-item __active __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}>
+                        Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}>
+                        Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
+                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}>
+                        Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
+                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a>
+                    </li></ul></div></div></div></div></div></div></div></div><div className="text-center mt-4 ml-2">
+    <a className="btn btn-outline-danger btn-lg" href="/grooms">View all</a>
+  </div><div className="container">
+    <div className="section__heading text-center mb-50">
+    </div><div className="team__container">
+      <div className="row row-cols-md-3 row-cols-sm-2 row-cols-2 mb--n30">
+        <div className="col-md-4 custom-col mb-30"><div className="container">
+            <article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}>
+                <img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/1695217396.jpg" alt="team-thumb" style={{height: 300}} />
+              </div><div className="card-body ">
+                <div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3">
+                </div><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}>
+                  <tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
+                      <td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td />
+                      <td>1995-09-20 </td></tr><tr>
+                    </tr>
+                    <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td>
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign meter.</td></tr>
+                    <tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td>
+                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td>
+                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td>28 Years </td></tr>
+                    <tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td>
+                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td>
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign..</td></tr><tr>
+                    </tr><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td />
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td>
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td>
+                      </td><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td />
+                      <td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td>
+                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td />
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr />
+                      <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td />
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td>
+                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Baramati..</td></tr></tbody>
+                      </table><li className="header__account header__account--items text-center " />
+                      <div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/2">View Profile</a></div>
+                      </div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container">
+                        <article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}>
+                          <img className="team__card--thumbnail__img display-block " src="/static/media/profie_photo.2d5685846284c2a66537.jpg" alt="team-thumb" style={{height: 300}} />
+                          </div><div className="card-body ">
+                            
+                        <div className="mt-3" />
+                        <div className="mt-3" />
+                        <div className="mt-3" /><div className="mt-3" />
+                        <div className="mt-3" /><div className="mt-3" /><div className="mt-3" />
+                        <table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td />
+                          <td /><td /><td /><td /><td /><td /><td /><td>2001-01-30 </td></tr><tr />
+                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td />
+                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td />
+                          <td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign meter.</td></tr><tr />
+                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td />
+                          <td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td />
+                          <td /><td /><td /><td /><td>22 Years </td></tr><tr />
+                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
+                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
+                          <td>Occupation </td><td>:</td><td /><td /><td /><td /><td />
+                          <td /><td /><td /><td /><td>Not Assign..</td></tr><tr />
+                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
+                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
+                          <td>Education</td><td>:</td><td /><td /><td /><td /><td /><td />
+                          <td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
+                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td />
+                          <td /><td /><td /><td /><td /><td>1..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
+                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td>
+                          </tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
+                          <td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Koregaon..</td>
+                          </tr></tbody></table><li className="header__account header__account--items text-center " />
+                          <div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/3">View Profile</a>
+                          </div>
+                          </div>
+                          </article>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </div>
+                          </section>
+
+
+
+
+</div>
+</>
+
   )
 }
 

@@ -77,7 +77,11 @@ html {
 }
 
 /* body {
+<<<<<<< HEAD
   width: 100%;
+=======
+  width: 100vw;
+>>>>>>> 5de1da217a0408c9d63cc28531ea886ebbc3e8e2
   min-height: 100vh;
   background-color: #f0f0f0;
   font-family: 'Poppins', sans-serif;
@@ -279,10 +283,9 @@ button:hover {
 }
 
 .table_card{
-  margin-left: 20px;
-  margin-right: 20px;
   margin-top: 20px;
   background-color: #fff;
+  width: 1000px;
   box-shadow: 0 0 36px rgba(0,0,0,.16);
 
 }
@@ -551,6 +554,7 @@ button {
 button:hover {
   background-color: red;
 }
+
 
 
 
@@ -831,3 +835,4 @@ body {
   color: white;
   background: crimson;
 }
+

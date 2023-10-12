@@ -14,22 +14,23 @@ const About = () => {
 	};
 	return (
 		<div>
-			<section id="about">
+
+			      <section id="about">
 				<img src="img/44.jpg" width="100%" />
-			</section>
-			<section id="about_heading_main" class="clearfix">
+			 </section>    
+
+			 <section id="about_heading_main" class="clearfix">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-							<div class="about_heading_main_1">
+							<div class="about_heading_main_1">						
 								<h5><a href="#">Home</a> <span>//</span> About Us</h5>
 								<h1>About <span> Us</span> </h1>
 							</div>
 						</div>
 					</div>
 				</div>
-			</section>
-
+			 </section>      
 
 			<section class="image__with--text__section section--padding">
 				<div class="container">
@@ -102,7 +103,7 @@ const About = () => {
 				</div>
 			</div>
 
-		
+
 
 			<section class="about__section section--padding border-bottom">
 				<div class="container">
