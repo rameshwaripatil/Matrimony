@@ -15,11 +15,23 @@ const About = () => {
 	return (
 		<div>
 
-			      <section id="about">
+<div className="all-title-box">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1 style={{ color: 'white', fontWeight: 'bold' }}>About Us</h1>
+              <ul className="row ">
+                <li className="breadcrumb-item active" style={{ color: 'white', fontWeight: 'bold',marginRight:950 }}>Home - About Us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>  
+			      {/* <section id="about">
 				<img src="img/44.jpg" width="100%" />
-			 </section>    
+			 </section>     */}
 
-			 <section id="about_heading_main" class="clearfix">
+			 {/* <section id="about_heading_main" class="clearfix">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
@@ -30,7 +42,7 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-			 </section>      
+			 </section>       */}
 
 			<section class="image__with--text__section section--padding">
 				<div class="container">
