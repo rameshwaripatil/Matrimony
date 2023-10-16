@@ -23,8 +23,21 @@ const Brides = () => {
   },[token])
   return (
     <div>
+<div className="all-title-box">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1 style={{ color: 'white', fontWeight: 'bold' }}>Brides</h1>
+              <ul className="row ">
+                <li className="breadcrumb-item active" style={{ color: 'white', fontWeight: 'bold',marginRight:950 }}>Home - Brides</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>  
 
-<section className="breadcrumb__section breadcrumb__bga">
+
+{/* <section className="breadcrumb__section breadcrumb__bga">
   <div className="container">
     <div className="row row-cols-1">
       <div className="col">
@@ -40,7 +53,7 @@ const Brides = () => {
       </div>
     </div>
   </div>
-</section>
+</section> */}
 
 <section id="about_last">
  <div class="container">
