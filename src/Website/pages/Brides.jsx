@@ -1,19 +1,124 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Authuser from '../Authentication/Authuser';
 
 const Brides = () => {
+  const{http,token}=Authuser();
 
+  const [bri, setBrides] = useState([]);
 
-
-
-
-  
+  const Brides = () => {
+    http.get(`get_member_detail_bride`)
+      .then((response) => {
+        setBrides(response.data.data.data);
+        console.log(response.data.data.data);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error('Error adding bride data:', error);
+      });
+  };
+  useEffect(()=>
+  {  
+    Brides();
+  },[token])
   return (
     <div>
 
-<section className="breadcrumb__section breadcrumb__bg"><div className="container"><div className="row row-cols-1"><div className="col"><div className="breadcrumb__content"><h1 className="breadcrumb__content--title mb-10 text-white">Brides</h1><ul className="breadcrumb__content--menu d-flex"><li className="breadcrumb__content--menu__items"><a className="text-white" href="/brides/\">Home</a></li><li className="breadcrumb__content--menu__items"><span className="text__secondary text-white">Brides</span></li></ul></div></div></div></div></section>
-
-<section className="team__section my-4"><div><div><div className="container p-3"><h3> Cast : </h3></div><div className="container-fluid " style={{marginTop: 10, marginBottom: 10}}><div className="row"><div className="col-md-9 offset-md-2  "><div className="alice-carousel"><div><div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}><ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1415.7px, 0px, 0px)'}}><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/2/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item" style={{width: '235.95px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/2/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __active __target" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/2/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '235.95px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/2/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li></ul></div></div></div></div></div></div></div></div><div className="text-center mt-4 ml-2"><a className="btn btn-outline-danger btn-lg" href="/brides">View all</a></div><div className="container"><div className="section__heading text-center mb-50 " /><div className="team__container"><div className="row row-cols-md-2 row-cols-sm-2 row-cols-2 mb--n30"><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/1695346740.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>2002-03-15 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 6in - 167cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>21 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>B.s.c ( ..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Working..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/4">View Profile</a></div></div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/16963447891.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>2000-03-19 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 7in - 170cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>23 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>B.C.S Di..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Private..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Karjat..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/5">View Profile</a></div></div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/16963449301.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>1994-05-08 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 5in - 165cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>29 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>B.A..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Working..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Dhule..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/6">View Profile</a></div></div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container"><article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}><img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/16958796841.jpg" alt="team-thumb" style={{height: 300}} /></div><div className="card-body "><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>1995-12-28 </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>5ft 1in - 154cm meter.</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>27 Years </td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>M.Com..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Private..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Miraj..</td></tr></tbody></table><li className="header__account header__account--items text-center " /><div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/7">View Profile</a></div></div></article></div></div></div></div></div></section>
+<section className="breadcrumb__section breadcrumb__bga">
+  <div className="container">
+    <div className="row row-cols-1">
+      <div className="col">
+        <div className="breadcrumb__content"><h1 className="breadcrumb__content--title mb-10 text-white">Brides</h1>
+         <ul className="breadcrumb__content--menu d-flex">
+          <li className="breadcrumb__content--menu__items">
+            <a className="text-white" href="/brides/\">Home</a></li>
+            <li className="breadcrumb__content--menu__items">
+              <span className="text__secondary text-white">Brides</span>
+            </li>
+         </ul>
+      </div>
+      </div>
     </div>
+  </div>
+</section>
+
+<section id="about_last">
+ <div class="container">
+  <div class="row">
+	   <div class="col-sm-12">
+		<div class="about_last">
+		  <h1><span>Our</span> Team Unity!</h1>
+		  <p>Vestibulum lacinia arcu eget nulla taciti sociosqu ad litora torquent.</p>
+		</div>
+	   </div>
+	   <div class="team col-sm-12  clearfix">
+		 {bri.map((el)=>(
+		
+			<div class="col-sm-4  col-lg-4">
+       
+			 <div class="team_1 clearfix"key={el.member_id}>
+			 <div className="team__card--thumbnail" style={{height: "300px"}}>
+            <img className="team__card--thumbnail__img display-block " src={el.member_user_img1
+
+} alt="team-thumb" style={{height: 300}} />
+            </div>
+       <table align="center" style={{marginTop: 10}}>
+              <tbody>
+                <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  
+                  <td>Birth Date</td>
+                  <td>:</td>
+                  <td>{el.date_of_birth} </td>
+                </tr>
+                <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  <td>Height</td>
+                  <td>:</td>
+                  <td>{el.height}</td>
+                </tr>
+                  <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  <td>Age </td>
+                  <td>:</td>
+                  <td>{el.age}</td>
+                  </tr>
+                  <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  <td>Frist Name </td>
+                  <td>:</td>
+                  <td>{el.first_name}</td>
+                  </tr>
+                  <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  <td>Education</td>
+                  <td>:</td>
+                  <td>{el.member_highest_education} </td></tr><tr />
+                  <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  <td>employed_in</td>
+                  <td>:</td>
+                  <td>{el.member_employed_in}</td></tr>
+                  <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  <td>income</td>
+                  <td>:</td>
+                  <td>/-</td>
+                  </tr><tr />
+                  <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
+                  <td>Taluka</td>
+                  <td>:</td>
+                  <td>{el.taluka_name}</td></tr>
+                  </tbody>
+                  </table>
+			 </div>
+      
+			</div>
+        ))}
+		
+		   </div>
+  </div>
+  </div>
+</section>
+ </div>
+
+
+                          
+
+
   )
 }
 

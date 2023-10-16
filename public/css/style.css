@@ -7,6 +7,8 @@ Licence: <a href="http://www.templateonweb.com/terms.php?v=content&contentid=152
 */
 body{
  font-family:Garamond;
+ max-width: 100%;
+ 
   }
 
 a:hover{
@@ -557,11 +559,7 @@ letter-spacing:1px;
  opacity:0;
  filter:alpha(opacity=0);  
 }
-#services_home .tooltip.in{
-    /*opacity:0;
-    filter:alpha(opacity=80);*/
-    
-}
+
 #services_home .tooltip.top{
     margin-top:-2px;
 }
