@@ -19,8 +19,8 @@ const Brides = () => {
   };
   useEffect(()=>
   {  
-    Brides();
-  },[token])
+    
+  }, [token])
   return (
     <div>
 
