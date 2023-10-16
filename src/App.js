@@ -4,13 +4,13 @@ import { BrowserRouter,Routes, Route } from 'react-router-dom'
 import { Home } from './Website/Components/Home'
 import About from './Website/pages/About'
 import Contact from './Website/pages/Contact'
-import Register from './Website/pages/Register'
+import Register from './Website/Authentication/Register'
 import Grooms from './Website/pages/Grooms'
 import Brides from './Website/pages/Brides'
 import "./App.css"
 import Search from './Website/pages/Search'
 import Membarship from './Website/pages/Membarship'
-import Login from './Website/pages/Login'
+import Login from './Website/Authentication/Login'
 
 
 const App = () => {
