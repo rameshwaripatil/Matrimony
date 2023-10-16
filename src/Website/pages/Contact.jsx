@@ -33,7 +33,7 @@ const [contact, setcontact]=useState([]);
                   </div>
                 </div>
                 <div className="contact__info--items">
-                  <h3 className="contact__info--content__title text-white mb-2">Email Address</h3>
+                  <h3 className="contact__info--content__title text-white mb-15">Email Address</h3>
                   <div className="contact__info--items__inner d-flex">
                     <div className="contact__info--icon"><svg xmlns="http://www.w3.org/2000/svg" width="31.57" height="31.13" viewBox="0 0 31.57 31.13"><path id="ic_email_24px" d="M30.413,4H5.157C3.421,4,2.016,5.751,2.016,7.891L2,31.239c0,2.14,1.421,3.891,3.157,3.891H30.413c1.736,0,3.157-1.751,3.157-3.891V7.891C33.57,5.751,32.149,4,30.413,4Zm0,7.783L17.785,21.511,5.157,11.783V7.891l12.628,9.728L30.413,7.891Z" transform="translate(-2 -4)" fill="currentColor" /></svg></div>
                     <div className="contact__info--content">
@@ -62,29 +62,28 @@ const [contact, setcontact]=useState([]);
                 </div>
               </div>
             </div>
-            <div className="col-lg-7 col-md-12">
+            <div className="col-lg-7">
               <div className="contact__form">
                 <form className="contact__form--inner" action="#">
                   <div className="row">
-                   
                     <div className="col-lg-6 col-md-6">
-                      <div className="contact__form--list mb-3">
+                      <div className="contact__form--list mb-20">
                         <label className="contact__form--label" htmlFor="input1">First Name<span className="contact__form--label__star">*</span></label>
                         <input className="contact__form--input" id="input1" placeholder="Your First Name" name="first_name" type="text" defaultValue /></div></div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="contact__form--list mb-3">
+                      <div className="contact__form--list mb-20">
                         <label className="contact__form--label" htmlFor="input2">Last Name<span className="contact__form--label__star">*</span></label>
                         <input className="contact__form--input" id="input2" placeholder="Your Last Name" name="last_name" type="text" defaultValue /></div></div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="contact__form--list mb-3">
+                      <div className="contact__form--list mb-20">
                         <label className="contact__form--label" htmlFor="input3">Email<span className="contact__form--label__star">*</span></label>
                         <input className="contact__form--input" id="input3" placeholder="Email" name="email" type="email" defaultValue /></div></div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="contact__form--list mb-3">
+                      <div className="contact__form--list mb-20">
                         <label className="contact__form--label" htmlFor="input4">Phone<span className="contact__form--label__star">*</span></label>
                         <input className="contact__form--input" id="input4" placeholder="Phone Number" type="number" name="mobile_no" defaultValue /></div></div>
                     <div className="col-lg-6 col-md-6">
-                      <div className="contact__form--list mb-3">
+                      <div className="contact__form--list mb-20">
                         <label className="contact__form--label" htmlFor="input5">Write Your Message<span className="contact__form--label__star">*</span></label>
                         <textarea className="contact__form--textarea" id="input5" placeholder="Write Your Message" type="text" name="massage" defaultValue={""} style={{ width: "650px" }} /></div></div></div>
                   <button className="contact__form--btn primary__btn" type="submit">Submit Now</button><p className="form-messege" />

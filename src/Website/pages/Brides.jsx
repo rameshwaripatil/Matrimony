@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Authuser from '../Authentication/Authuser';
 
 const Brides = () => {
+  const{http,token}=Authuser();
 
- return (
+  const [bri, setBrides] = useState([]);
+
+  const Brides = () => {
+    http.get(`get_member_detail_bride`)
+      .then((response) => {
+        setBrides(response.data.data.data);
+        console.log(response.data.data.data);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error('Error adding bride data:', error);
+      });
+  };
+  useEffect(()=>
+  {  
+    Brides();
+  },[token])
+  return (
     <div>
 
-<section className="breadcrumb__section breadcrumb__bg">
+<section className="breadcrumb__section breadcrumb__bga">
   <div className="container">
     <div className="row row-cols-1">
       <div className="col">
@@ -33,11 +52,15 @@ const Brides = () => {
 		</div>
 	   </div>
 	   <div class="team col-sm-12  clearfix">
+		 {bri.map((el)=>(
 		
-			<div class="col-sm-4 col-lg-4 ">
-			 <div class="team_1 clearfix">
-       <div className="team__card--thumbnail" style={{height: 300}}>
-            <img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/1695346740.jpg" alt="team-thumb" style={{height: 300}} />
+			<div class="col-sm-4  col-lg-4">
+       
+			 <div class="team_1 clearfix"key={el.member_id}>
+			 <div className="team__card--thumbnail" style={{height: "300px"}}>
+            <img className="team__card--thumbnail__img display-block " src={el.member_user_img1
+
+} alt="team-thumb" style={{height: 300}} />
             </div>
        <table align="center" style={{marginTop: 10}}>
               <tbody>
@@ -45,30 +68,31 @@ const Brides = () => {
                   
                   <td>Birth Date</td>
                   <td>:</td>
-                  <td>2002-03-15 </td>
+                  <td>{el.date_of_birth} </td>
                 </tr>
                 <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
                   <td>Height</td>
                   <td>:</td>
-                  <td>5ft 6in - 167cm meter.</td>
+                  <td>{el.height}</td>
                 </tr>
                   <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
                   <td>Age </td>
                   <td>:</td>
-                  <td>21 Years </td>
+                  <td>{el.age}</td>
                   </tr>
                   <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
-                  <td>Occupation </td>
+                  <td>Frist Name </td>
                   <td>:</td>
-                  <td>..</td>
+                  <td>{el.first_name}</td>
                   </tr>
                   <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
                   <td>Education</td>
                   <td>:</td>
-                  <td>B.s.c </td></tr><tr />
+                  <td>{el.member_highest_education} </td></tr><tr />
                   <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
                   <td>employed_in</td>
-                  <td>Not Working..</td></tr>
+                  <td>:</td>
+                  <td>{el.member_employed_in}</td></tr>
                   <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
                   <td>income</td>
                   <td>:</td>
@@ -77,85 +101,20 @@ const Brides = () => {
                   <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
                   <td>Taluka</td>
                   <td>:</td>
-                  <td>Not Assign..</td></tr>
+                  <td>{el.taluka_name}</td></tr>
                   </tbody>
                   </table>
 			 </div>
-			 {/* <div class="team_inner clearfix text-center">
-			 <h3>Praesent Mauris</h3>
-			 <h4>OWNER and Founder</h4>	
-             <ul>
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			 </ul>			 
-			</div> */}
+      
 			</div>
-			<div class="col-sm-4 col-lg-4">
-			 <div class="team_1 clearfix">
-			   <div class="grid clearfix">
-							<figure class="effect-jazz">
-								<img src="img/36.jpg" alt="img25"/>			
-			     </figure>
-							
-			  </div>
-			 </div>
-			 <div class="team_inner clearfix text-center">
-			 <h3>Semper Porta</h3>
-			 <h4>Director</h4>
-			 <ul>
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			 </ul>
-		     </div>
-			</div>
-			<div class="col-sm-4  col-lg-4">
-			 <div class="team_1 clearfix">
-			   <div class="grid clearfix">
-							<figure class="effect-jazz">
-								<img src="img/37.jpg" alt="img25"/>			
-			     </figure>
-							
-			  </div>
-			 </div>
-			 <div class="team_inner clearfix text-center">
-			 <h3>Eget Nulla</h3>
-			 <h4>Manager</h4>
-			 <ul>
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			 </ul>
-			</div>
-			</div>
-			<div class="col-sm-4  col-lg-4">
-			 <div class="team_1 clearfix">
-			   <div class="grid clearfix">
-							<figure class="effect-jazz">
-								<img src="img/38.jpg" alt="img25"/>			
-			     </figure>							
-			  </div>
-			 </div>
-			 <div class="team_inner clearfix text-center"/>
-			 <h3>Semper Porta</h3>
-			 <h4>Director</h4>
-             <ul>
-			      <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				  <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				  <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			 </ul>			 
-			</div>
-			</div>
+        ))}
+		
 		   </div>
   </div>
-  
+  </div>
 </section>
  </div>
+
 
                           
 
