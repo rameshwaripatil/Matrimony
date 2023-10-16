@@ -2,12 +2,7 @@ import React from 'react'
 
 const Brides = () => {
 
-
-
-
-
-  
-  return (
+ return (
     <div>
 
 <section className="breadcrumb__section breadcrumb__bg">
