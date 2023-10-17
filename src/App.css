@@ -323,7 +323,7 @@ button:hover {
   margin-bottom: 15px;
   border: 1px solid #ced4da; /* Bootstrap default border color */
   border-radius: 5px;
-  background-color: #343a40; /* Bootstrap dark background color */
+  background-color: #EE0B42; /* Bootstrap dark background color */
   color: #fff; /* Select text color */
 }
 

@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
-import "./Brides.css";
+import "./Brides.css"; 
 
 const Brides = () => {
   const { http, token } = Authuser();
 
-  const [bri, setBrides] = useState([]);
+  const [bri, setBrides] = useState([]);   
 
   const Brides = () => {
     http.get(`get_member_detail_bride`)
@@ -15,12 +15,14 @@ const Brides = () => {
       })
       .catch((error) => {
         // Handle errors
-        console.error('Error adding bride data:', error);
+        console.error('Error adding bride data:', error);         
       });
   };
   useEffect(() => {
     Brides();
-  }, [token])
+  }, [token])    
+
+
   return (
     <div>
       <div className="all-title-box">
@@ -43,8 +45,8 @@ const Brides = () => {
           <div className="row">
             <div className="col-sm-12">
               <div className="about_last">
-                <h1 className="text-center" ><span>Our</span> Team Unity!</h1>
-                <p>Vestibulum lacinia arcu eget nulla taciti sociosqu ad litora torquent.</p>
+                <h1 className="text-center" ><span>Our Brides..!</span> </h1>
+                <p><b>देखा जो तुझे यार ..दिल में बजी गिटार...!</b></p>
               </div>
             </div>
             <div className="team col-sm-12  clearfix">
