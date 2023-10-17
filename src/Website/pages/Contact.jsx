@@ -1,18 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Contact = () => {
+
+const [contact, setcontact]=useState([]);
+  fetch('').then ((response) =>{
+    return response.json();
+
+  })
+  .then ((data) =>{
+
+  });
+
   return (
   <div>
+<div className="all-title-box">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1 style={{ color: 'white', fontWeight: 'bold' }}>Contact Us</h1>
+              <ul className="row ">
+                <li className="breadcrumb-item active" style={{ color: 'white', fontWeight: 'bold',marginRight:950 }}>Home - Contact Us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>  
       <section className="contact__section section--padding">
         <div className="container">
-          <div className="section__heading text-center mb-40">
-            <h2 className="section__heading--maintitle text__secondary mb-10" style={{ marginTop: "20px" }}>Get In Touch</h2>
+          <div className="section__heading text-center mb-4">
+            <h2 className="section__heading--maintitle text__secondary mb-2" style={{ marginTop: "20px" }}>Get In Touch</h2>
             <p className="section__heading--desc" style={{ marginTop: "20px" }} >Have a question for us or feedback? Please click on the most appropriate category <br></br>and fill out the form to reach us.</p></div>
-          <div className="main__contact--area"><div className="row align-items-center row-md-reverse">
-            <div className="col-lg-5 bg-danger" >
+          <div className="main__contact--area">
+            <div className="row align-items-center row-md-reverse">
+            <div className="col-lg-5 col-md-12 mb-4 bg-danger" >
               <div className="contact__info border-radius-10">
                 <div className="contact__info--items">
-                  <h3 className="contact__info--content__title text-white mb-15">Contact Us</h3>
+                  <h3 className="contact__info--content__title text-white mb-2">Contact Us</h3>
                   <div className="contact__info--items__inner d-flex">
                     <div className="contact__info--icon"><svg xmlns="http://www.w3.org/2000/svg" width="31.568" height="31.128" viewBox="0 0 31.568 31.128"><path id="ic_phone_forwarded_24px" d="M26.676,16.564l7.892-7.782L26.676,1V5.669H20.362v6.226h6.314Zm3.157,7a18.162,18.162,0,0,1-5.635-.887,1.627,1.627,0,0,0-1.61.374l-3.472,3.424a23.585,23.585,0,0,1-10.4-10.257l3.472-3.44a1.48,1.48,0,0,0,.395-1.556,17.457,17.457,0,0,1-.9-5.556A1.572,1.572,0,0,0,10.1,4.113H4.578A1.572,1.572,0,0,0,3,5.669,26.645,26.645,0,0,0,29.832,32.128a1.572,1.572,0,0,0,1.578-1.556V25.124A1.572,1.572,0,0,0,29.832,23.568Z" transform="translate(-3 -1)" fill="currentColor" /></svg></div>
                     <div className="contact__info--content">
@@ -32,7 +55,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="contact__info--items">
-                  <h3 className="contact__info--content__title text-white mb-15">Office Location</h3>
+                  <h3 className="contact__info--content__title text-white mb-2">Office Location</h3>
                   <div className="contact__info--items__inner d-flex">
                     <div className="contact__info--icon"><svg xmlns="http://www.w3.org/2000/svg" width="31.57" height="31.13" viewBox="0 0 31.57 31.13"><path id="ic_account_balance_24px" d="M5.323,14.341V24.718h4.985V14.341Zm9.969,0V24.718h4.985V14.341ZM2,32.13H33.57V27.683H2ZM25.262,14.341V24.718h4.985V14.341ZM17.785,1,2,8.412v2.965H33.57V8.412Z" transform="translate(-2 -1)" fill="currentColor" /></svg>
                     </div><div className="contact__info--content"><p className="contact__info--content__desc text-white">Rui pati, MIDC, Baramati.</p>
@@ -40,7 +63,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="contact__info--items">
-                  <h3 className="contact__info--content__title text-white mb-15">Follow Us</h3>
+                  <h3 className="contact__info--content__title text-white mb-2">Follow Us</h3>
                   <ul className="contact__info--social d-flex"><li className="contact__info--social__list"><a className="contact__info--social__icon" target="_blank" href="https://www.facebook.com/profile.php?id=100090053242512"><svg xmlns="http://www.w3.org/2000/svg" width="7.667" height="16.524" viewBox="0 0 7.667 16.524"><path data-name="Path 237" d="M967.495,353.678h-2.3v8.253h-3.437v-8.253H960.13V350.77h1.624v-1.888a4.087,4.087,0,0,1,.264-1.492,2.9,2.9,0,0,1,1.039-1.379,3.626,3.626,0,0,1,2.153-.6l2.549.019v2.833h-1.851a.732.732,0,0,0-.472.151.8.8,0,0,0-.246.642v1.719H967.8Z" transform="translate(-960.13 -345.407)" fill="currentColor" /></svg><span className="visually-hidden">Facebook</span></a></li>
                     <li className="contact__info--social__list"><a className="contact__info--social__icon" target="_blank" href="https://twitter.com/royal_m_bureau?t=Ach6L4F4nOJhn5op5S4pjg&s=09"><svg xmlns="http://www.w3.org/2000/svg" width="16.489" height="13.384" viewBox="0 0 16.489 13.384"><path data-name="Path 303" d="M966.025,1144.2v.433a9.783,9.783,0,0,1-.621,3.388,10.1,10.1,0,0,1-1.845,3.087,9.153,9.153,0,0,1-3.012,2.259,9.825,9.825,0,0,1-4.122.866,9.632,9.632,0,0,1-2.748-.4,9.346,9.346,0,0,1-2.447-1.11q.4.038.809.038a6.723,6.723,0,0,0,2.24-.376,7.022,7.022,0,0,0,1.958-1.054,3.379,3.379,0,0,1-1.958-.687,3.259,3.259,0,0,1-1.186-1.666,3.364,3.364,0,0,0,.621.056,3.488,3.488,0,0,0,.885-.113,3.267,3.267,0,0,1-1.374-.631,3.356,3.356,0,0,1-.969-1.186,3.524,3.524,0,0,1-.367-1.5v-.057a3.172,3.172,0,0,0,1.544.433,3.407,3.407,0,0,1-1.1-1.214,3.308,3.308,0,0,1-.4-1.609,3.362,3.362,0,0,1,.452-1.694,9.652,9.652,0,0,0,6.964,3.538,3.911,3.911,0,0,1-.075-.772,3.293,3.293,0,0,1,.452-1.694,3.409,3.409,0,0,1,1.233-1.233,3.257,3.257,0,0,1,1.685-.461,3.351,3.351,0,0,1,2.466,1.073,6.572,6.572,0,0,0,2.146-.828,3.272,3.272,0,0,1-.574,1.083,3.477,3.477,0,0,1-.913.8,6.869,6.869,0,0,0,1.958-.546A7.074,7.074,0,0,1,966.025,1144.2Z" transform="translate(-951.23 -1140.849)" fill="currentColor" /></svg>
                       <span className="visually-hidden">Twitter</span></a></li>
@@ -82,14 +105,14 @@ const Contact = () => {
           </div>
           </div>
         </div>
-        <section className="google-map-section">
+        <section className="google-map-section" style={{marginTop:"20px"}}>
           <div className="container">
             <div className="row">
               <div className="col-lg-12">
                 <div className="google-map">
                   <iframe
-                    title="Google Map" width="200%" height="400" style={{ border: '0' }}
-                    src="https://www.google.com/maps/@37.6316859,55.3465045,21z?entry=ttu"
+                    title="Google Map" width="100%" height="400" style={{ border: '0' , marginRight:"1500px"}}
+                    src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.5751083612968!2d74.60641507505385!3d18.18347688284589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3756e35bd9dc5%3A0xb9b331f6b43b3374!2sRoyal%20Marriage%20Bureau!5e0!3m2!1sen!2sin!4v1687173066909!5m2!1sen!2sin" 
                     allowFullScreen></iframe>
                 </div>
               </div>

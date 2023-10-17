@@ -27,6 +27,22 @@ const Membership = () => {
 
   return (
     <div>
+
+<div className="all-title-box">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1 style={{ color: 'white', fontWeight: 'bold' }}>Membership</h1>
+              <ul className="row ">
+                <li className="breadcrumb-item active" style={{ color: 'white', fontWeight: 'bold',marginRight:950 }}>Home - Membership</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>  
+
+
+
       <section className="team__section my-4">
         <div className="container">
           <div className="section__heading text-center mb-50">

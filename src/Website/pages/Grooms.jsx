@@ -2,142 +2,396 @@ import React from 'react'
 
 const Grooms = () => {
   return (
+    <div>
+      <div className="all-title-box">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1 style={{ color: 'white', fontWeight: 'bold' }}>Grooms</h1>
+              <ul className="row ">
+                <li className="breadcrumb-item active" style={{ color: 'white', fontWeight: 'bold',marginRight:950 }}>Home-Grooms</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>  
+      <h2 class="text-center text-danger mt-4">Our Grooms</h2>
+      <section className="team__section my-4">
+        <div>
+          <div>
+            <div className="container p-3">
+              <h3> Cast : </h3>
+            </div>
+            <div className="container-fluid " style={{ marginTop: 10, marginBottom: 10 }}>
+              <div className="row">
+                <div className="col-md-9 offset-md-2  ">
+                  <div className="alice-carousel">
+                    <div><div className="alice-carousel__wrapper" style={{ paddingLeft: 0, paddingRight: 0 }}>
+                      <ul className="alice-carousel__stage" style={{ transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-630px, 0px, 0px)' }}>
+                        <li className="alice-carousel__stage-item __cloned" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item __cloned" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item __cloned" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item __cloned" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmbat..</a></li>
+                        <li className="alice-carousel__stage-item" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Not Assi..</a></li>
+                        <li className="alice-carousel__stage-item" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item __active __target" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item __active" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmbat..</a></li>
+                        <li className="alice-carousel__stage-item __active __cloned" style={{ width: 90 }}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Not Assi..</a></li>
+                        <li className="alice-carousel__stage-item __active __cloned" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item __cloned" style={{ width: 90 }}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li>
+                        <li className="alice-carousel__stage-item __cloned" style={{ width: 90 }}>
+                          <a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{ height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14 }}> Brahmin ..</a></li></ul>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="text-center mt-4 ml-2">
+          <a className="btn btn-outline-danger btn-lg" href="/grooms">View all</a>
+        </div><div className="container">
+          <div className="section__heading text-center mb-50" />
+          <div className="team__container">
+            <div className="row row-cols-md-3 row-cols-sm-2 row-cols-2 mb--n30">
+              <div className="col-md-4 custom-col mb-30">
+                <div className="container">
+                  <article className="team__card"style={{height:550,width:500}}>
+                    <div className="team__card--thumbnail" style={{ height: 300}}>
+                      <img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/1695217396.jpg" alt="team-thumb" style={{ height: 300 }} />
+                    </div>
+                    <div className="card-body ">
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <table align="center" style={{ marginTop: 10 }}><tbody><tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                        <td /><td />
+                        <td /><td />
+                        <td /><td />
+                        <td /><td />
+                        <td /><td />
+                        <td>Birth Date</td>
+                        <td>:</td><td />
+                        <td /><td />
+                        <td /><td />
+                        <td /><td />
+                        <td /><td />
+                        <td>1995-09-20 </td>
+                      </tr><tr />
+                        <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td>Height</td>
+                          <td>:</td>
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td /><td />
+                          <td>Not Assign meter.</td>
+                        </tr><tr />
+                        <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td>Age </td>
+                          <td>:</td>
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td>28 Years </td>
+                        </tr><tr />
+                        <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td>Occupation </td>
+                          <td>:</td><td />
+                          <td /><td /><td />
+                          <td /><td /><td />
+                          <td /><td />
+                          <td>Not Assign..</td>
+                        </tr><tr />
+                        <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td>Education</td>
+                          <td>:</td><td />
+                          <td /><td /><td />
+                          <td /><td /><td />
+                          <td /><td /><td>..</td>
+                        </tr><tr />
+                        <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td>employed_in</td>
+                          <td>:</td>
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td>..</td>
+                        </tr><tr />
+                        <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td>income</td>
+                          <td>:</td>
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td>/-</td>
+                        </tr><tr />
+                        <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
 
-    <>
-
-      <main class="main__content_wrapper"><section class="my-5"><div class="container card"><div class="team__card row p-5 mt-4"><div class="text-center mt-3"><h2 class="text-danger">Basic Filters</h2></div><div class="col-md-4 px-1 my-3"><label class="form-label">Gender</label><select aria-label="Default select example" name="gender" class="form-select form-select-lg"><option value="0">Select Gender</option><option value="2">Male</option><option value="1">Female</option><option value="3">Other</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label"> Caste</label><select name="cast" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Caste</option><option value="1">Not Assign</option>
-        <option value="720">Muslim - Pathan</option><option value="721">Muslim - Qureshi</option><option value="722">Muslim - Rajput</option><option value="723">Muslim - Rowther</option><option value="724">Muslim - Shafi</option><option value="725">Muslim - Sheikh</option><option value="726">Muslim - Siddiqui</option><option value="727">Muslim - Syed</option><option value="728">Muslim - UnSpecified</option><option value="729">Muslim - Ansari</option><option value="730">Muslim - Arain</option><option value="731">Muslim - Awan</option><option value="732">Muslim - Bohra</option><option value="733">Muslim - Dekkani</option><option value="734">Muslim - Dudekula</option><option value="735">Muslim - Hanafi</option><option value="736">Muslim - Jat</option><option value="737">Muslim - Khoja</option><option value="738">Muslim - Lebbai</option><option value="739">Muslim - Malik</option><option value="740">Muslim - Mapila</option><option value="741">Muslim - Maraicar</option><option value="742">Muslim - Memon</option><option value="743">Muslim - Mughal</option><option value="744">Muslim - Others</option><option value="745">Muslim - Pathan</option><option value="746">Muslim - Qureshi</option><option value="747">Muslim - Rajput</option><option value="748">Muslim - Rowther</option><option value="749">Muslim - Shafi</option><option value="750">Muslim - Sheikh</option><option value="751">Muslim - Siddiqui</option><option value="752">Muslim - Syed</option><option value="753">Muslim - UnSpecified</option><option value="754">Muslim - Ansari</option><option value="755">Muslim - Arain</option><option value="756">Muslim - Awan</option><option value="757">Muslim - Bohra</option><option value="758">Muslim - Dekkani</option><option value="759">Muslim - Dudekula</option><option value="760">Muslim - Hanafi</option><option value="761">Muslim - Jat</option><option value="762">Muslim - Khoja</option><option value="763">Muslim - Lebbai</option><option value="764">Muslim - Malik</option><option value="765">Muslim - Mapila</option><option value="766">Muslim - Maraicar</option><option value="767">Muslim - Maraicar</option><option value="768">Muslim - Memon</option><option value="769">Muslim - Mughal</option><option value="770">Muslim - Others</option><option value="771">Muslim - Pathan</option><option value="772">Muslim - Qureshi</option><option value="773">Muslim - Rajput</option><option value="774">Muslim - Rowther</option><option value="775">Muslim - Shafi</option><option value="776">Muslim - Sheikh</option><option value="777">Muslim - Siddiqui</option><option value="778">Muslim - Syed</option><option value="779">Muslim - UnSpecified</option><option value="780">Born Again</option><option value="781">Brethren</option><option value="782">Church of South India</option><option value="783">Evangelist</option><option value="784">Jacobite</option><option value="785">Knanaya</option><option value="786">Knanaya Catholic</option><option value="787">Knanaya Jacobite</option><option value="788">Latin Catholic</option><option value="789">Malankara Catholic</option><option value="790">Marthoma</option><option value="791">Pentecost</option><option value="792">Roman Catholic</option><option value="793">Seventh-day Adventist</option><option value="794">Syrian Catholic</option><option value="795">Syrian Jacobite</option><option value="796">Syrian Orthodox</option><option value="797">Syro Malabar</option><option value="798">Christian - Others</option><option value="799">Sikh - Ahluwalia</option><option value="800">Sikh - Arora</option><option value="801">Sikh - Bhatia</option><option value="802">Sikh - Bhatra</option><option value="803">Sikh - Ghumar</option><option value="804">Sikh - Intercaste</option><option value="805">Sikh - Jat</option><option value="806">Sikh - Kamboj</option><option value="807">Sikh - Khatri</option><option value="808">Sikh - Kshatriya</option><option value="809">Sikh - Lubana</option><option value="810">Sikh - Majabi</option><option value="811">Sikh - Nai</option><option value="812">Sikh - Others</option><option value="813">Sikh - Rajput</option><option value="814">Sikh - Ramdasia</option><option value="815">Sikh - Ramgharia</option><option value="816">Sikh - Ravidasia</option><option value="817">Sikh - Saini</option><option value="818">Sikh - Tonk Kshatriya</option><option value="819">Sikh - Unspecified</option><option value="820">Jain - Agarwal</option><option value="821">Jain - Bania</option><option value="822">Jain - Intercaste</option><option value="823">Jain - Jaiswal</option><option value="824">Jain - KVO</option><option value="825">Jain - Khandelwal</option><option value="826">Jain - Kutchi</option><option value="827">Jain - Oswal</option><option value="828">Jain - Others</option><option value="829">Jain - Porwal</option><option value="830">Jain - Unspecified</option><option value="831">Jain - Vaishya</option><option value="832">Jain - Agarwal</option><option value="833">Jain - Bania</option><option value="834">Jain - Intercaste</option><option value="835">Jain - Jaiswal</option><option value="836">Jain - KVO</option><option value="837">Jain - Khandelwal</option><option value="838">Jain - Kutchi</option><option value="839">Jain - Oswal</option><option value="840">Jain - Others</option><option value="841">Jain - Porwal</option><option value="842">Jain - Unspecified</option><option value="843">Jain - Vaishya</option><option value="844">Other Caste</option><option value="845">Intercaste</option><option value="846">Irani</option><option value="847">Parsi</option><option value="848">Other Caste</option><option value="849">Other Caste</option><option value="850">Other Caste</option><option value="851">Maratha</option><option value="852">Fhull Mali</option><option value="853">wadar</option><option value="854">Burud</option><option value="855">Nathpanti Devari Gosavi</option><option value="856">Dhangar</option><option value="857">Brahmin - Niyogi</option></select></div>
-        <div class="col-md-4 px-1 my-3"><label class="form-label">Marital Status</label><select name="marital_status" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Marital Status</option><option value="1">Unmarried</option><option value="2">Divorced</option><option value="3">Widowed</option><option value="4">Separated</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">Min Age</label><select name="max_age" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Min Age</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">Max Age</label><select name="min_age" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Max Age</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option><option value="32">32</option><option value="33">33</option><option value="34">34</option><option value="35">35</option><option value="36">36</option><option value="37">37</option><option value="38">38</option><option value="39">39</option><option value="40">40</option><option value="41">41</option><option value="42">42</option><option value="43">43</option><option value="44">44</option><option value="45">45</option><option value="46">46</option><option value="47">47</option><option value="48">48</option><option value="49">49</option><option value="50">50</option><option value="51">51</option><option value="52">52</option><option value="53">53</option><option value="54">54</option><option value="55">55</option><option value="56">56</option><option value="57">57</option><option value="58">58</option><option value="59">59</option><option value="60">60</option></select></div></div><div class="team__card row p-5 mt-4"><div class="text-center mt-3"><h2 class="text-danger">Regional Filters</h2></div><div class="col-md-4 px-1 my-3"><label class="form-label">Employed In (Working Sector)</label><select name="emploay" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Employed In (Working Sector)</option><option value="Government">Government</option><option value="Private">Private</option><option value="Business">Business</option><option value="Defence">Defence</option><option value="Self Employed">Self Employed</option><option value="Not Working">Not Working
-        </option></select></div>
-
-
-          <div class="col-md-4 px-1 my-3"><label class="form-label">State Living In</label><select name="state" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select State Living In</option><option value="0">Not Assign</option><option value="1">Maharashtra</option><option value="2">Goa</option><option value="3">Karnataka</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">District Living In</label><select name="district" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select District Living</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">Taluka Living In</label><select name="taluka" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Taluka Living</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">Village Living In</label><select name="village" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Village Living</option></select></div></div><div class="row team__card p-5 mt-4"><div class="text-center mt-3"><h2 class="text-danger">Physical Appearance</h2></div><div class="col-md-4 px-1 my-3"><label class="form-label">Height</label><select name="height" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Height</option><option value="1">Not Assign</option><option value="2">Below 4ft 6in - 137cm</option><option value="3">4ft 7in - 139cm</option><option value="4">4ft 8in - 142cm</option><option value="5">4ft 9in - 144cm</option><option value="6">4ft 10in - 147cm</option><option value="7">4ft 11in - 149cm</option><option value="8">5ft - 152cm</option><option value="9">5ft 1in - 154cm</option><option value="10">5ft 2in - 157cm</option><option value="11">5ft 3in - 160cm</option><option value="12">5ft 4in - 162cm</option><option value="13">5ft 5in - 165cm</option><option value="14">5ft 6in - 167cm</option><option value="15">5ft 7in - 170cm</option><option value="16">5ft 8in - 172cm</option><option value="17">5ft 9in - 175cm</option><option value="18">5ft 10in - 177cm</option><option value="19">5ft 11in - 180cm</option><option value="20">6ft - 182cm</option><option value="21">6ft 1in - 185cm</option><option value="22">6ft 2in - 187cm</option><option value="23">6ft 3in - 190cm</option><option value="24">6ft 4in - 193cm</option><option value="25">6ft 5in - 195cm</option><option value="26">6ft 6in - 198cm</option><option value="27">6ft 7in - 200cm</option><option value="28">6ft 8in - 203cm</option><option value="29">6ft 9in - 205cm</option><option value="30">6ft 10in - 208cm</option><option value="31">6ft 11in - 210cm</option><option value="32">7ft - 213cm</option><option value="33">Above 7ft - 213cm</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">Weight</label><select name="weight" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Weight</option><option value="1">Not Assign</option><option value="2">41 kg</option><option value="3">42 kg</option><option value="4">43 kg</option><option value="5">44 kg</option><option value="6">45 kg</option><option value="7">46 kg</option><option value="8">47 kg</option><option value="9">48 kg</option><option value="10">49 kg</option><option value="11">50 kg</option><option value="12">51 kg</option><option value="13">52 kg</option><option value="14">53 kg</option><option value="15">54 kg</option><option value="16">55 kg</option><option value="17">56 kg</option><option value="18">57 kg</option><option value="19">58 kg</option><option value="20">59 kg</option><option value="21">60 kg</option><option value="22">61 kg</option><option value="23">62 kg</option><option value="24">63 kg</option><option value="25">64 kg</option><option value="26">65 kg</option><option value="27">66 kg</option><option value="28">67 kg</option><option value="29">68 kg</option><option value="30">69 kg</option><option value="31">70 kg</option><option value="32">71 kg</option><option value="33">72 kg</option><option value="34">73 kg</option><option value="35">74 kg</option><option value="36">75 kg</option><option value="37">76 kg</option><option value="38">77 kg</option><option value="39">78 kg</option><option value="40">79 kg</option><option value="41">80 kg</option><option value="42">81 kg</option><option value="43">82 kg</option><option value="44">83 kg</option><option value="45">84 kg</option><option value="46">85 kg</option><option value="47">86 kg</option><option value="48">87 kg</option><option value="49">88 kg</option><option value="50">89 kg</option><option value="51">90 kg</option><option value="52">91 kg</option><option value="53">92 kg</option><option value="54">93 kg</option><option value="55">94 kg</option><option value="56">95 kg</option><option value="57">96 kg</option><option value="58">97 kg</option><option value="59">98 kg</option><option value="60">99 kg</option><option value="61">100 kg</option><option value="62">101 kg</option><option value="63">102 kg</option><option value="64">103 kg</option><option value="65">104 kg</option><option value="66">105 kg</option><option value="67">106 kg</option><option value="68">107 kg</option><option value="69">108 kg</option><option value="70">109 kg</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">Body Type</label><select name="body_type" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Body Type</option><option value="Slim">Slim</option><option value="Average">Average</option><option value="Athletic">Athletic</option><option value="Heavy">Heavy</option></select></div><div class="col-md-4 px-1 my-3"><label class="form-label">Complextion (Body Color)</label><select name="body_color" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Complextion (Body Color)</option><option value="Very Fair">Very Fair</option><option value="Fair">Fair</option><option value="Wheatish">Wheatish</option><option value="Wheatish Brown">Wheatish Brown</option><option value="Dark">Dark</option></select></div></div><div class="team__card row p-5 mt-4">
-          <div class="col-md-12 text-center"><button class="btn btn-success mb-2 btn-lg">Search</button></div></div></div></section></main>
-
-
-
-<div><h2 class="text-center text-danger mt-4">Our Grooms</h2>
-<section className="team__section my-4">
-  <div><div>
-      <div className="container p-3">
-        <h3> Cast : </h3>
-      </div><div className="container-fluid " style={{marginTop: 10, marginBottom: 10}}>
-        <div className="row">
-          <div className="col-md-9 offset-md-2  ">
-            <div className="alice-carousel"><div>
-                <div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}>
-                  <ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1459.2px, 0px, 0px)'}}>
-                    <li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a>
-                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
-                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
-                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
-                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a>
-                    </li><li className="alice-carousel__stage-item" style={{width: '243.2px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a>
-                    </li><li className="alice-carousel__stage-item __active __target" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
-                    </li><li className="alice-carousel__stage-item __active" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
-                    </li><li className="alice-carousel__stage-item __active" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
-                    </li><li className="alice-carousel__stage-item __active" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a>
-                    </li><li className="alice-carousel__stage-item __active __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}>
-                        Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}>
-                        Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a>
-                    </li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}>
-                        Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '243.2px'}}>
-                      <a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a>
-                    </li></ul></div></div></div></div></div></div></div></div><div className="text-center mt-4 ml-2">
-    <a className="btn btn-outline-danger btn-lg" href="/grooms">View all</a>
-  </div><div className="container">
-    <div className="section__heading text-center mb-50">
-    </div><div className="team__container">
-      <div className="row row-cols-md-3 row-cols-sm-2 row-cols-2 mb--n30">
-        <div className="col-md-4 custom-col mb-30"><div className="container">
-            <article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}>
-                <img className="team__card--thumbnail__img display-block " src="https://admin.royalmarriagebureau.com/uploads/userimg/1695217396.jpg" alt="team-thumb" style={{height: 300}} />
-              </div><div className="card-body ">
-                <div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3" /><div className="mt-3">
-                </div><div className="mt-3" /><div className="mt-3" /><table align="center" style={{marginTop: 10}}>
-                  <tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
-                      <td>Birth Date</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td />
-                      <td>1995-09-20 </td></tr><tr>
-                    </tr>
-                    <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td>
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign meter.</td></tr>
-                    <tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td>
-                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td>
-                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td>28 Years </td></tr>
-                    <tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td>
-                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Occupation </td><td>:</td>
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign..</td></tr><tr>
-                    </tr><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td />
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Education</td><td>:</td>
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td>
-                      </td><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td /><td />
-                      <td /><td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td>
-                      </td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td />
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td></tr><tr />
-                      <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td />
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Taluka</td><td>:</td>
-                      <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Baramati..</td></tr></tbody>
+                          <td /><td />
+                          <td /><td />
+                          <td>Taluka</td>
+                          <td>:</td><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td /><td />
+                          <td>Baramati..</td>
+                        </tr></tbody>
                       </table><li className="header__account header__account--items text-center " />
-                      <div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/2">View Profile</a></div>
-                      </div></article></div></div><div className="col-md-4 custom-col mb-30"><div className="container">
-                        <article className="team__card"><div className="team__card--thumbnail" style={{height: 300}}>
-                          <img className="team__card--thumbnail__img display-block " src="/static/media/profie_photo.2d5685846284c2a66537.jpg" alt="team-thumb" style={{height: 300}} />
-                          </div><div className="card-body ">
-                            
-                        <div className="mt-3" />
-                        <div className="mt-3" />
-                        <div className="mt-3" /><div className="mt-3" />
-                        <div className="mt-3" /><div className="mt-3" /><div className="mt-3" />
-                        <table align="center" style={{marginTop: 10}}><tbody><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}>
-                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Birth Date</td><td>:</td><td /><td />
-                          <td /><td /><td /><td /><td /><td /><td /><td>2001-01-30 </td></tr><tr />
-                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td />
-                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Height</td><td>:</td><td />
-                          <td /><td /><td /><td /><td /><td /><td /><td /><td>Not Assign meter.</td></tr><tr />
-                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td />
-                          <td /><td /><td /><td /><td /><td /><td>Age </td><td>:</td><td /><td /><td /><td /><td />
-                          <td /><td /><td /><td /><td>22 Years </td></tr><tr />
-                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
-                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
-                          <td>Occupation </td><td>:</td><td /><td /><td /><td /><td />
-                          <td /><td /><td /><td /><td>Not Assign..</td></tr><tr />
-                          <tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
-                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
-                          <td>Education</td><td>:</td><td /><td /><td /><td /><td /><td />
-                          <td /><td /><td /><td>..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
-                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>employed_in</td><td>:</td><td /><td /><td /><td />
-                          <td /><td /><td /><td /><td /><td>1..</td></tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td />
-                          <td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>income</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>/-</td>
-                          </tr><tr /><tr style={{borderBottom: '1px solid rgb(204, 204, 204)'}}><td /><td /><td /><td /><td /><td /><td /><td /><td /><td /><td />
-                          <td>Taluka</td><td>:</td><td /><td /><td /><td /><td /><td /><td /><td /><td /><td>Koregaon..</td>
-                          </tr></tbody></table><li className="header__account header__account--items text-center " />
-                          <div className="text-center"><a className="btn btn-success mb-4 mt-4 " href="/single_view/3">View Profile</a>
-                          </div>
-                          </div>
-                          </article>
-                          </div>
-                          </div>
-                          </div>
-                          </div>
-                          </div>
-                          </section>
-
-
-
-
-</div>
-</>
-
+                      <div className="text-center">
+                        <a className="btn btn-success mb-4 mt-4 " href="/single_view/2">View Profile</a>
+                      </div>
+                    </div>
+                  </article>
+                </div></div>
+              <div className="col-md-4 custom-col mb-30">
+                <div className="container">
+                  <article className="team__card"style={{height:550,width:500}}>
+                    <div className="team__card--thumbnail" style={{ height: 300 }}>
+                      <img className="team__card--thumbnail__img display-block " src="img/143.jpeg" alt="team-thumb" style={{ height: 300 }} />
+                    </div>
+                    <div className="card-body ">
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <div className="mt-3" />
+                      <table align="center" style={{ marginTop: 10 }}>
+                        <tbody>
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td /><td />
+                            <td /><td />
+                            <td /><td />
+                            <td /><td />
+                            <td /><td />
+                            <td>Birth Date</td>
+                            <td>:</td>
+                            <td /><td /><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>2001-01-30 </td>
+                          </tr><tr />
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>Height</td>
+                            <td>:</td>
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>Not Assign meter.</td>
+                          </tr><tr />
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td /><td />
+                            <td>Age </td>
+                            <td>:</td>
+                            <td /><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>22 Years </td>
+                          </tr><tr />
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>Occupation </td>
+                            <td>:</td>
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td /><td />
+                            <td /><td />
+                            <td>Not Assign..</td>
+                          </tr><tr />
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td /><td />
+                            <td /><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>Education</td>
+                            <td>:</td>
+                            <td /><td />
+                            <td />
+                            <td />
+                            <td /><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>..</td>
+                          </tr><tr />
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>employed_in</td>
+                            <td>:</td>
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>1..</td>
+                          </tr><tr />
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td />
+                            <td />
+                            <td /><td />
+                            <td /><td />
+                            <td /><td />
+                            <td /><td />
+                            <td>income</td>
+                            <td>:</td>
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td /><td />
+                            <td /><td />
+                            <td /><td>/-</td>
+                          </tr><tr />
+                          <tr style={{ borderBottom: '1px solid rgb(204, 204, 204)' }}><td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td />
+                            <td>Taluka</td>
+                            <td>:</td>
+                            <td /><td />
+                            <td /><td />
+                            <td /><td />
+                            <td /><td />
+                            <td />
+                            <td>Koregaon..</td>
+                          </tr></tbody>
+                      </table>
+                      <li className="header__account header__account--items text-center " />
+                      <div className="text-center">
+                        <a className="btn btn-success mb-4 mt-4 " href="/single_view/3">View Profile</a>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
 
