@@ -1,6 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Authuser from '../Authentication/Authuser';
+
 
 const Grooms = () => {
+  const{http,token}=Authuser();
+
+  const [groom, setgrooms] = useState([]);
+
+  const Grooms = () => {
+    http.get(`get_member_detail_groom`)
+      .then((response) => {
+        setgrooms(response.data.data.data);
+        console.log(response.data.data.data);
+      })
+      .catch((error) => {
+        // Handle errors
+        console.error('Error adding bride data:', error);
+      });
+  };
+  useEffect(()=>
+  {  
+    Grooms();
+  },[token])
+
   return (
     <div>
       <div className="all-title-box">
@@ -15,13 +37,15 @@ const Grooms = () => {
           </div>
         </div>
       </div>  
+      
+    
       <h2 class="text-center text-danger mt-4">Our Grooms</h2>
       <section className="team__section my-4">
         <div>
           <div>
+         </div>
             <div className="container p-3">
               <h3> Cast : </h3>
-            </div>
             <div className="container-fluid " style={{ marginTop: 10, marginBottom: 10 }}>
               <div className="row">
                 <div className="col-md-9 offset-md-2  ">
@@ -58,13 +82,16 @@ const Grooms = () => {
                 </div>
               </div>
             </div>
+        
           </div>
         </div>
         <div className="text-center mt-4 ml-2">
           <a className="btn btn-outline-danger btn-lg" href="/grooms">View all</a>
-        </div><div className="container">
+        </div>
+        <div className="container">
           <div className="section__heading text-center mb-50" />
           <div className="team__container">
+          
             <div className="row row-cols-md-3 row-cols-sm-2 row-cols-2 mb--n30">
               <div className="col-md-4 custom-col mb-30">
                 <div className="container">
@@ -87,7 +114,8 @@ const Grooms = () => {
                         <td /><td />
                         <td /><td />
                         <td>Birth Date</td>
-                        <td>:</td><td />
+                        <td>:</td>
+                        <td />
                         <td /><td />
                         <td /><td />
                         <td /><td />
@@ -390,7 +418,9 @@ const Grooms = () => {
             </div>
           </div>
         </div>
+        
       </section>
+     
     </div>
   )
 }
