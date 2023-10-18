@@ -45,54 +45,26 @@ const Membership = () => {
             <p className="section__heading--desc">Select from our multiple membership plans and find your best life partner with membership benefits.</p>
           </div>
 
-          <div className="team__container">
+          <div className="team__container bg-danger">
             <div className="row mb--n30">
-<<<<<<< HEAD
-             
-              {/* {
-              member.map((el)=>(
-              <div className="col-md-6 col-lg-4 custom-col mb-30">
-                <article className="team__card">
-                  <div className="team__card--thumbnail">
-                    <img className="team__card--thumbnail__img display-block" src="https://royalmarriagebureau.com/static/media/gold%20plan%20.2174e1cff0232d30532a.jpg" alt="team-thumb" />
-                  </div>
-                  <div className="team__card--content text-center">
-                    <h3>Plan Name: Platinum plan</h3>
-                    <hr />
-                    <h4>Plan Amount</h4>
-                    <p className="text-danger fs-4">2000</p>
-                    <hr />
-                    <h4>Plan Duration</h4>
-                    <p className="text-danger fs-4">90</p>
-                    <hr />
-                    <h4>Profile Views</h4>
-                    <p className="text-danger fs-4">40</p>
-                    <hr />
-                    <button className="banner__video--btn primary__btn" style={{ background: 'green' }}>Buy Now</button>
-                  </div>
-                </article>
-              </div>
-))} */}
-=======
->>>>>>> 9f91363b0611f03d458698638ab29dea21b6655a
 
-              {plans.map(plan => (
-                <div key={plan.id} className="col-md-6 col-lg-4 custom-col mb-30">
+              {member.map(plan => (
+                <div key={plan.membership_plan_id} className="col-md-6 col-lg-4 custom-col mb-30">
                   <article className="team__card">
                     <div className="team__card--thumbnail">
                       <img className="team__card--thumbnail__img display-block" src={plan.image} alt="team-thumb" />
                     </div>
                     <div className="team__card--content text-center">
-                      <h3>Plan Name: {plan.name}</h3>
+                      <h3>Plan Name: {plan.plan_name}</h3>
                       <hr />
                       <h4>Plan Amount</h4>
-                      <p className="text-danger fs-4">{plan.amount}</p>
+                      <p className="text-danger fs-4">{plan.paymat_amount}</p>
                       <hr />
                       <h4>Plan Duration</h4>
-                      <p className="text-danger fs-4">{plan.duration}</p>
+                      <p className="text-danger fs-4">{plan.plan_duration}</p>
                       <hr />
                       <h4>Profile Views</h4>
-                      <p className="text-danger fs-4">{plan.profileViews}</p>
+                      <p className="text-danger fs-4">{plan.allow_profile}</p>
                       <hr />
                       <button className="banner__video--btn primary__btn" style={{ background: 'green' }}>Buy Now</button>
                     </div>
