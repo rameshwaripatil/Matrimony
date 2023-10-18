@@ -7,7 +7,7 @@ const Search = () => {
       <div class="container">
         <div class=" table_card row bg-black p-5 mt-5">
           <div class="text-center">
-            <h2 class="text-danger">Basic Filters</h2>
+            <h2 class="text-danger"> <b>Basic Filters</b> </h2>
           </div>
           <div class="col-lg-4  col-md-4 px-1 my-3" >
 
@@ -49,7 +49,7 @@ const Search = () => {
         
         <div class=" table_card row bg-black p-5 mt-5">
           <div class="text-center">
-            <h2 class="text-danger">Regional Filters</h2>
+            <h2 class="text-danger"> <b>Regional Filters</b> </h2>
           </div>
           <div class="col-lg-4 col-sm-12  col-md-4 px-1 my-3" >
 
@@ -76,7 +76,7 @@ const Search = () => {
         </div>
         <div class=" table_card row bg-black p-5 mt-5">
           <div class="text-center">
-            <h2 class="text-danger">Physical Appearance</h2>
+            <h2 class="text-danger"><b>Physical Appearance</b></h2>
           </div>
           <div class="col-lg-4 col-md-4 px-1 my-3">
             <label class="form-label">Height</label>

@@ -13,6 +13,18 @@ const [contact, setcontact]=useState([]);
 
   return (
   <div>
+<div className="all-title-box">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-12">
+              <h1 style={{ color: 'white', fontWeight: 'bold' }}>Contact Us</h1>
+              <ul className="row ">
+                <li className="breadcrumb-item active" style={{ color: 'white', fontWeight: 'bold',marginRight:950 }}>Home - Contact Us</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>  
       <section className="contact__section section--padding">
         <div className="container">
           <div className="section__heading text-center mb-4">

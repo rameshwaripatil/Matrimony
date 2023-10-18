@@ -1,0 +1,141 @@
+/* Brides.css */
+
+/* General Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0c0c0c; /* Dark background color */
+    color: #fff; /* Text color */
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 500px;
+  }
+  
+  /* Breadcrumb Section */
+  .breadcrumb__section {
+    padding: 50px 0;
+  }
+  
+  .breadcrumb__bga {
+    background: url("https://bestwallpapers.in/wp-content/uploads/2018/05/flowers-red-green-leaves-4k-wallpaper-2560x1024.jpg");
+  }
+  
+  .breadcrumb__content {
+    text-align: center;
+  }
+  
+  .breadcrumb__content--title {
+    font-size: 36px;
+  }
+  
+  .breadcrumb__content--menu {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+  }
+  
+  .breadcrumb__content--menu__items {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .text-white {
+    color: #fff !important;
+  }
+  
+  /* Team Section */
+  #about_last {
+    padding: 50px 0;
+  }
+  
+  .about_last {
+    text-align: center;
+  }
+  
+  .about_last h1 {
+    font-size: 48px;
+    color: #fff;
+  }
+  
+  .about_last p {
+    font-size: 18px;
+    color: #aaa;
+  }
+  
+  /* Team Cards */
+  .team {
+    margin-top: 30px;
+  }
+  
+  .team_1 {
+    background-color: #1f1f1f; /* Dark card background color */
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .team_1:hover {
+    transform: scale(1.05);
+  }
+  
+  .team__card--thumbnail {
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  /* Add the following to your existing CSS */
+
+.team__card--thumbnail {
+    position: relative;
+  }
+  
+/* Add the following to your existing CSS */
+/* Add the following to your existing CSS */
+
+.team__card--thumbnail__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    opacity: 0.9; /* Set initial opacity */
+  }
+  
+  .team__card--thumbnail:hover .team__card--thumbnail__img {
+    transform: translate(-50%, -50%) rotate(20deg) scale(1.1);
+    opacity: 1;
+  }
+  
+  
+  
+  /* Table Styling */
+  table {
+    width: 100%;
+    margin-top: 10px;
+    border-collapse: collapse;
+    color: #fff;
+  }
+  
+  table, th, td {
+    border: 1px solid #555;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .team_1 {
+      margin-right: 0;
+    }
+  }
+  
