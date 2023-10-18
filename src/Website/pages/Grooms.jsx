@@ -16,12 +16,12 @@ const items = [
 const Grooms = () => {
   const { http, token } = Authuser();
 
-  const [bri, setBrides] = useState([]);
+  const [groom, setGroom] = useState([]);
 
   const Brides = () => {
-    http.get(`get_member_detail_bride`)
+    http.get(`get_member_detail_groom`)
       .then((response) => {
-        setBrides(response.data.data.data);
+        setGroom(response.data.data.data);
         console.log(response.data.data.data);
       })
       .catch((error) => {
@@ -70,7 +70,7 @@ const Grooms = () => {
               </div>
             </div>
             <div className="team col-sm-12  clearfix">
-              {bri.map((el) => (
+              {groom.map((el) => (
 
                 <div className="col-sm-4  col-lg-4">
 

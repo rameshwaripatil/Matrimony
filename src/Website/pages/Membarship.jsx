@@ -6,7 +6,7 @@ const Membership = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://marriagebureau.ajspire.com/api/membership_plan/view');
+        const response = await fetch('');
         const data = await response.json();
         console.log('API Response:', data);
 
