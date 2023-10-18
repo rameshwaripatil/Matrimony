@@ -1,6 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Register = () => {
+  const[formData,setformData]=useState({
+    name:'',
+    email:'',
+    mob_no:'',
+    address:'',
+    password:'',
+    confirmpassword:''
+
+  });  
+
+  console.log(formData);
+  const onInputChange=(e)=>{
+    setformData({...formData,[e.target.name]:e.target.value});
+  };
+
+  const onSubmit = (e) => {
+    e.preventDefault();
+    fetch('http://marriagebureau.ajspire.com/api/front_user_register', {
+      method: 'POST',
+      body: JSON.stringify(formData),  // Convert formData to JSON string
+      headers: {
+        'Content-Type': 'application/json',  // Specify content type as JSON
+        // Include other headers if needed
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
+  };
   return (
     <div>
 <div>
@@ -29,26 +62,26 @@ const Register = () => {
           <div className="register_right_inner clearfix">
             <div className="clearfix clear_1">
               <div className="col-sm-6 register_right_inner_1 space_left">
-                <input type="text" className="form-control" placeholder="First Name *" />
+                <input type="text" className="form-control" onChange={(e)=>onInputChange(e)} placeholder="First Name *" />
               </div>
               <div className="col-sm-6 register_right_inner_1 space_left">
-                <input type="text" className="form-control" placeholder="Last Name *" />
-              </div>
-            </div>
-            <div className="clearfix clear_1">
-              <div className="col-sm-6 register_right_inner_1 space_left">
-                <input type="text" className="form-control" placeholder="Email *" />
-              </div>
-              <div className="col-sm-6 register_right_inner_1 space_left">
-                <input type="text" className="form-control" placeholder="Mobile *" />
+                <input type="text" className="form-control"  onChange={(e)=>onInputChange(e)}placeholder="Last Name *" />
               </div>
             </div>
             <div className="clearfix clear_1">
               <div className="col-sm-6 register_right_inner_1 space_left">
-                <input type="text" className="form-control" placeholder="Location *" />
+                <input type="text" className="form-control" onChange={(e)=>onInputChange(e)} placeholder="Email *" />
               </div>
               <div className="col-sm-6 register_right_inner_1 space_left">
-                <input type="text" className="form-control" id="cal_1" placeholder="Date of Birth" />
+                <input type="text" className="form-control" onChange={(e)=>onInputChange(e)} placeholder="Mobile *" />
+              </div>
+            </div>
+            <div className="clearfix clear_1">
+              <div className="col-sm-6 register_right_inner_1 space_left">
+                <input type="text" className="form-control" onChange={(e)=>onInputChange(e)} placeholder="Location *" />
+              </div>
+              {/* <div className="col-sm-6 register_right_inner_1 space_left">
+                <input type="text" className="form-control" onChange={(e)=>onInputChange(e)} id="cal_1" placeholder="Date of Birth" />
               </div>
             </div>
             <div className="clearfix clear_1">
@@ -101,21 +134,23 @@ const Register = () => {
                   <option value="Female">Ipsum</option>
                 </select>
               </div>
-            </div>
-            <div className="clearfix clear_1">
+            </div> */}
+            {/* <div className="clearfix clear_1">
               <div className="col-sm-6 register_right_inner_1 space_left">
                 <input type="text" className="form-control" placeholder="Captcha Code" />
               </div>
               <div className="col-sm-6 register_right_inner_1 space_left">
                 <h4>FBGRE</h4>
               </div>
-            </div>
+            </div> */}
             <div className="clearfix col-sm-12 clear_2">
-              <p><a href="#">SUBMIT</a></p>
+            <button type="submit" className="btn btn-primary btn-block" onClick={(e)=>onSubmit(e)}>Sign Up</button>
+
             </div>
           </div>
         </div>
       </div>
+    </div>
     </div>
   </section></div>
 
