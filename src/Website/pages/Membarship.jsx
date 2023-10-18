@@ -46,11 +46,11 @@ const Membership = () => {
           </div>
 
           <div className="team__container bg-danger">
-            <div className="row mb--n30">
+            <div className="row">
 
               {member.map(plan => (
-                <div key={plan.membership_plan_id} className="col-md-6 col-lg-4 custom-col mb-30">
-                  <article className="team__card">
+                <div  className="col-md-6 col-lg-4 custom-col mb-30">
+                  <article className="team__card"key={plan.membership_plan_id}>
                     <div className="team__card--thumbnail">
                       <img className="team__card--thumbnail__img display-block" src={plan.image} alt="team-thumb" />
                     </div>
