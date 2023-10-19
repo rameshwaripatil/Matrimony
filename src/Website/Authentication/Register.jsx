@@ -36,6 +36,8 @@ const ProfileCreated =() => {
     address: '',
     password: '',
     confirmpassword: '',
+    mother_tounges:'',
+    profile_created_id:'',
   });
 
   console.log(formData);

@@ -2,8 +2,8 @@ import React from 'react';
 
 const VideoLinkButton = () => {
     const backgroundStyle = {
-        backgroundImage: 'url("https://c1.wallpaperflare.com/preview/979/135/785/5968a02795f49.jpg")',  // Replace with the actual path to your image
-        backgroundSize: '100% 100%',  // Make the background image responsive
+        backgroundImage: 'url("https://wallpapercave.com/dwp1x/wp6239280.jpg")',  // Replace with the actual path to your image
+        backgroundSize: '100%',  // Make the background image responsive
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         height: '100vh',

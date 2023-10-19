@@ -1,0 +1,77 @@
+/* Add these styles to your existing CSS or create a new CSS file */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .main__content_wrapper {
+    color: white;
+  }
+  
+  .breadcrumb__section {
+    padding-top: 300px;
+    background-image: url('https://m.media-amazon.com/images/S/pv-target-images/0e3da645e07ccd1028d50d9a7ce5ef3189ba8aa7b3838b154be35b50542de7b6.jpg'); /* Replace 'your-background-image-url.jpg' with the actual URL or path to your image */
+    background-size: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .account__login {
+    background-color: #00ff00;
+    color: #fff;
+  }
+  
+  .account__login--header {
+    color: #ff0000; /* Red color */
+  }
+  
+  .contact__form--label {
+    color: #ff0000; /* Red color */
+  }
+  
+  .contact__form--input {
+    background-color: pink;
+    color: #fff;
+    border: 1px solid #ff0000; /* Red border */
+  }
+  
+  .checkout__checkbox--checkmark {
+    border: 2px solid #ff0000; /* Red border */
+  }
+  
+  .account__login--btn {
+    background-color: #ff0000; /* Red color */
+    color: #000;
+  }
+  
+  /* Add more styles as needed */
+  
+  .breadcrumb__section {
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .account__login--inner {
+    max-width: 600px; /* Set a maximum width for the form */
+    margin: 0 auto; /* Center the form horizontally */
+  }
+  
+  .contact__form--list {
+    margin-bottom: 20px;
+  }
+  
+  /* Responsive styles for smaller screens */
+  @media screen and (max-width: 768px) {
+    .account__login--inner {
+      padding: 0 20px; /* Add some padding to the sides for smaller screens */
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .contact__form--list {
+      width: 100%; /* Make the form fields full-width on smaller screens */
+    }
+  }
+  
