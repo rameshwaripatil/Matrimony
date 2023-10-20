@@ -133,7 +133,8 @@ const ProfileCreated =() => {
   }, [token]);   
   return (
     <div>
-      
+      <div className='container'>
+        <div className='row'>
       <div className="clearfix clear_1">
         <div className="col-sm-6 register_right_inner_1 space_left">
           <input
@@ -153,7 +154,9 @@ const ProfileCreated =() => {
             placeholder="Last Name *"
           />
         </div>
+        </div>
       </div>
+      <div className='row'>
       <div className="clearfix clear_1">
         <div className="col-sm-6 register_right_inner_1 space_left">
           <input
@@ -173,6 +176,7 @@ const ProfileCreated =() => {
             placeholder="Mobile *"
           />
         </div>
+      </div>
       </div>
       <div className="clearfix clear_1">
         <div className="col-sm-6 register_right_inner_1 space_left">
@@ -243,7 +247,7 @@ const ProfileCreated =() => {
           Sign Up
         </button>
       </div>
-     
+      </div>
     </div>
   );
 };
