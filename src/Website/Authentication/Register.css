@@ -4,6 +4,18 @@
 } */
 
 /* Container styles */
+.contact__form--label{
+  font-size: large;
+  background-color: red;
+}
+.contact__form--input
+{
+  color: black;
+}
+.login__section
+{
+  background-color: aqua;
+}
 .registration-page{
   background-image: url("https://images.pexels.com/photos/2060240/pexels-photo-2060240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
   background-repeat: no-repeat;
