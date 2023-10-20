@@ -1,77 +1,83 @@
-/* Add these styles to your existing CSS or create a new CSS file */
+/* Global styles */
+/* body {
+  font-family: Arial, sans-serif;
+} */
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .main__content_wrapper {
-    color: white;
-  }
-  
-  .breadcrumb__section {
-    padding-top: 300px;
-    background-image: url('https://m.media-amazon.com/images/S/pv-target-images/0e3da645e07ccd1028d50d9a7ce5ef3189ba8aa7b3838b154be35b50542de7b6.jpg'); /* Replace 'your-background-image-url.jpg' with the actual URL or path to your image */
-    background-size: 90%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .account__login {
-    background-color: #00ff00;
-    color: #fff;
-  }
-  
-  .account__login--header {
-    color: #ff0000; /* Red color */
-  }
-  
-  .contact__form--label {
-    color: #ff0000; /* Red color */
-  }
-  
-  .contact__form--input {
-    background-color: pink;
-    color: #fff;
-    border: 1px solid #ff0000; /* Red border */
-  }
-  
-  .checkout__checkbox--checkmark {
-    border: 2px solid #ff0000; /* Red border */
-  }
-  
-  .account__login--btn {
-    background-color: #ff0000; /* Red color */
-    color: #000;
-  }
-  
-  /* Add more styles as needed */
-  
-  .breadcrumb__section {
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  
-  .account__login--inner {
-    max-width: 600px; /* Set a maximum width for the form */
-    margin: 0 auto; /* Center the form horizontally */
-  }
-  
-  .contact__form--list {
-    margin-bottom: 20px;
-  }
-  
-  /* Responsive styles for smaller screens */
-  @media screen and (max-width: 768px) {
-    .account__login--inner {
-      padding: 0 20px; /* Add some padding to the sides for smaller screens */
-    }
-  }
-  
-  @media screen and (max-width: 576px) {
-    .contact__form--list {
-      width: 100%; /* Make the form fields full-width on smaller screens */
-    }
-  }
-  
+/* Container styles */
+.registration-page{
+  background-image: url("https://images.pexels.com/photos/2060240/pexels-photo-2060240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 5%;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Form container styles */
+.registration-container {
+  background-color: black;
+  padding: 20px;
+  margin-top: 5%;
+margin-left: 35%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 30%;
+  height: 40%;
+}
+
+/* Form section styles */
+.form-section {
+  margin-bottom: 20px;
+}
+
+/* Input field styles */
+.registration-input input,
+.form-input {
+  width: 100%;
+  padding: 10px;
+  background-color: #EE0B42;
+  margin-bottom: 10px;
+  border: 1px solid #EE0B42;
+  border-radius: 5px;
+}
+
+/* Form label styles */
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Select styles */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00ff00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: red;
+}
+
+.btn-block {
+  width: 100%;
+}

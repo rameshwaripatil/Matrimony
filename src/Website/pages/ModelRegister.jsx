@@ -50,7 +50,7 @@ function ModelRegister() {
                   Stay proactive and regularly update your profile with new information, photos, and preferences to attract the right connections.
                 </label>
                 <Link to="/login" >
-                  <b>Continue With Login...</b></Link>
+                  <h2> <b>Continue With Login...</b></h2></Link>
               </div>
             </div>
           </div>
