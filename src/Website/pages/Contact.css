@@ -1,0 +1,113 @@
+/* Contact.css */
+
+/* Basic styling for the entire Contact component */
+.con {
+    background-color: black;
+    padding: 20px;
+  }
+  
+  /* Title styles */
+  .all-title-box {
+    background: #333;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .all-title-box h1 {
+    color: white;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Breadcrumb styles */
+  .breadcrumb-item.active {
+    color: white;
+    font-weight: bold;
+    margin-right: 950px;
+  }
+  
+  /* Contact section styles */
+  .contact__section {
+    padding: 40px 0;
+    
+  }
+  
+  .contact__section h2 {
+    margin-top: 20px;
+  }
+  
+  .contact__section p {
+    margin-top: 20px;
+  }
+  
+  /* Contact info styles */
+  .contact__info {
+    border-radius: 10px;
+    background: rgb(195, 35, 35);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact__info h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .contact__info--items__inner {
+    display: flex;
+    align-items: center;
+  }
+  
+  .contact__info--icon {
+    margin-right: 10px;
+  }
+  
+  /* Contact form styles */
+  .contact__form--list {
+    margin-bottom: 20px;
+  }
+  
+  .contact__form--label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .contact__form--input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact__form--label__star {
+    color:rgb(195, 35, 35) ;
+  }
+  
+  .contact__form--textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .contact__form--btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Google Map section styles */
+  .google-map-section {
+    margin-top: 20px;
+
+  }
+  
+  .google-map {
+ width: 83%;
+
+ 
+}
+  
