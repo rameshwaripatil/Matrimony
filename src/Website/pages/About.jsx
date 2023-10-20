@@ -229,7 +229,7 @@ const About = () => {
 									</div>
 								</div>
 								<div class="team_inner clearfix text-center">
-									<h3>Aaditya Bhusare</h3>
+									<h3>Akshay Tengale</h3>
 									<h4>Director</h4>
 									<ul>
 										<li><a href="#"><i class="fa fa-facebook"></i></a></li>

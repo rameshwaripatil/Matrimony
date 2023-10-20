@@ -1,28 +1,26 @@
 import React from 'react';
+import './VideoLinkButton.css'; // Import the CSS file with keyframes
 
 const VideoLinkButton = () => {
     const backgroundStyle = {
-        backgroundImage: 'url("https://wallpapercave.com/dwp1x/wp6239280.jpg")',  // Replace with the actual path to your image
-        backgroundSize: '100%',  // Make the background image responsive
+        backgroundImage: 'url("img/44.jpg")',
+        backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         height: '100vh',
-        // Set the height as needed
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
     };
 
+   
+
     return (
         <div className="App">
             <div className="background" style={backgroundStyle}>
                 <div className="container">
-
-
-                    
                     <div className="banner__video--content position__relative text-center">
                         <div className="bideo__play banner__video--play mb-35">
-                            
                             <a
                                 className="bideo__play--icon banner__video--play__icon glightbox"
                                 href="https://youtu.be/tyBJioe8gOs?si=0JT1UsJMwTlUGuyB"
@@ -55,7 +53,6 @@ const VideoLinkButton = () => {
                         <a
                             className="banner__video--btn primary__btn"
                             href="/register"
-                            style={{marginTop: '500px'}}
                         >
                             Register Now
                         </a>
