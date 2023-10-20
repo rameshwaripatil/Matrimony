@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Authuser from './Authuser';
+import "./Register.css"
 
 const Register = () => {
   const [mothert,setmothert] = useState([]);
@@ -75,119 +76,238 @@ const ProfileCreated =() => {
     ProfileCreated();
   }, [token]);   
   return (
-    <div>
+    // <div>
       
-      <div className="clearfix clear_1">
-        <div className="col-sm-6 register_right_inner_1 space_left">
-          <input
-            type="text"
-            className="form-control"
-            name="name" 
-            onChange={(e) => onInputChange(e)}
-            placeholder="First Name *"
-          />
-        </div>
-        <div className="col-sm-6 register_right_inner_1 space_left">
-          <input
-            type="text"
-            className="form-control"
-            name="lastname" 
-            onChange={(e) => onInputChange(e)}
-            placeholder="Last Name *"
-          />
-        </div>
-      </div>
-      <div className="clearfix clear_1">
-        <div className="col-sm-6 register_right_inner_1 space_left">
-          <input
-            type="text"
-            className="form-control"
-            name="email" 
-            onChange={(e) => onInputChange(e)}
-            placeholder="Email *"
-          />
-        </div>
-        <div className="col-sm-6 register_right_inner_1 space_left">
-          <input
-            type="text"
-            className="form-control"
-            name="mob_no" 
-            onChange={(e) => onInputChange(e)}
-            placeholder="Mobile *"
-          />
-        </div>
-      </div>
-      <div className="clearfix clear_1">
-        <div className="col-sm-6 register_right_inner_1 space_left">
-          <input
-            type="text"
-            className="form-control"
-            name="address" 
-            onChange={(e) => onInputChange(e)}
-            placeholder="address"
-          />
-        </div>
-          <div className="col-sm-6 register_right_inner_1 space_left">
-            <label class="contact__form--label">Mother Tounge</label>
-            <select class="contact__form--input" name="mother_toungue"  onChange={(e) => onInputChange(e)}>
-              <option value="">Choose...</option>
-              {mothert.map((el)=>
-              (
-                <option value={el.mother_tounges_id}>{el.mothertounge}</option>
-              ))
+    //   <div className="clearfix clear_1">
+    //     <div className="col-sm-6 register_right_inner_1 space_left">
+    //       <input
+    //         type="text"
+    //         className="form-control"
+    //         name="name" 
+    //         onChange={(e) => onInputChange(e)}
+    //         placeholder="First Name *"
+    //       />
+    //     </div>
+    //     <div className="col-sm-6 register_right_inner_1 space_left">
+    //       <input
+    //         type="text"
+    //         className="form-control"
+    //         name="lastname" 
+    //         onChange={(e) => onInputChange(e)}
+    //         placeholder="Last Name *"
+    //       />
+    //     </div>
+    //   </div>
+    //   <div className="clearfix clear_1">
+    //     <div className="col-sm-6 register_right_inner_1 space_left">
+    //       <input
+    //         type="text"
+    //         className="form-control"
+    //         name="email" 
+    //         onChange={(e) => onInputChange(e)}
+    //         placeholder="Email *"
+    //       />
+    //     </div>
+    //     <div className="col-sm-6 register_right_inner_1 space_left">
+    //       <input
+    //         type="text"
+    //         className="form-control"
+    //         name="mob_no" 
+    //         onChange={(e) => onInputChange(e)}
+    //         placeholder="Mobile *"
+    //       />
+    //     </div>
+    //   </div>
+    //   <div className="clearfix clear_1">
+    //     <div className="col-sm-6 register_right_inner_1 space_left">
+    //       <input
+    //         type="text"
+    //         className="form-control"
+    //         name="address" 
+    //         onChange={(e) => onInputChange(e)}
+    //         placeholder="address"
+    //       />
+    //     </div>
+    //       <div className="col-sm-6 register_right_inner_1 space_left">
+    //         <label class="contact__form--label">Mother Tounge</label>
+    //         <select class="contact__form--input" name="mother_toungue"  onChange={(e) => onInputChange(e)}>
+    //           <option value="">Choose...</option>
+    //           {mothert.map((el)=>
+    //           (
+    //             <option value={el.mother_tounges_id}>{el.mothertounge}</option>
+    //           ))
 
-              }
-              </select></div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-          <div class="contact__form--list mb-20">
-            <label class="contact__form--label">Date of Birth</label>
-          <input class="contact__form--input" placeholder="" name="date_of_birth" type="date"/></div>
-          <div class="contact__form--list mb-20">
-            <label class="contact__form--label">Profile Created By</label>
+    //           }
+    //           </select></div>
+    //     </div>
+    //     <div class="col-lg-6 col-md-6">
+    //       <div class="contact__form--list mb-20">
+    //         <label class="contact__form--label">Date of Birth</label>
+    //       <input class="contact__form--input" placeholder="" name="date_of_birth" type="date"/></div>
+    //       <div class="contact__form--list mb-20">
+    //         <label class="contact__form--label">Profile Created By</label>
             
-            <select class="contact__form--input" name="profile_created_by" onChange={(e) => onInputChange(e)}>
-              <option value="">Choose...</option>
-              {
-                profile.map((el)=>(
-                  <option value={el.profile_created_id}>{el.profilecreated}</option>
-                ))
-              }
-              </select></div></div>
-        <div className="clearfix clear_1">
-        <div className="col-sm-6 register_right_inner_1 space_left">
-          <input
-            type="password"
-            className="form-control"
-            name="password"
-            onChange={(e) => onInputChange(e)}
-            placeholder="Password"
-            required
-          />
-        </div>
-        <div className="col-sm-6 register_right_inner_1 space_left">
+    //         <select class="contact__form--input" name="profile_created_by" onChange={(e) => onInputChange(e)}>
+    //           <option value="">Choose...</option>
+    //           {
+    //             profile.map((el)=>(
+    //               <option value={el.profile_created_id}>{el.profilecreated}</option>
+    //             ))
+    //           }
+    //           </select></div></div>
+    //     <div className="clearfix clear_1">
+    //     <div className="col-sm-6 register_right_inner_1 space_left">
+    //       <input
+    //         type="password"
+    //         className="form-control"
+    //         name="password"
+    //         onChange={(e) => onInputChange(e)}
+    //         placeholder="Password"
+    //         required
+    //       />
+    //     </div>
+    //     <div className="col-sm-6 register_right_inner_1 space_left">
         
-          <input
-            type="password"
-            className="form-control"
-            name="confirmpassword"
-            onChange={(e) => onInputChange(e)}
-            placeholder="Confirm Password"
-          />
-        </div>
-        </div>
+    //       <input
+    //         type="password"
+    //         className="form-control"
+    //         name="confirmpassword"
+    //         onChange={(e) => onInputChange(e)}
+    //         placeholder="Confirm Password"
+    //       />
+    //     </div>
+    //     </div>
       
-      <div className="clearfix col-sm-12 clear_2">
-        <button
-          type="submit"
-          className="btn btn-primary btn-block"
-          onClick={(e) => onSubmit(e)}
-        >
-          Sign Up
-        </button>
-      </div>
+    //   <div className="clearfix col-sm-12 clear_2">
+    //     <button
+    //       type="submit"
+    //       className="btn btn-primary btn-block"
+    //       onClick={(e) => onSubmit(e)}
+    //     >
+    //       Sign Up
+    //     </button>
+    //   </div>
      
+    // </div>
+    <div  className="registration-page">
+    <div className="registration-container form-section">
+      <div className="column-sm-6 registration-input">
+      <h1 className="text-center">Register Here</h1>
+
+        <input
+          type="text"
+          className="form-control"
+          name="first_name"
+          onChange={(e) => onInputChange(e)}
+          placeholder="First Name *"
+        />
+      </div>
+      <div className="column-sm-6 registration-input">
+        <input
+          type="text"
+          className="form-control"
+          name="last_name"
+          onChange={(e) => onInputChange(e)}
+          placeholder="Last Name *"
+        />
+      </div>
+    
+    <div className="form-section clear-fix">
+      <div className="column-sm-6 registration-input">
+        <input
+          type="text"
+          className="form-control"
+          name="email"
+          onChange={(e) => onInputChange(e)}
+          placeholder="Email *"
+        />
+      </div>
+      <div className="column-sm-6 registration-input">
+        <input
+          type="text"
+          className="form-control"
+          name="mobile_number"
+          onChange={(e) => onInputChange(e)}
+          placeholder="Mobile *"
+        />
+      </div>
     </div>
+    <div className="form-section clear-fix">
+      <div className="column-sm-6 registration-input">
+        <input
+          type="text"
+          className="form-control"
+          name="address"
+          onChange={(e) => onInputChange(e)}
+          placeholder="Address"
+        />
+      </div>
+      <div className="column-sm-6 registration-input">
+        <label className="form-label">Mother Tongue</label>
+        <select
+          className="form-input"
+          name="mother_tongue"
+          onChange={(e) => onInputChange(e)}
+        >
+          <option value="">Choose...</option>
+          {mothert.map((el) => (
+            <option value={el.mother_tongues_id}>{el.mother_tongue}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <div className="column-lg-6 column-md-6">
+      <div className="form-list mb-20">
+        <label className="form-label">Date of Birth</label>
+        <input className="form-input" placeholder="" name="date_of_birth" type="date" />
+      </div>
+      <div className="form-list mb-20">
+        <label className="form-label">Profile Created By</label>
+        <select
+          className="form-input"
+          name="profile_created_by"
+          onChange={(e) => onInputChange(e)}
+        >
+          <option value="">Choose...</option>
+          {profile.map((el) => (
+            <option value={el.profile_created_id}>{el.profile_created}</option>
+          ))}
+        </select>
+      </div>
+    </div>
+    <div className="form-section clear-fix">
+      <div className="column-sm-6 registration-input">
+        <input
+          type="password"
+          className="form-control"
+          name="password"
+          onChange={(e) => onInputChange(e)}
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div className="column-sm-6 registration-input">
+        <input
+          type="password"
+          className="form-control"
+          name="confirm_password"
+          onChange={(e) => onInputChange(e)}
+          placeholder="Confirm Password"
+        />
+      </div>
+    </div>
+    <div className="clear-fix column-sm-12 form-section">
+      <button
+        type="submit"
+        className="btn btn-primary btn-block"
+        onClick={(e) => onSubmit(e)}
+      >
+        Sign Up
+      </button>
+    </div>
+  </div>
+  </div>
+  
   );
 };
 
