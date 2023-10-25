@@ -29,8 +29,8 @@ const [contact, setcontact]=useState([]);
       <section className="contact__section section--padding">
         <div className="container">
           <div className="section__heading text-center mb-4">
-            <h2 className="section__heading--maintitle text__secondary mb-2" style={{ marginTop: "20px" }}>Get In Touch</h2>
-            <p className="section__heading--desc" style={{ marginTop: "20px" }} >Have a question for us or feedback? Please click on the most appropriate category <br></br>and fill out the form to reach us.</p></div>
+            <h2 className="section__heading--maintitle text__secondary mb-2" style={{ marginTop: "20px",color:"black" }}>Get In Touch</h2>
+            <p className="section__heading--desc" style={{ marginTop: "20px",color:"black" }} >Have a question for us or feedback? Please click on the most appropriate category <br></br>and fill out the form to reach us.</p></div>
           <div className="main__contact--area">
             <div className="row align-items-center row-md-reverse">
             <div className="col-lg-5 col-md-12 mb-4"  >
