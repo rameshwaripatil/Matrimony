@@ -3,7 +3,6 @@ import { useEffect } from 'react'
 import AliceCarousel from 'react-alice-carousel'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import CircularScaler from './CircularScaler'
 import Authuser from '../Authentication/Authuser'
 
 const CastSlider = () => {
