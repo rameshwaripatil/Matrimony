@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Authuser from '../Authentication/Authuser';
 import "./Register.css"
+import { Link } from "react-router-dom";
 
 
 function Register() {
@@ -45,6 +46,7 @@ function Register() {
     http.post("/front_user_register/send/massage", formData).then((res) => {
       setOtp(1);
       setDisebale(0)
+      alert("otp sent to register number successfully")
     }).catch((e) => {
 
       setDisebale(0)
@@ -80,6 +82,7 @@ function Register() {
     http.get("/get/mother_tounge")
       .then((res) => {
         SetMother_Tounge(res.data.data);
+        console.log(res.data.data)
       }).catch((e) => {
         console.log(e);
       })
@@ -88,8 +91,10 @@ function Register() {
   const Profile = () => {
     http.get("/get/profile_created_by").then((res) => {
       Set_profile(res.data.data);
+      console.log(res.data.data)
     }).catch((e) => {
       console.log(e);
+      
     });
   };
 
@@ -128,6 +133,31 @@ function Register() {
     }
   };
   return (
+    <>
+    {
+      OtpDiseble ? (
+        <div className="container">
+      <div className="row justify-content-md-center">
+        <div className="col-12 text-center ">
+          <div className="row">
+            <div className="col-12 mt-5">
+              <h2 className="title">
+                Verify OTP
+              </h2>
+              <form className="m-5 skjfksjdf">
+                <input className="m-1 otpdata" type="text" onKeyUp={tabChange} maxLength={1} />
+                <input className="m-1 otpdata" type="text" onKeyUp={tabChange} maxLength={1} />
+                <input className="m-1 otpdata" type="text" onKeyUp={tabChange} maxLength={1} />
+                <input className="m-1 otpdata" type="text" onKeyUp={tabChange} maxLength={1} />
+              </form>
+              <hr className="mt-4" />
+            <Link to="/login">  <button className="banner__video--btn primary__btn m-2" onClick={sessIon_start} disabled={btnDiseble} style={{backgroundColor:"green"}}>Verify</button></Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      ) :
     <div className="mt-5">
       <section className="breadcrumb__section breadcrumb__bg " style={{ height: "800px" }}>
         <div className="container">
@@ -401,6 +431,8 @@ function Register() {
         </div>
       </section>
     </div>
+}
+  </>
   );
 }
 
