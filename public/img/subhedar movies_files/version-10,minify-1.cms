@@ -1,0 +1,568 @@
+
+
+
+const POPUP_MANAGER_LOADED = 'popUpManagerLoaded';
+function popupManager(popUpManagerCallback) {
+  window.TimesApps = window.TimesApps || {};
+  const TimesApps = window.TimesApps || {};
+  const debugLogs = function(str1, str2, str3) {
+    if (
+      typeof window === 'object' &&
+      window.location.search &&
+      window.location.search.indexOf('debug') > -1 &&
+      window.console
+    ) {
+      console.log(str1, str2, str3);
+    }
+  };
+  TimesApps.Popup = function(id, showPopCallback, priority, data, isReady) {
+    const dataObj = data || {};
+    this.id = id;
+    this.lastShownTimeStamp = dataObj.lastShownTimeStamp
+      ? dataObj.lastShownTimeStamp
+      : null;
+    this.showPopCallback = showPopCallback;
+    this.ready = isReady || 0;
+    this.priority = priority;
+    // this.status;
+    this.userActionStatus = null;
+    this.retryDone = 0;
+  };
+
+  TimesApps.Popup.prototype.showPopCallback = function() {
+    return this.showPopCallback();
+  };
+
+  TimesApps.Popup.prototype.getPriority = function() {
+    return this.priority;
+  };
+
+  TimesApps.Popup.prototype.onReadyCallback = function(status) {
+    this.ready = status;
+    if (status === 3) {
+      this.setStatus(false);
+    }
+  };
+
+  TimesApps.Popup.prototype.isReady = function() {
+    return this.ready;
+  };
+
+  TimesApps.Popup.prototype.onShowCallback = function(status) {
+    //show - success / failure / rejected
+
+    this.status = status;
+    // eslint-disable-next-line no-extra-boolean-cast
+    if (!!status) {
+      this.lastShownTimeStamp = Date.now();
+    }
+  };
+
+  TimesApps.Popup.prototype.getStatus = function() {
+    return this.status;
+  };
+
+  TimesApps.Popup.prototype.setStatus = function(status) {
+    this.status = status || false;
+  };
+
+  TimesApps.Popup.prototype.getLastShownTime = function() {
+    return this.lastShownTimeStamp;
+  };
+
+  TimesApps.Popup.prototype.onUserActionCallback = function(status) {
+    this.userActionStatus = status;
+  };
+
+  TimesApps.PopUpManager = (function() {
+    /*
+        1. Register overlay
+        2. Decide overlay priority
+        3. show overlay
+
+
+        Register overlay
+            - registerOverlay
+                - return onReadyCallback
+                - all popup's call onReadyCallback to mark status, they are ready to be called
+            - read priority from config
+            - create priority queue
+
+        Decide overlay priority
+	        - read priority queue
+	        - call if 1st is ready
+	                - if status OK  - call
+	                - else if not needed to be called, call Next
+	        -
+
+	    Show overlay
+	        - save state in Localstorage
+	            - show - true/false
+	            - timestamp
+
+
+	    Config
+            - popup list
+            - priority for each
+            - show frequency
+    */
+
+    const popUpPriority = [
+      // 'SubscribeNudge',
+      //'usSurvey',
+      //'timesclubWidget',
+      //'prime_adfreenudeg',
+      'onetapsignin',
+      'withtimestop10',
+      'covid19',
+      // 'etsubscribenudge',
+      // 'food',
+      // 'lifestyle',
+      // 'genderpluspopup',
+      // 'healthpluspopup',
+      // 'educationpluspopup',
+      //'timespointPopUp',
+      //'notification',
+    ];
+
+    const config = {
+      browserStorageKey: 'popUpManager',
+      defaultFrequency: 14,
+      waitTimeToCheckStatusInMSec: 10000,
+      maxRetryCount: 2,
+      analyseQueueMaxRetryCount: 3,
+      popupsConfig: {},
+      timeoutVal: null,
+    };
+
+    const constants = {
+      HRS_IN_DAY: 24,
+      MINS_IN_HR: 60,
+      SEC_IN_MIN: 60,
+      MilliSEC_IN_SEC: 1000,
+    };
+
+    const state = {
+      /*
+       * 1. insertion sort
+       *
+       */
+      _analyseQueueRetryCount: 2,
+      _popupQueue: [],
+    };
+
+    const fn = {
+      _docReady() {
+        (function(func, base) {
+          // The public function name defaults to window.docReady
+          // but you can pass in your own object and own function name and those will be used
+          // if you want to put them in a different namespace
+          const funcName = func || 'docReady';
+          const baseObj = base || window;
+          let readyList = [];
+          let readyFired = false;
+          let readyEventHandlersInstalled = false;
+          const priorLen = popUpPriority.length;
+          for (let i = 0; i < priorLen; i += 1) {
+            config.popupsConfig[popUpPriority[i]] = { priority: `${i}` };
+          }
+
+          // call this when the document is ready
+          // this function protects itself against being called more than once
+          function ready() {
+            if (!readyFired) {
+              // this must be set to true before we start calling callbacks
+              readyFired = true;
+              for (let i = 0; i < readyList.length; i += 1) {
+                // if a callback here happens to add new ready handlers,
+                // the docReady() function will see that it already fired
+                // and will schedule the callback to run right after
+                // this event loop finishes so all handlers will still execute
+                // in order and no new ones will be added to the readyList
+                // while we are processing the list
+                readyList[i].fn.call(window, readyList[i].ctx);
+              }
+              // allow any closures held by these functions to free
+              readyList = [];
+            }
+          }
+
+          function readyStateChange() {
+            if (document.readyState === 'complete') {
+              ready();
+            }
+          }
+
+          // This is the one public interface
+          // docReady(fn, context);
+          // the context argument is optional - if present, it will be passed
+          // as an argument to the callback
+          baseObj[funcName] = function(callback, context) {
+            if (typeof callback !== 'function') {
+              throw new TypeError(
+                'callback for docReady(fn) must be a function',
+              );
+            }
+            // if ready has already fired, then just schedule the callback
+            // to fire asynchronously, but right away
+            if (readyFired) {
+              // eslint-disable-next-line prefer-arrow-callback
+              setTimeout(function() {
+                callback(context);
+              }, 1);
+              return;
+            }
+            // add the function and context to the list
+            readyList.push({ fn: callback, ctx: context });
+
+            // if document already ready to go, schedule the ready function to run
+            if (document.readyState === 'complete') {
+              setTimeout(ready, 1);
+            } else if (!readyEventHandlersInstalled) {
+              // otherwise if we don't have event handlers installed, install them
+              if (document.addEventListener) {
+                // first choice is DOMContentLoaded event
+                document.addEventListener('DOMContentLoaded', ready, false);
+                // backup is window load event
+                window.addEventListener('load', ready, false);
+              } else {
+                // must be IE
+                document.attachEvent('onreadystatechange', readyStateChange);
+                window.attachEvent('onload', ready);
+              }
+              readyEventHandlersInstalled = true;
+            }
+          };
+        })('docReady', window);
+      },
+      _init() {
+        const popUpManagerLoadedEvent = new Event(POPUP_MANAGER_LOADED);
+        window.dispatchEvent(popUpManagerLoadedEvent);
+        if (typeof callback === 'function') {
+          popUpManagerCallback();
+        }
+      },
+      _register(id, showCallback) {
+        let callbacks = {};
+        const popUp = fn._createPopUpObject(id, showCallback);
+        if (
+          !(navigator?.userAgent?.toLowerCase().indexOf('googlebot') > -1) &&
+          config.popupsConfig[id]
+        ) {
+          fn._addToQueue(popUp);
+        }
+
+        callbacks = {
+          onReadyCallback: fn._onReadyCallback.bind(popUp),
+          onShowCallback: fn._onShowCallback.bind(popUp),
+          onUserActionCallback: popUp.onUserActionCallback,
+        };
+        return callbacks;
+      },
+      _onReadyCallback(status) {
+        this.onReadyCallback(status);
+        // eslint-disable-next-line prefer-arrow-callback
+        window.docReady(function() {
+          if (!config.timeoutVal) {
+            config.timeoutVal = setTimeout(fn._analyseQueue, 4000);
+          }
+        });
+      },
+      _onShowCallback(status) {
+        /*
+         * popup displayed
+         */
+        if (!(navigator?.userAgent?.toLowerCase().indexOf('googlebot') > -1)) {
+          debugLogs('*** onShowCallback', this, status);
+          this.onShowCallback(status);
+          fn._setStatusInStorage();
+        }
+      },
+      _createPopUpObject(id, showCallback) {
+        const popUpdata = {};
+        const priority = fn._getPriorityFromConfig(id);
+        const moduleStatus = fn._getStatusFromStorage();
+        popUpdata.lastShownTimeStamp =
+          moduleStatus[id] && moduleStatus[id].lastShownTime;
+        return new TimesApps.Popup(id, showCallback, priority, popUpdata);
+      },
+      _shouldAddToQueue(popUp) {
+        // let days = config.popupsConfig[id] && config.popupsConfig[id].frequency;
+        let shouldAddToQueue = true;
+        const frequency =
+          config.defaultFrequency *
+          constants.HRS_IN_DAY *
+          constants.MINS_IN_HR *
+          constants.SEC_IN_MIN *
+          constants.MilliSEC_IN_SEC;
+        const currentTimestamp = Date.now();
+        try {
+          if (
+            popUp &&
+            popUp.lastShownTimeStamp &&
+            currentTimestamp - parseInt(popUp.lastShownTimeStamp, 10) <
+              frequency
+          ) {
+            shouldAddToQueue = false;
+          }
+        } catch (e) {
+          // console.log(error);
+        }
+
+        return shouldAddToQueue;
+      },
+      _addToQueue(popUp) {
+        if (fn._shouldAddToQueue(popUp)) {
+          fn._sortAndInsert(popUp);
+        }
+      },
+      _sortAndInsert(newPopup) {
+        /*
+         * priority values ranges used
+         * are like UNIX nice values.
+         * 0 is highest prority
+         * a value of 100 will be of less priority
+         */
+        //console.log("*** start", [...[],...state._popupQueue]);
+        const newQueue = [...[], ...state._popupQueue];
+
+        newQueue.push(newPopup);
+
+        if (newQueue.length > 1) {
+          newQueue.sort((pop1, pop2) => {
+            let sortingValue;
+            const t1 = pop1.getLastShownTime();
+            const t2 = pop2.getLastShownTime();
+            if (pop1.getLastShownTime() && pop2.getLastShownTime()) {
+              //both have lastShownTime & sorting basis on time
+              //console.log("*** sort 1", pop1, pop2);
+              sortingValue = t1 - t2;
+            } else if (!pop1.getLastShownTime() && !pop2.getLastShownTime()) {
+              //both have never shown up, sorting on priority
+              //console.log("*** sort 2", pop1, pop2);
+              sortingValue =
+                fn._getPriorityFromConfig(pop1.id) -
+                fn._getPriorityFromConfig(pop2.id);
+            } else if (!pop1.getLastShownTime()) {
+              //pop1 has not shown, moving higher
+              //console.log('*** sort 3', pop1, pop2);
+              sortingValue = -1;
+            } else if (!pop2.getLastShownTime()) {
+              //pop2 has not shown, moving higher
+              //console.log("*** sort 4", pop1, pop2);
+              sortingValue = 1;
+            }
+            return sortingValue;
+          });
+        }
+
+        state._popupQueue = newQueue;
+      },
+      _removeFromQueue(id) {
+        const queue = state._popupQueue;
+        let newQueue;
+
+        for (let i = 0; i < queue.length; i += 1) {
+          if (queue[i].id === id) {
+            newQueue = queue.slice(0, i).concat(queue.slice(i + 1));
+            break;
+          }
+        }
+
+        state._popupQueue = newQueue;
+      },
+      _getPriorityFromConfig(id) {
+        let priority = null;
+        priority = config.popupsConfig[id] && config.popupsConfig[id].priority;
+        return priority;
+      },
+      _getShowFrequencyFromConfig(id) {
+        let days = config.popupsConfig[id] && config.popupsConfig[id].frequency;
+        const frequency =
+          days *
+          constants.HRS_IN_DAY *
+          constants.MINS_IN_HR *
+          constants.SEC_IN_MIN *
+          constants.MilliSEC_IN_SEC;
+
+        // eslint-disable-next-line no-restricted-globals
+        days = !!days && !isNaN(days) ? days : config.defaultFrequency;
+
+        return frequency;
+      },
+      /* _isPopupAllowedInGivenFrequency(lastShownTime, frequencyInMiliSec) {
+        const isPopupAllowedInGivenFrequency =
+          Date.now() - lastShownTime >= frequencyInMiliSec;
+        //isPopupAllowedInGivenFrequency = lastShownTime;
+
+        //popup has surpassed it's cooldown timeout
+        //however, other's haven't been able to show up
+
+        //if queue.haveAlllShown up i.e popupInLoop.getLastShownTime()
+        //Date.now() - popupInLoop.getLastShownTime() >= frequencyInMiliSec
+
+        const nDaysMiliS =
+          state._popupQueue.length *
+          constants.HRS_IN_DAY *
+          constants.MINS_IN_HR *
+          constants.SEC_IN_MIN *
+          constants.MilliSEC_IN_SEC;
+
+        const isPopupShownInLastNDays = lastShownTime
+          ? Date.now() - lastShownTime >= nDaysMiliS
+          : true;
+
+        //console.log('*** isPopupAllowedInGivenFrequency, isPopupShownInLastNDays',isPopupAllowedInGivenFrequency,isPopupShownInLastNDays);
+        return isPopupAllowedInGivenFrequency && isPopupShownInLastNDays;
+      }, */
+      _analyseQueue() {
+        /*
+         * check popup list
+         * for priority
+         * and last shown time
+         */
+        let popupShowCbCalled = false;
+
+        if (!fn._isPopuManagerRunningInSession()) {
+          //one popup has been displayed in 24hrs, exit
+          //console.log('***popup  _pop already displayed in 24hrs');
+          return;
+        }
+
+        for (let i = 0; i < state._popupQueue.length; i += 1) {
+          const popupInLoop = state._popupQueue[i];
+          /*const frequencyInMiliSec =
+            popupInLoop && fn._getShowFrequencyFromConfig(popupInLoop.id);*/
+
+          if (popupInLoop.isReady() && popupInLoop.getStatus() !== false) {
+            debugLogs('*** popupInLoop.getStatus()', popupInLoop.getStatus());
+            debugLogs('***popup  analyse showPopCallback ', popupInLoop.id);
+            popupShowCbCalled = true;
+            popupInLoop.showPopCallback();
+            //in case the pop  up fails
+            fn._waitAndCheckStatus(popupInLoop);
+            break;
+          } else if (
+            popupInLoop.getStatus() !== false &&
+            !popupInLoop.isReady(popupInLoop.id)
+          ) {
+            //wait for pop up to get ready, then show
+            fn._waitAndCheckStatus(popupInLoop);
+            debugLogs('*** if 4 fn._waitAndCheckStatus', popupInLoop.id);
+            break;
+          }
+        }
+        if (
+          !popupShowCbCalled &&
+          config.analyseQueueMaxRetryCount >= state._analyseQueueRetryCount
+        ) {
+          state._analyseQueueRetryCount += 1;
+          debugLogs(
+            '*** _analyseQueue retry popupShowCbCalled',
+            popupShowCbCalled,
+          );
+          setTimeout(fn._analyseQueue, 0);
+        }
+      },
+      _waitAndCheckStatus(popUP) {
+        // eslint-disable-next-line no-param-reassign
+        setTimeout(
+          function() {
+            this.popUP.retryDone += 1;
+            //pop up has still not shown
+            if (
+              !this.popUP.getStatus() &&
+              this.popUP.retryDone <= config.maxRetryCount
+            ) {
+              this.popUP.setStatus(false);
+              fn._analyseQueue();
+            }
+          }.bind({ popUP }),
+          config.waitTimeToCheckStatusInMSec,
+        );
+      },
+      _setStatusInStorage() {
+        const data = fn._getStatusFromStorage();
+        let jsonData;
+
+        const latestDisplayedPopup = {
+          time: null,
+          id: null,
+        };
+
+        for (let i = 0; i < state._popupQueue.length; i += 1) {
+          const popupInLoop = state._popupQueue[i];
+          // eslint-disable-next-line no-extra-boolean-cast
+          if (!!popupInLoop.getLastShownTime()) {
+            data[popupInLoop.id] = {
+              lastShownTime: popupInLoop.getLastShownTime(),
+            };
+            if (popupInLoop.getLastShownTime() > latestDisplayedPopup.time) {
+              latestDisplayedPopup.time = popupInLoop.getLastShownTime();
+              latestDisplayedPopup.id = popupInLoop.id;
+            }
+          }
+        }
+        data.latestDisplayedPopup = latestDisplayedPopup;
+
+        try {
+          jsonData = JSON.stringify(data);
+        } catch (e) {
+          //console.log('popupManager, JSON error');
+        }
+
+        localStorage.setItem(config.browserStorageKey, jsonData);
+      },
+
+      _isPopuManagerRunningInSession() {
+        return false;
+        const moduleStatus = fn._getStatusFromStorage();
+        const latestDisplayedPopup = moduleStatus.latestDisplayedPopup || {};
+        const popUpCoolDownTime =
+          constants.HRS_IN_DAY *
+          constants.MINS_IN_HR *
+          constants.SEC_IN_MIN *
+          constants.MilliSEC_IN_SEC;
+
+        if (Date.now() - latestDisplayedPopup.time < popUpCoolDownTime) {
+          //one popup has been displayed in 24hrs, exit
+          //console.log('***popup  _pop already displayed in 24hrs');
+          return false;
+        }
+        return true;
+      },
+
+      _getStatusFromStorage() {
+        const jsonData = localStorage.getItem(config.browserStorageKey);
+        let data;
+
+        try {
+          data = JSON.parse(jsonData) || {};
+        } catch (e) {
+          data = {};
+          //console.log('popupManager, JSON error');
+        }
+
+        return data;
+      },
+    };
+    fn._docReady();
+    fn._init();
+
+    const api = {
+      registerPopup(id, showCallback) {
+        return fn._register(id, showCallback);
+      },
+      isPopuMangerRunning() {
+        return fn._isPopuManagerRunningInSession();
+      },
+    };
+
+    return api;
+  })();
+}
+popupManager();
+
+
+
+	
