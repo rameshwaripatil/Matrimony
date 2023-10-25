@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from "react";
 import Authuser from '../Authentication/Authuser';
 import "./Register.css"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 
 function Register() {
-  const { http, token } = Authuser();
+  const { http,setToken, token } = Authuser();
   const [btnDiseble, setDisebale] = useState(0);
   const [OtpDiseble, setOtp] = useState(0);
-
+  const notify = (M) => toast(M);
+  const notifys = (M) => toast.error(M);
+  const navigate = useNavigate();
+  if (token != null) {
+    navigate("/");
+  }
 
   let [formData, SetformData] = useState({
     first_name: '',
@@ -40,15 +46,23 @@ function Register() {
       document.getElementById('error').innerText = errormsg;
     }
   }
-  const SendMassage = (e) => {
+
+  const SendMassage=(e)=>{
     e.preventDefault();
     setDisebale(1)
     http.post("/front_user_register/send/massage", formData).then((res) => {
       setOtp(1);
       setDisebale(0)
-      alert("otp sent to register number successfully")
     }).catch((e) => {
-
+      const validationErrors = e.response.data.errors;
+      if (validationErrors) {
+        if (validationErrors.email && validationErrors.email.length > 0) {
+         notifys(validationErrors.email[0]);
+         }
+        if (validationErrors.mobile_no && validationErrors.mobile_no.length > 0) {
+         notifys(validationErrors.mobile_no[0]);
+       }
+      }
       setDisebale(0)
     });
     setDisebale(0)
@@ -69,14 +83,21 @@ function Register() {
     // Add the age to the formData object
     formData.age = age;
 
-    http.post("/front_user_register/now", formData).then((res) => {
-
+    http.post("/front_user_register", formData).then((res) => {
+      if (res.data.access_token) {
+        setToken(res.data.user_data, res.data.access_token);
+        navigate("/login");
+      } else {
+        notify(res.data.message);
+      }
       setDisebale(0);
     }).catch((e) => {
       setDisebale(0);
     });
     setDisebale(0);
+
   };
+
   const [Mother_Tounge, SetMother_Tounge] = useState([]);
   const Mother_Toungee = () => {
     http.get("/get/mother_tounge")
@@ -151,7 +172,7 @@ function Register() {
                 <input className="m-1 otpdata" type="text" onKeyUp={tabChange} maxLength={1} />
               </form>
               <hr className="mt-4" />
-            <Link to="/login">  <button className="banner__video--btn primary__btn m-2" onClick={sessIon_start} disabled={btnDiseble} style={{backgroundColor:"green"}}>Verify</button></Link>
+              <button className="banner__video--btn primary__btn m-2" onClick={sessIon_start} disabled={btnDiseble} style={{backgroundColor:"green"}}>Verify</button>
             </div>
           </div>
         </div>
