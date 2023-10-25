@@ -11,12 +11,14 @@
     background: #333;
     padding: 20px 0;
     text-align: center;
+    
   }
   
   .all-title-box h1 {
     color: white;
     font-weight: bold;
     margin: 0;
+    
   }
   
   /* Breadcrumb styles */
@@ -24,6 +26,7 @@
     color: white;
     font-weight: bold;
     margin-right: 950px;
+   
   }
   
   /* Contact section styles */
@@ -34,6 +37,7 @@
   
   .contact__section h2 {
     margin-top: 20px;
+    font-style:unset;
   }
   
   .contact__section p {
@@ -43,7 +47,7 @@
   /* Contact info styles */
   .contact__info {
     border-radius: 10px;
-    background: rgb(195, 35, 35);
+    background: rgb(234, 16, 67);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
