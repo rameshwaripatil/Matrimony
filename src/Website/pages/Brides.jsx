@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
 import "./Brides.css"; 
+import CastSlider from './CastSlider';
 
 const Brides = () => {
   const { http, token } = Authuser();
@@ -38,7 +39,7 @@ const Brides = () => {
         </div>
       </div>
      
-   
+   <CastSlider/>
 
       <section id="about_last">
         <div className="container">

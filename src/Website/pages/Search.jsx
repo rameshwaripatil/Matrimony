@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
+import { Form } from 'react-router-dom';
 
 const Search = () => {
   const {http,token}=Authuser();
@@ -8,6 +9,12 @@ const Search = () => {
   const [height,setHeight]=useState([]);
   const [age,setAge]=useState([]);
   const[state,setState]=useState([]);
+  const [employee,setEmployee]=useState([]);
+  const [village,setVillage]=useState([]);
+  const [district,setDistrict]=useState([]);
+  const [taluka,setTaluka]=useState([]);
+   const [Nakshatra, SetNakshatra] = useState([]);
+  const [Raasi, SetRaasi] = useState([]);
 
   const Filter = ()=>{ 
     http.get(`member/imformation/for_fillter`)
@@ -17,19 +24,84 @@ const Search = () => {
     setHeight(response.data.height);
     setWeight(response.data.weight);
     setState(response.data.state);
+    setEmployee(response.data.occupation);
+       SetNakshatra(response.data.nakshtra);
+        SetRaasi(response.data.rashi);
+console.log(response.data.occupation)
     console.log(response.data.height);
     console.log(response.data.state);
     console.log(response.data.weight);
     console.log(response.data.cast);
     console.log(response.data.age);
+     console.log(response.data.nakshtra);
+      console.log(response.data.rashi);
   })
   .catch((error) => {
     // Handle errors
     console.error('Error  data:', error);
   });
 };
+
+ const Village =(id)=>
+ {
+  http.get(`get/village/${id}`)
+  .then((response) => {
+    setVillage(response.data.village);
+    console.log(response.data.village);
+
+  }
+  )
+  .catch((error) => {
+    // Handle errors
+    console.error('Error  data:', error);
+  });
+ }
+ const District =(id)=>
+ {
+  http.get(`get/distrct/${id}`)
+  .then((response) => {
+    setDistrict(response.data.district);
+    console.log(response.data.district);
+
+  }
+  )
+  .catch((error) => {
+    // Handle errors
+    console.error('Error  data:', error);
+  });
+ }
+ const Taluka =(id)=>
+ {
+  http.get(`get/taluka/${id}`)
+  .then((response) => {
+    setTaluka(response.data.talukas);
+    console.log(response.data.talukas);
+
+  }
+  )
+  .catch((error) => {
+    // Handle errors
+    console.error('Error  data:', error);
+  });
+ }
+ const [Data, SetFillter] = useState({
+    gender: "0",
+    cast: "0",
+    marital_status: "0",
+    max_age: "0",
+    min_age: "0",
+    emploay: "0",
+    state: "0",
+    height: "0",
+    weight: "0",
+    body_type: "0",
+    body_color: "0",
+  });
 useEffect(() => {
   Filter();
+  District();
+  Taluka();
+  Village();
 }, [token])
   return (
     <div>
@@ -65,34 +137,16 @@ useEffect(() => {
             <label className="form-label">Min Age</label>
             <select name="max_age" aria-label="Default select example" className="form-select form-select-lg">
               <option value={0}>Select Min Age</option>
-              <option value={18}>18</option>
-              <option value={19}>19</option>
-              <option value={20}>20</option>
-              <option value={21}>21</option>
-              <option value={22}>22</option><option value={23}>23</option>
-              <option value={24}>24</option><option value={25}>25</option>
-              <option value={26}>26</option><option value={27}>27</option>
-              <option value={28}>28</option><option value={29}>29</option>
-              <option value={30}>30</option><option value={31}>31</option>
-              <option value={32}>32</option><option value={33}>33</option>
-              <option value={34}>34</option><option value={35}>35</option>
-              <option value={36}>36</option><option value={37}>37</option>
-              <option value={38}>38</option><option value={39}>39</option>
-              <option value={40}>40</option><option value={41}>41</option>
-              <option value={42}>42</option><option value={43}>43</option>
-              <option value={44}>44</option><option value={45}>45</option>
-              <option value={46}>46</option><option value={47}>47</option>
-              <option value={48}>48</option><option value={49}>49</option>
-              <option value={50}>50</option><option value={51}>51</option>
-              <option value={52}>52</option><option value={53}>53</option>
-              <option value={54}>54</option><option value={55}>55</option>
-              <option value={56}>56</option><option value={57}>57</option>
-              <option value={58}>58</option><option value={59}>59</option>
-              <option value={60}>60</option>
+              { age.map((el)=>(
+              <option value={el.age_id}>{el.age_name}</option>
+              ))}
               </select></div>
           <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label className="form-label">Max Age</label><select name="min_age" aria-label="Default select example" className="form-select form-select-lg"><option value={0}>Select Max Age</option><option value={18}>18</option><option value={19}>19</option><option value={20}>20</option><option value={21}>21</option><option value={22}>22</option><option value={23}>23</option><option value={24}>24</option><option value={25}>25</option><option value={26}>26</option><option value={27}>27</option><option value={28}>28</option><option value={29}>29</option><option value={30}>30</option><option value={31}>31</option><option value={32}>32</option><option value={33}>33</option><option value={34}>34</option><option value={35}>35</option><option value={36}>36</option><option value={37}>37</option><option value={38}>38</option><option value={39}>39</option><option value={40}>40</option><option value={41}>41</option><option value={42}>42</option><option value={43}>43</option><option value={44}>44</option><option value={45}>45</option><option value={46}>46</option><option value={47}>47</option><option value={48}>48</option><option value={49}>49</option><option value={50}>50</option><option value={51}>51</option><option value={52}>52</option><option value={53}>53</option><option value={54}>54</option><option value={55}>55</option><option value={56}>56</option><option value={57}>57</option><option value={58}>58</option><option value={59}>59</option><option value={60}>60</option></select></div>
-        </div>
+            <label className="form-label">Max Age</label><select name="min_age" aria-label="Default select example" className="form-select form-select-lg"><option value={0}>Select Max Age</option>  { age.map((el)=>(
+              <option value={el.age_id}>{el.age_name}</option>
+              ))}
+              </select></div>
+              </div>
         
         <div class=" table_card row bg-black p-5 mt-5">
           <div class="text-center">
@@ -101,12 +155,16 @@ useEffect(() => {
           <div class="col-lg-4 col-sm-12  col-md-4 px-1 my-3" >
 
             <label class="form-label">Employed In (Working Sector)</label>
-            <select name="emploay" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Employed In (Working Sector)</option><option value="Government">Government</option><option value="Private">Private</option><option value="Business">Business</option><option value="Defence">Defence</option><option value="Self Employed">Self Employed</option><option value="Not Working">Not Working</option></select>
-          </div>
+            <select name="emploay" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Employed In (Working Sector)</option>
+            {employee.map((el)=>(
+ <option value={el.occupation_id}>{el.occupation}</option>
+            ))}</select></div>
           <div class="col-lg-4 col-md-4 px-1 my-3">
             <label class="form-label">State Living In</label>
-            <select name="state" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select State Living In</option><option value="0">Not Assign</option><option value="1">Maharashtra</option><option value="2">Goa</option><option value="3">Karnataka</option></select>
-          </div>
+            <select name="state" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select State Living In</option>
+              {state.map((el)=>(
+              <option value={el.state_id}>{el.state_name}</option>
+              ))}</select></div>
           <div class="col-lg-4 col-md-4 px-1 my-3">
             <label class="form-label">District Living In</label>
             <select name="district" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select District Living</option></select>
@@ -117,7 +175,8 @@ useEffect(() => {
           </div>
           <div class="col-lg-4 col-md-4 px-1 my-3">
             <label class="form-label">Village Living In</label>
-            <select name="village" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Village Living</option></select>
+            <select name="village" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Village Living</option>
+            </select>
           </div>
 
         </div>
@@ -136,9 +195,9 @@ useEffect(() => {
           </div>
           <div class="col-lg-4 col-md-4 px-1 my-3">
             <label class="form-label">Weight</label>
-            <select name="weight" aria-label="Default select example" class="form-select form-select-lg">
+            <select name="height" aria-label="Default select example" class="form-select form-select-lg">
               <option value="0">Select Weight</option>
-            {weight.map((el)=>(
+              {weight.map((el)=>(
               <option value={el.weight_id}>{el.weight}</option>
               ))}
               </select>

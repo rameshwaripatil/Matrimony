@@ -1,0 +1,102 @@
+/* VideoLinkButton.css */
+
+/* Keyframes for pulse and spin animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Apply styles to the play button */
+.bideo__play--icon {
+    position: relative;
+    display: inline-block;
+}
+
+.bideo__play--icon::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 251, 251, 0.5);
+    border-radius: 50%;
+    animation: ripple 1s ease-out infinite;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+
+.bideo__play--icon::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, whitesmoke(29, 27, 27, 0.7) 20%, transparent 55%);
+    background-size: 250% 250%;
+    background-position: center;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        background-size: 100% 100%;
+        transform: scale(1);
+    }
+    50% {
+        background-size: 150% 150%;
+        transform: scale(1.2);
+    }
+    100% {
+        background-size: 100% 100%;
+        transform: scale(1);
+    }
+}
+
+.bideo__play--icon svg {
+    fill: transparent;
+    stroke: #fff;
+    stroke-width: 2;
+    transition: fill 0.3s, stroke 0.3s;
+}
+
+.bideo__play--icon:hover {
+    animation: none; /* Stop the previous animations on hover */
+    transform: scale(1.2);
+}
+
+.bideo__play--icon:hover svg {
+    fill: #fff;
+    stroke: transparent;
+}
+
+/* Add other styles for your button as needed */
+
+
+/* Add styles for the "Register Now" button */
+.banner__video--btn {
+    background-color: red; /* Change the background color as needed */
+    color: #fff; /* Change the text color as needed */
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.banner__video--btn:hover {
+    background-color: #0056b3; /* Change the hover background color as needed */
+    color: #fff; /* Change the hover text color as needed */
+}
