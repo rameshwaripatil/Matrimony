@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
 import "./Grooms.css";
-import AliceCarousel from 'react-alice-carousel'; // Import the library
-import 'react-alice-carousel/lib/alice-carousel.css'; // Import the default styles
+import { Carousel } from 'react-responsive-carousel';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 
 
@@ -10,9 +10,39 @@ import 'react-alice-carousel/lib/alice-carousel.css'; // Import the default styl
 
 
 const Grooms = () => {
+
+
   const { http, token } = Authuser();
 const [cast,setCast]=useState([])
   const [groom, setGroom] = useState([]);
+  const [viewcast, setViewCast] = useState(0);
+  const [displayCount, setDisplayCount] = useState(0);
+  const [offset, setOffset] = useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
+
+
+
+
+
+  const viewcasts = (e) => {
+    if (e === 1) {
+      setViewCast(1);
+    } else if (e === 0) {
+      setViewCast(0);
+    }
+  };
+
+  const handleViewMore = () => {
+    setDisplayCount(displayCount + 5);
+  };
+
+  const handleViewLess = () => {
+    if (displayCount > 5) {
+      setDisplayCount(displayCount - 5);
+      setOffset(offset - 5);
+    } 
+  };
+
   const items = cast.map((cast, index) => (
     <div
       key={`item${index}`} // Add a unique key for each item using the index
@@ -39,8 +69,26 @@ const [cast,setCast]=useState([])
         console.error('Error adding bride data:', error);
       });
   };
+
+
+  const getCasts = () => {
+    http.get(`/member/imformation/for_fillter`)
+      .then((res) => {
+        setCast(res.data.cast);
+      })
+      .catch((e) => {
+        console.log(e);
+      });
+  }
+
+
+
+
+
   useEffect(() => {
     Brides();
+    getCasts();
+
   }, [token])
   return (
     <div>
@@ -58,31 +106,33 @@ const [cast,setCast]=useState([])
       </div>
      
 
-<div className="container-fluid " style={{marginTop: 100, marginBottom: 10,paddingTop:100,background:"green"}}><div className="row"><div className="col-md-9 offset-md-2  "><div className="alice-carousel"><div><div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}><ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1904.95px, 0px, 0px)'}}><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active __target" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li></ul></div></div></div></div></div></div>
-
-<AliceCarousel
-  autoPlay
-  autoPlayInterval={3000}
-/>
-
-<div style={{ marginLeft: '80px' }}>
-
-          <AliceCarousel
-            items={items}
-
-            responsive={{
-              0: { items: 2 },
-              600: { items: 3 },
-              1024: { items: 5 },
-            }}
-            autoPlay={true}
-            disableDotsControls={true}
-            disableButtonsControls={true}
-          />
-        </div>
 
 
 
+
+
+        <div className="row ">
+              <div className="col-12 col-md-9 offset-md-2">
+                <Carousel
+                  showArrows={false}
+                  showStatus={false}
+                  showIndicators={false}
+                  infiniteLoop={true}
+                  autoPlay={true}
+                  interval={3000}
+                  stopOnHover={true}
+                  showThumbs={false}
+                  centerMode={true}
+                  centerSlidePercentage={46}
+                >
+                  {cast.slice(0, 10).map((el) => (
+                    <div key={el.caste}>
+                      <a href="#" className="btn btn-danger circle-button rounded-circle" style={{ paddingTop: '8%',borderRadius:'50%' }} >{el.caste}</a>
+                    </div>
+                  ))}
+                </Carousel>
+              </div>
+            </div>
 
 
 
@@ -95,7 +145,50 @@ const [cast,setCast]=useState([])
             <div className="col-sm-12">
               <div className="about_last">
                 <h1 className="text-danger" ><span>Our   Grooms..!</span> </h1>
-                <p><b>25 दिन में पैसा डबल..!</b></p>
+                <p><b>25 दिन
+          {viewcast !== 1 ? (
+            <div className="text-center mt-4">
+              <a className="btn btn-outline-danger" onClick={() => viewcasts(1)}>View all</a>
+            </div>
+          ) : (
+            <div className="text-center mt-4">
+              <a className="btn btn-outline-danger" onClick={() => viewcasts(0)}>Go Back</a>
+            </div>
+          )}
+
+          {viewcast === 1 ? (
+            <div className="container p-3">
+              <div className="row ">
+                <div className=" ">
+                  <div className="text-center">
+                    <input className="m-1 w-50  mt-3" placeholder='Enter your cast...'
+                      onChange={(e) => { setSearchTerm(e.target.value) }} />
+                  </div>
+                </div>
+                {cast.filter((el) => {
+                  if (searchTerm === "") {
+                    return true;
+                  }
+                  else if (el.caste.toLowerCase().includes(searchTerm.toLowerCase())) {
+                    return true;
+                  }
+                  return false;
+
+                })
+                  .slice(offset, offset + displayCount).map((el) => (
+                    <a className="bg-danger text-white text-center align-items-center m-auto w-75 p-4 mt-3" href="/view_by_cast/1/1/Not Assign" key={el.caste}>{el.caste}</a>
+                  ))}
+                <div className="text-center mt-4">
+                  <button className="btn btn-outline-danger" onClick={handleViewLess} >
+                    View Less
+                  </button>
+                  <button className="btn btn-outline-danger mx-2" onClick={handleViewMore}>
+                    View More
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : ''} में पैसा डबल..!</b></p>
               </div>
             </div>
             <div className="team col-sm-12  clearfix">

@@ -454,11 +454,51 @@ button:hover {
 }
 
 
+/* Styling for the <li> element */
+.header__contact--info__list {
+  background-color: #333; /* Example background color */
+  padding: 10px; /* Example padding */
+  list-style: none; /* Remove list-style bullets */
+}
+
+/* Styling for the <select> element */
+.goog-te-combo {
+  border: 1px solid #ccc; /* Example border style */
+  background-color: #fff; /* Example background color */
+  padding: 5px; /* Example padding */
+}
+
+/* Styling for the <a> element */
+.VIpgJd-ZVi9od-l4eHX-hSRGPd {
+  color: #0077FF; /* Example link color */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Styling for the <img> element */
+.VIpgJd-ZVi9od-l4eHX-hSRGPd img {
+  margin-right: 3px; /* Example right margin for the image */
+}
+
+/* Styling for the text within the <span> element */
+.VIpgJd-ZVi9od-l4eHX-hSRGPd span {
+  white-space: nowrap; /* Prevent text from wrapping */
+}
 
 
 
 
 
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.3s, filter 0.3s, box-shadow 0.3s;
+}
+
+.img-responsive:hover {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
 
 
