@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
-
+import "./contact.css"
 const Contact = () => {
   const{http,token}=Authuser()
 
@@ -23,9 +23,9 @@ useEffect(() => {
 
 
   return (
-  <div>
+  <div className='con'>
 <div className="all-title-box">
-        <div className="container">
+<div className="container" style={{ maxWidth: '100%', padding: '0 20px' }}>
           <div className="row">
             <div className="col-lg-12">
               <h1 style={{ color: 'white', fontWeight: 'bold' }}>Contact Us</h1>
@@ -39,12 +39,16 @@ useEffect(() => {
       <section className="contact__section section--padding">
         <div className="container">
           <div className="section__heading text-center mb-4">
-            <h2 className="section__heading--maintitle text__secondary mb-2" style={{ marginTop: "20px" }}>Get In Touch</h2>
-            <p className="section__heading--desc" style={{ marginTop: "20px" }} >Have a question for us or feedback? Please click on the most appropriate category <br></br>and fill out the form to reach us.</p></div>
+            <h2 className="section__heading--maintitle text__secondary mb-2" style={{ marginTop: "20px",color:"black" }}>Get In Touch</h2>
+            <p className="section__heading--desc" style={{ marginTop: "20px",color:"black" }} >Have a question for us or feedback? Please click on the most appropriate category <br></br>and fill out the form to reach us.</p></div>
           <div className="main__contact--area">
             <div className="row align-items-center row-md-reverse">
+<<<<<<< HEAD
             
             <div className="col-lg-5 col-md-12 mb-4 bg-danger" >
+=======
+            <div className="col-lg-5 col-md-12 mb-4"  >
+>>>>>>> bcbf242a83dd451b982fba4e4823d0ccf40c6c71
               <div className="contact__info border-radius-10">
                 <div className="contact__info--items">
                   <h3 className="contact__info--content__title text-white mb-2">Contact Us</h3>
@@ -86,7 +90,7 @@ useEffect(() => {
                 </div>
               </div>
             </div>
-            <div className="col-lg-7">
+            <div className="col-lg-7 col-md-12">
               <div className="contact__form">
                 <form className="contact__form--inner" action="#">
                   <div className="row">
@@ -123,7 +127,7 @@ useEffect(() => {
               <div className="col-lg-12">
                 <div className="google-map">
                   <iframe
-                    title="Google Map" width="100%" height="400" style={{ border: '0' , marginRight:"1500px"}}
+                    title="Google Map" width="100%" height="400" style={{ border: '0' , marginRight:"2000px"}}
                     src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.5751083612968!2d74.60641507505385!3d18.18347688284589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3756e35bd9dc5%3A0xb9b331f6b43b3374!2sRoyal%20Marriage%20Bureau!5e0!3m2!1sen!2sin!4v1687173066909!5m2!1sen!2sin" 
                     allowFullScreen></iframe>
                 </div>
