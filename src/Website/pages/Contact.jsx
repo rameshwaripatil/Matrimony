@@ -1,15 +1,26 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import Authuser from '../Authentication/Authuser';
 
 const Contact = () => {
+  const{http,token}=Authuser()
 
 const [contact, setcontact]=useState([]);
-  fetch('').then ((response) =>{
-    return response.json();
+const Contact = () => {
+  http.get(`store_contact`)
+    .then((response) => {
+      setcontact(response.data);
+      console.log(response.data);
+    })
+    .catch((error) => {
+      // Handle errors
+      console.error('Error data:', error);         
+    });
+};
+useEffect(() => {
+  Contact();
+}, [token])    
 
-  })
-  .then ((data) =>{
 
-  });
 
   return (
   <div>
@@ -32,6 +43,7 @@ const [contact, setcontact]=useState([]);
             <p className="section__heading--desc" style={{ marginTop: "20px" }} >Have a question for us or feedback? Please click on the most appropriate category <br></br>and fill out the form to reach us.</p></div>
           <div className="main__contact--area">
             <div className="row align-items-center row-md-reverse">
+            
             <div className="col-lg-5 col-md-12 mb-4 bg-danger" >
               <div className="contact__info border-radius-10">
                 <div className="contact__info--items">
