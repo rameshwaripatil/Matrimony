@@ -43,12 +43,7 @@ useEffect(() => {
             <p className="section__heading--desc" style={{ marginTop: "20px",color:"black" }} >Have a question for us or feedback? Please click on the most appropriate category <br></br>and fill out the form to reach us.</p></div>
           <div className="main__contact--area">
             <div className="row align-items-center row-md-reverse">
-<<<<<<< HEAD
-            
-            <div className="col-lg-5 col-md-12 mb-4 bg-danger" >
-=======
             <div className="col-lg-5 col-md-12 mb-4"  >
->>>>>>> bcbf242a83dd451b982fba4e4823d0ccf40c6c71
               <div className="contact__info border-radius-10">
                 <div className="contact__info--items">
                   <h3 className="contact__info--content__title text-white mb-2">Contact Us</h3>
