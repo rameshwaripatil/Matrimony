@@ -1,16 +1,26 @@
-import React, { useState } from 'react'
-import './Contact.css'
-
+import React, { useEffect, useState } from 'react'
+import Authuser from '../Authentication/Authuser';
+import "./contact.css"
 const Contact = () => {
+  const{http,token}=Authuser()
 
 const [contact, setcontact]=useState([]);
-  fetch('').then ((response) =>{
-    return response.json();
+const Contact = () => {
+  http.get(`store_contact`)
+    .then((response) => {
+      setcontact(response.data);
+      console.log(response.data);
+    })
+    .catch((error) => {
+      // Handle errors
+      console.error('Error data:', error);         
+    });
+};
+useEffect(() => {
+  Contact();
+}, [token])    
 
-  })
-  .then ((data) =>{
 
-  });
 
   return (
   <div className='con'>
