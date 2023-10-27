@@ -35,12 +35,13 @@ const Login = () => {
         console.log(res.data.user_data);
         if (res.data.token) {
           setToken(res.data.user_data, res.data.token);
-          
+          console.log("login sucessfully logged in")
           navigate("/");
         } else {
           notify(res.data.message);
         }
         setDisebale(0);
+
       })
       .catch((error) => {
         // notify("The provided credentials are invalid");

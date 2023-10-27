@@ -57,11 +57,11 @@ const CastSlider = () => {
     ]
     const Skeleton = [
 
-        <CircularScaler />,
-        <CircularScaler />,
-        <CircularScaler />,
-        <CircularScaler />,
-        <CircularScaler />,
+        // <CircularScaler />,
+        // <CircularScaler />,
+        // <CircularScaler />,
+        // <CircularScaler />,
+        // <CircularScaler />,
     ]
     return (
         <div>
