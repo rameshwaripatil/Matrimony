@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
-import "./contact.css"
+import "./Contact.css"
 const Contact = () => {
   const{http,token}=Authuser()
 

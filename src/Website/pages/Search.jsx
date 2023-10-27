@@ -1,225 +1,579 @@
-import React, { useEffect, useState } from 'react'
-import Authuser from '../Authentication/Authuser';
-import { Form } from 'react-router-dom';
-
+import React, { useEffect, useState } from "react";
+import "./Search.css";
 const Search = () => {
-  const {http,token}=Authuser();
-  const [cast,setCast]=useState([]);
-  const [weight,setWeight]=useState([]);
-  const [height,setHeight]=useState([]);
-  const [age,setAge]=useState([]);
-  const[state,setState]=useState([]);
-  const [employee,setEmployee]=useState([]);
-  const [village,setVillage]=useState([]);
-  const [district,setDistrict]=useState([]);
-  const [taluka,setTaluka]=useState([]);
-   const [Nakshatra, SetNakshatra] = useState([]);
-  const [Raasi, SetRaasi] = useState([]);
+  const [Cast, SetCast] = useState([]);
+  const [State, SetState] = useState([]);
+  const [Height, SetHeight] = useState([]);
+  const [Weight, SetWeight] = useState([]);
+  const [Age, SetAge] = useState([]);
+  const [WSector, SetWSector] = useState([]);
+  const [MT, SetMT] = useState([]);
+  const [viewSearch, SetviewSearch] = useState([]);
 
-  const Filter = ()=>{ 
-    http.get(`member/imformation/for_fillter`)
-  .then((response) => {
-    setCast(response.data.cast);
-    setAge(response.data.age);
-    setHeight(response.data.height);
-    setWeight(response.data.weight);
-    setState(response.data.state);
-    setEmployee(response.data.occupation);
-       SetNakshatra(response.data.nakshtra);
-        SetRaasi(response.data.rashi);
-console.log(response.data.occupation)
-    console.log(response.data.height);
-    console.log(response.data.state);
-    console.log(response.data.weight);
-    console.log(response.data.cast);
-    console.log(response.data.age);
-     console.log(response.data.nakshtra);
-      console.log(response.data.rashi);
-  })
-  .catch((error) => {
-    // Handle errors
-    console.error('Error  data:', error);
-  });
-};
+  const GetFilter = () => {
+    fetch(
+      "http://marriagebureau.ajspire.com/api/member/imformation/for_fillter"
+    )
+      .then((Response) => {
+        return Response.json();
+      })
+      .then((data) => {
+        console.log(data.cast);
+        console.log(data.state);
+        console.log(data.height);
+        console.log(data.weight);
+        console.log(data.age);
+        console.log(data.occupation);
 
- const Village =(id)=>
- {
-  http.get(`get/village/${id}`)
-  .then((response) => {
-    setVillage(response.data.village);
-    console.log(response.data.village);
+        SetCast(data.cast);
+        SetState(data.state);
+        SetHeight(data.height);
+        SetWeight(data.weight);
+        SetAge(data.age);
+        SetWSector(data.occupation);
+      });
+  };
+  useEffect(() => {
+    GetFilter();
+  }, []);
 
-  }
-  )
-  .catch((error) => {
-    // Handle errors
-    console.error('Error  data:', error);
-  });
- }
- const District =(id)=>
- {
-  http.get(`get/distrct/${id}`)
-  .then((response) => {
-    setDistrict(response.data.district);
-    console.log(response.data.district);
+  const GetMT = () => {
+    fetch("http://marriagebureau.ajspire.com/api/get/mother_tounge")
+      .then((Response) => {
+        return Response.json();
+      })
+      .then((data) => {
+        console.log(data.data);
 
-  }
-  )
-  .catch((error) => {
-    // Handle errors
-    console.error('Error  data:', error);
-  });
- }
- const Taluka =(id)=>
- {
-  http.get(`get/taluka/${id}`)
-  .then((response) => {
-    setTaluka(response.data.talukas);
-    console.log(response.data.talukas);
+        SetMT(data.data);
+      });
+  };
+  useEffect(() => {
+    GetMT();
+  }, []);
 
-  }
-  )
-  .catch((error) => {
-    // Handle errors
-    console.error('Error  data:', error);
-  });
- }
- const [Data, SetFillter] = useState({
-    gender: "0",
-    cast: "0",
-    marital_status: "0",
-    max_age: "0",
-    min_age: "0",
-    emploay: "0",
-    state: "0",
-    height: "0",
-    weight: "0",
-    body_type: "0",
-    body_color: "0",
-  });
-useEffect(() => {
-  Filter();
-  District();
-  Taluka();
-  Village();
-}, [token])
+  const viewSearchs = (e) => {
+    if (e === 1) {
+      SetviewSearch(1);
+    } else if (e === 0) {
+      SetviewSearch(0);
+    }
+  };
+
   return (
     <div>
-
-      <div class="container">
-        <div class=" table_card row bg-black p-5 mt-5">
-          <div class="text-center">
-            <h2 class="text-danger"> <b>Basic Filters</b> </h2>
+      <div className="container-search ">
+        <div className="team-1 row p-5 mt-2 Basic-Filters ">
+          <div className="text-center ">
+            <h2 className="text-danger">
+              <b style={{ color: "red" }}>Basic Filters</b>
+            </h2>
           </div>
-          <div class="col-lg-4  col-md-4 px-1 my-3" >
-
-            <label class="form-label">Gender</label>
-            <select aria-label="Default select example" name="gender" class="form-select form-select-lg">
-              <option value="0">Select Gender</option>
-              <option value="2">Male</option>
-              <option value="1">Female</option>
-              <option value="3">Other</option>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Gender</label>
+            <select
+              aria-label="Default select example"
+              name="gender"
+              className="form-select form-select"
+            >
+              <option>Select Gender</option>
+              <option>Male</option>
             </select>
           </div>
-          
-          <div class="col-lg-4 col-md-4 px-1 my-3">
+          <div className=" col-12 col-md-4 col-sm-6 px-1 my-3">
             <label className="form-label"> Caste</label>
-            <select name="cast" aria-label="Default select example" className="form-select form-select-lg">
-              <option value={0}>Select Caste</option>
-              {cast.map((el)=>(
-              <option value={el.caste_id}>{el.caste}</option>
+            <select
+              name="cast"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Caste</option>
+              {Cast.map((scast) => (
+                <option value={scast.caste_id}>{scast.caste}</option>
               ))}
-              </select>
+            </select>
           </div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label className="form-label">Marital Status</label><select name="marital_status" aria-label="Default select example" className="form-select form-select-lg"><option value={0}>Select Marital Status</option><option value={1}>Unmarried</option><option value={2}>Divorced</option><option value={3}>Widowed</option><option value={4}>Separated</option></select></div>
-          <div class="col-lg-4 col-md-4 px-1 my-3" >
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Marital Status</label>
+            <select
+              name="marital_status"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Marital Status</option>
+              <option>married</option>
+              <option>Unmarried</option>
+            </select>
+          </div>
+          <div className="col-md-4 px-1 my-3">
             <label className="form-label">Min Age</label>
-            <select name="max_age" aria-label="Default select example" className="form-select form-select-lg">
-              <option value={0}>Select Min Age</option>
-              { age.map((el)=>(
-              <option value={el.age_id}>{el.age_name}</option>
+            <select
+              name="max_age"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Min Age</option>
+              {Age.map((sage) => (
+                <option value={sage.age_id}>{sage.age_name}</option>
               ))}
-              </select></div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label className="form-label">Max Age</label><select name="min_age" aria-label="Default select example" className="form-select form-select-lg"><option value={0}>Select Max Age</option>  { age.map((el)=>(
-              <option value={el.age_id}>{el.age_name}</option>
+            </select>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Max Age</label>
+            <select
+              name="min_age"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Max Age</option>
+              {Age.map((sage) => (
+                <option value={sage.age_id}>{sage.age_name}</option>
               ))}
-              </select></div>
-              </div>
-        
-        <div class=" table_card row bg-black p-5 mt-5">
-          <div class="text-center">
-            <h2 class="text-danger"> <b>Regional Filters</b> </h2>
-          </div>
-          <div class="col-lg-4 col-sm-12  col-md-4 px-1 my-3" >
-
-            <label class="form-label">Employed In (Working Sector)</label>
-            <select name="emploay" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Employed In (Working Sector)</option>
-            {employee.map((el)=>(
- <option value={el.occupation_id}>{el.occupation}</option>
-            ))}</select></div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">State Living In</label>
-            <select name="state" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select State Living In</option>
-              {state.map((el)=>(
-              <option value={el.state_id}>{el.state_name}</option>
-              ))}</select></div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">District Living In</label>
-            <select name="district" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select District Living</option></select>
-          </div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">Taluka Living In</label>
-            <select name="taluka" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Taluka Living</option></select>
-          </div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">Village Living In</label>
-            <select name="village" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Village Living</option>
             </select>
           </div>
 
-        </div>
-        <div class=" table_card row bg-black p-5 mt-5">
-          <div class="text-center">
-            <h2 class="text-danger"><b>Physical Appearance</b></h2>
-          </div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">Height</label>
-            <select name="height" aria-label="Default select example" class="form-select form-select-lg">
-              <option value="0">Select Height</option>
-              {height.map((el)=>(
-              <option value={el.height_id}>{el.height}</option>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Mother Tounge</label>
+            <select
+              name="min_age"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Mother Tounge</option>
+              {MT.map((SMT) => (
+                <option value={SMT.mother_tounges_id}>
+                  {SMT.mothertounge}
+                </option>
               ))}
-              </select>
+            </select>
           </div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">Weight</label>
-            <select name="height" aria-label="Default select example" class="form-select form-select-lg">
-              <option value="0">Select Weight</option>
-              {weight.map((el)=>(
-              <option value={el.weight_id}>{el.weight}</option>
+        </div>
+        <div className="team-2 row p-5 mt-4 Regional-Filters ">
+          <div className="text-center ">
+            <h2 className="text-danger">
+              <b style={{ color: "red" }}>Regional Filters</b>
+            </h2>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Employed In (Working Sector)</label>
+            <select
+              name="emploay"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Employed In (Working Sector)</option>
+              {WSector.map((sws) => (
+                <option value={sws.occupation_id}>{sws.occupation}</option>
               ))}
-              </select>
+
+              <option value="Private">Private</option>
+            </select>
           </div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">Body Type</label>
-            <select name="body_type" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Body Type</option><option value="Slim">Slim</option><option value="Average">Average</option><option value="Athletic">Athletic</option><option value="Heavy">Heavy</option></select>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">State Living In</label>
+            <select
+              name="state"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select State Living In</option>
+              {State.map((el) => (
+                <option value={el.state_id}>{el.state_name}</option>
+              ))}
+            </select>
           </div>
-          <div class="col-lg-4 col-md-4 px-1 my-3">
-            <label class="form-label">Complextion (Body Color)</label>
-            <select name="body_color" aria-label="Default select example" class="form-select form-select-lg"><option value="0">Select Complextion (Body Color)</option><option value="Very Fair">Very Fair</option><option value="Fair">Fair</option><option value="Wheatish">Wheatish</option><option value="Wheatish Brown">Wheatish Brown</option><option value="Dark">Dark</option></select></div>
-        </div>
-        <div class=" table_card row bg-black p-5 mt-5">
-          <div class="col-md-12 text-center"><button class="btn btn-success mb-2 btn-lg">Search</button></div>
-        </div>
-        </div>
-        </div>
-      
-      
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">District Living In</label>
+            <select
+              name="district"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select District Living</option>
 
-  )
+              <option>Select District Living</option>
+            </select>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Taluka Living In</label>
+            <select
+              name="taluka"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Taluka Living</option>
+            </select>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Village Living In</label>
+            <select
+              name="village"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Village Living</option>
+              <option>Mhasobanagar</option>
+            </select>
+          </div>
+        </div>
+        <div className=" team-3 row p-5 mt-4 Physical-Appearance">
+          <div className="text-center ">
+            <h2 className="text-danger">
+              <b style={{ color: "red" }}>Physical Appearance</b>
+            </h2>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Height</label>
+            <select
+              name="height"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Height</option>
+              {Height.map((sheight) => (
+                <option>{sheight.height}</option>
+              ))}
+            </select>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Weight</label>
+            <select
+              name="weight"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option value={0}>Select Weight</option>
+              {Weight.map((sweight) => (
+                <option value={sweight.weight_id}>{sweight.weight}</option>
+              ))}
+            </select>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Body Type</label>
+            <select
+              name="body_type"
+              aria-label="Default select example"
+              className="form-select form-select"
+            >
+              <option>Select Body Type</option>
+              <option value="Slim">Slim</option>
+            </select>
+          </div>
+          <div className="col-md-4 px-1 my-3">
+            <label className="form-label">Complextion (Body Color)</label>
+            <select className="form-select form-select">
+              <option>Select Complextion (Body Color)</option>
+              <option>Very Fair</option>
+            </select>
+          </div>
+        </div>
+        <div className="team-4 p-5 mt-4 ">
+          {viewSearch != 1 ? (
+            <div className="col-md-12 text-center">
+              <button
+                className="btn btn-success mb-2 btn-lg "
+                onClick={(e) => viewSearchs(1)}
+              >
+                Search
+              </button>
+            </div>
+          ) : (
+            <div className="col-md-12 text-center">
+              <button
+                className="btn btn-success mb-2 btn-lg"
+                onClick={(e) => viewSearchs(0)}
+              >
+                Go Back{" "}
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+      {viewSearch === 1 ? (
+        <div className="container mt-5">
+          <div className="section__heading text-center mb-4" />
+          <div className="team__container">
+            <div className="row row-cols-md-3 row-cols-sm-2 row-cols-1 mb--n30">
+              <div className="col-md-4 custom-col mb-4">
+                <div className="container">
+                  <div className="card shadow">
+                    <div className="card-body">
+                      <article className="team__card">
+                        <div
+                          className="team__card--thumbnail mx-auto"
+                          style={{ height: "300px", width: "220px" }}
+                        >
+                          <img
+                            className="team__card--thumbnail__img display-block"
+                            src="https://admin.royalmarriagebureau.com/uploads/userimg/1695217396.jpg"
+                            alt="team-thumb"
+                            style={{ height: "300px" }}
+                          />
+                        </div>
+                        <table className="mt-4 mx-auto">
+                          <tbody>
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Birth Date</td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>1995-09-20 </td>
+                            </tr>
+                            <tr />
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Height</td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Not Assign meter.</td>
+                            </tr>
+                            <tr />
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Age </td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>28 Years </td>
+                            </tr>
+                            <tr />
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Occupation </td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Not Assign..</td>
+                            </tr>
+                            <tr />
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Education</td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>..</td>
+                            </tr>
+                            <tr />
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>employed_in</td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>..</td>
+                            </tr>
+                            <tr />
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>income</td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>/-</td>
+                            </tr>
+                            <tr />
+                            <tr
+                              style={{
+                                borderBottom: "1px solid rgb(204, 204, 204)",
+                              }}
+                            >
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Taluka</td>
+                              <td>:</td>
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td />
+                              <td>Baramati..</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        <div className="text-center mt-4">
+                          <a
+                            className="btn btn-success mb-4"
+                            href="/single_view/2"
+                          >
+                            View Profile
+                          </a>
+                        </div>
+                      </article>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        " "
+      )}
+    </div>
+  );
+};
 
-}
-
-export default Search
+export default Search;
