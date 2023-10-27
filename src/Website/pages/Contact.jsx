@@ -24,6 +24,7 @@ useEffect(() => {
 
   return (
   <div className='con'>
+    
 <div className="all-title-box">
 <div className="container" style={{ maxWidth: '100%', padding: '0 20px' }}>
           <div className="row">
@@ -122,7 +123,7 @@ useEffect(() => {
               <div className="col-lg-12">
                 <div className="google-map">
                   <iframe
-                    title="Google Map" width="100%" height="400" style={{ border: '0' , marginRight:"2000px"}}
+                    title="Google Map" width="1700" height="400" style={{ border: '0' }}
                     src= "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3790.5751083612968!2d74.60641507505385!3d18.18347688284589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc3756e35bd9dc5%3A0xb9b331f6b43b3374!2sRoyal%20Marriage%20Bureau!5e0!3m2!1sen!2sin!4v1687173066909!5m2!1sen!2sin" 
                     allowFullScreen></iframe>
                 </div>
