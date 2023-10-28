@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
 import "./Brides.css"; 
-import CastSlider from './CastSlider';
+
+
 
 const Brides = () => {
   const { http, token } = Authuser();
+  const[cast,setCast]=useState([]);
 
   const [bri, setBrides] = useState([]);   
 
@@ -19,8 +21,12 @@ const Brides = () => {
         console.error('Error adding bride data:', error);         
       });
   };
+
+
+
   useEffect(() => {
     Brides();
+
   }, [token])    
 
 
@@ -39,8 +45,7 @@ const Brides = () => {
         </div>
       </div>
      
-   <CastSlider/>
-
+      
       <section id="about_last">
         <div className="container">
           <div className="row">

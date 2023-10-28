@@ -2,11 +2,21 @@
 
 /* Basic styling for the entire Contact component */
 .con {
-    background-color: black;
-    padding: 20px;
-    background-image: url("https://wallpaper.dog/large/20521614.jpg");
- 
+
+  background-image: url("https://www.weddinggownpreservationkit.com/blog-images/zoom-wedding/thumbs/zoom-mountaintop-wedding-background-tmb.jpg");
+  background-size: cover; /* Make sure the background image covers the entire element */
+  animation: backgroundAnimation 5s infinite; /* 5s duration, infinite loop */
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 0%;
   }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
   
   /* Title styles */
   .all-title-box {
@@ -52,7 +62,7 @@
   /* Contact info styles */
   .contact__info {
     border-radius: 10px;
-    background: rgb(234, 16, 67);
+    background: rgb(153, 4, 4);
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
@@ -116,6 +126,7 @@
   }
   
   .google-map {
+    
  width: 83%;
 
  

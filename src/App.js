@@ -11,6 +11,8 @@ import "./App.css"
 import Search from './Website/pages/Search'
 import Membarship from './Website/pages/Membarship'
 import Login from './Website/Authentication/Login'
+import Profile from './Website/pages/Profile'
+import Dashboard from './Website/pages/Dashboard'
 
 
 const App = () => {
@@ -27,6 +29,8 @@ const App = () => {
       <Route path="/search"  element={<Master Rcf={Search}/>} />
       <Route path="/membarship"  element={<Master Rcf={Membarship}/>} />
       <Route path="/login"  element={<Master Rcf={Login}/>} />
+      <Route path="/profile"  element={<Master Rcf={Profile}/>} />
+      <Route path="/dashboard"  element={<Master Rcf={Dashboard}/>} />
 
 
 
