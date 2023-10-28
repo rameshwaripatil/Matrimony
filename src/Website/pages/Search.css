@@ -1,0 +1,74 @@
+/* You can add this CSS code to your component's CSS file or a global CSS file */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    
+  }
+  
+  .team-1, .team-2, .team-3, .team-4 {
+    background-color: black;
+    padding: 20px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  
+  .team__card {
+    text-align: center;
+    background-color: black;
+
+  }
+  
+  .team__card--thumbnail {
+    text-align: center;
+  }
+  
+  .team__card--thumbnail__img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  table tr {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+  }
+  
+  .btn:hover {
+    background-color: #218838;
+  }
+  
