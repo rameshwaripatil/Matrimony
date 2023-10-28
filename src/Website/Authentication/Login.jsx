@@ -8,44 +8,40 @@ const Login = () => {
   const notify = (message) => toast.error(message);
 
   const { http, setToken, token } = Authuser();
-  const [btnDisable, setDisable] = useState(false); // Changed variable name and initial state value to boolean
+  const [btnDiseble, setDisebale] = useState(0);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (token !== null) {
+    if (token != null) {
       navigate("/");
     }
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
   }, [navigate, token]);
 
-  const [loginData, setLoginData] = useState({ email: '', password: '' }); // Changed variable names to be more descriptive
+  const [Login, SetLogin] = useState({ email: "", password: "" });
 
-  const onInputChange = (e) => {
-    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+  const OninputChange = (e) => {
+    SetLogin({ ...Login, [e.target.name]: e.target.value });
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-    setDisable(true); // Disable the button during the request
 
-    http.post("/front_user_login", loginData)
+    http
+      .post("/user/login", Login)
       .then((res) => {
-        console.log(res.data);
+        console.log(res.data.user_data);
         if (res.data.token) {
           setToken(res.data.user_data, res.data.token);
+          console.log("login sucessfully logged in");
           navigate("/");
         } else {
           notify(res.data.message);
         }
-        setDisable(false); // Re-enable the button after the request is completed
+        setDisebale(0);
       })
       .catch((error) => {
-        // Handle error here
-        notify("An error occurred during login.");
-        setDisable(false); // Re-enable the button in case of an error
+        // notify("The provided credentials are invalid");
+        setDisebale(0);
       });
   };
 
@@ -61,7 +57,7 @@ const Login = () => {
                     Login
                   </h2>
                   <a className="account__login--header__desc">
-                    <b>Login if you are a returning customer.</b>
+                    <b>Login if you area a returning customer.</b>
                   </a>
                 </div>
                 <div className="account__login--inner">
@@ -70,16 +66,16 @@ const Login = () => {
                       <input
                         name="email"
                         type="text"
-                        onChange={(e) => onInputChange(e)}
+                        onChange={(e) => OninputChange(e)}
                         className="form-control"
-                        placeholder="Enter your User Id | Mobile Number | Email Id"
+                        placeholder="Enter your User Id | Mobile Numbar | Email Id "
                       />
                     </div>
                     <div className="form-group">
                       <input
                         name="password"
                         type="password"
-                        onChange={(e) => onInputChange(e)}
+                        onChange={(e) => OninputChange(e)}
                         className="form-control"
                         placeholder="Enter your password"
                       />
@@ -88,6 +84,7 @@ const Login = () => {
                       <input
                         className="form-check-input"
                         type="checkbox"
+                        defaultValue
                         id="check"
                       />
                       <label className="form-check-label" htmlFor="check">
@@ -95,11 +92,12 @@ const Login = () => {
                       </label>
                     </div>
                     <div className="form-button">
-                      <button type="submit" onClick={(e) => onSubmit(e)} disabled={btnDisable}>
-                        Login
+                      <button type="submit" onClick={(e) => onSubmit(e)}>
+                        login
                       </button>
                       <p>
-                        Forgot your password? <a href="/forgot-password">reset here</a>
+                        Forgot your password?
+                        <a href="/forgot-password">reset here</a>
                       </p>
                     </div>
                   </div>
@@ -115,12 +113,29 @@ const Login = () => {
                         className="checkout__checkbox--label login__remember--label"
                         htmlFor="check1"
                       >
+                        {" "}
+                        &nbsp;&nbsp;
                         <b>Remember me</b>
                       </label>
                     </div>
-                    <a className="text-danger">Forgot Password</a>
+                    <a className="text-danger">&nbsp;&nbsp; Forgot Password</a>
                   </div>
-                  {/* Button moved inside the form */}
+                  <button
+                    className="account__login--btn primary__btn"
+                    type="submit"
+                  >
+                    Login
+                  </button>
+                  <div class="account__login--divide">
+                    <hr class="account__login--middle-line" />
+                    <span class="account__login--divide__text">OR</span>
+                    <hr class="account__login--middle-line" />
+                  </div>
+
+                  <p className="account__login--signup__text">
+                    <b> Don,t Have an Account ?</b> &nbsp;&nbsp;
+                    <b style={{ color: "red" }}>Create New Account</b>
+                  </p>
                 </div>
               </div>
             </div>
@@ -132,9 +147,6 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { Link, useNavigate } from "react-router-dom";
@@ -200,14 +212,14 @@ export default Login;
 //         {/* Start breadcrumb section */}
 //         <section className="breadcrumb__section breadcrumb__bg" style={{height:"600px"}}>
 //         <div className="container">
-       
+
 //         {/* Start login section  */}
 //         <div className="login__section section--padding">
 //           <div className="container">
 //             <form onSubmit={(e) => sessIon_start(e)}>
 //               <div className="login__section--inner">
 //                 <div className="row row-cols-md-2 row-cols-1 d-flex justify-content-center">
-              
+
 //                   <div className="col">
 //                     <div className="account__login">
 //                       <div className="account__login--header mb-25 text-center">
@@ -281,7 +293,7 @@ export default Login;
 //                           >
 //                             &nbsp;&nbsp;Create New Account
 //                           </Link>
-                          
+
 //                         </p>
 //                       </div>
 //                     </div>
@@ -300,4 +312,3 @@ export default Login;
 // }
 
 // export default Login;
-

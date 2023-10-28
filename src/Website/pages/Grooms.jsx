@@ -35,6 +35,23 @@ const Groom = () => {
     } 
   };
 
+  const items = cast.map((cast, index) => (
+    <div
+      key={`item${index}`} // Add a unique key for each item using the index
+      className="bg-danger text-center text-white"
+      style={{
+        height: '80px',
+        width: '80px',
+        borderRadius: '50%',
+        paddingTop: '29px',
+        fontSize: '12px',
+      }}
+    >
+      {cast.caste}
+    </div>
+  ));
+  
+
 
   const getCasts = () => {
     http.get(`/member/imformation/for_fillter`)
