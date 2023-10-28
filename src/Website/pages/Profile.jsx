@@ -171,12 +171,12 @@ const Profile = () => {
 
     return (
         <div className='row'>
-            <HeaderBg
+            {/* <HeaderBg
                 main="Profile"
                 route="\"
                 route_name="Profile"
                 page="Profile"
-            />
+            /> */}
             <div className='col-md-10 offset-md-1'>
                 <div className='section--padding'>
                     <div className="card m-2 mb-5">
