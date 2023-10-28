@@ -1,0 +1,1095 @@
+
+	
+ 
+	    window.globalCallbackAfterSuscription = undefined;
+	    var fromreact = ''
+	var __DEV_ENV__ = (["timesofindia.indiatimes.com","m.timesofindia.com"].indexOf(document.location.hostname) > -1) ? false : true;
+	 var eventCategory={
+         'home':'Home',
+         'etbriefs':'Brief',
+         'articleshow/' :'Articleshow',
+         'web-series/' :'Webseries',
+         'photostory/':'Photostory',
+         'videos':'Video_List',
+         'movie-review/':'Movie_Review',
+         'movieshow/':'MovieListing_Show',
+         'latest-new-movies/':'MovieListing_List',
+         'showtimes/':'Showtime',
+         'awards/':'Awards',
+         'previews/':'Preview',
+         'theatres-list':'Theater_List',
+         'videoshow/':'Video_Show',
+         'seasonreview/':'Season_Review',
+         'seriesreview/':'Series_Review',
+         'episodereview/':'Episode_Review',
+         'webseriesshow/':'Series_Review',
+         'topic/':'Topic_Celebrity',
+         'ottmoviereview/':'OTTMovie_Review'
+        }
+    var defaultCategory='ArticlesList';
+      var categoryArray=Object.keys(eventCategory);
+      var domainsArray=['https://timesofindia.indiatimes.com/etimes','https://toidev.indiatimes.com/etimes','https://toidev.indiatimes.com', 'https://timesofindia.indiatimes.com', 'https://toispadev4.indiatimes.com'];
+	 
+//******************************** GRX CONFIG MODULE START ************************************//
+    var grx_module = (function(){
+        var fn, api, config;
+        config = {
+            'grx_projectcode' : (__DEV_ENV__) ? 'g3bf3e414' : 'g7af6dd9d' ,// Stg : g3bf3e414 Production: g7af6dd9d
+            'grx_subproject' : 'etimes', 
+            'grx_subproject_toi' : 'toi',
+            'grx_applicationServerKey' : 'BAEr8bO2Cyl8t2PmXW686snggFFooIy0DnRBBp0hxgptp7MBCXRJaMTdIzmqL3t1rB0BqKauxyyv94PADuUlAsw',
+            'swjs_path' : '/grxsw.cms',
+            'swjs_path_react_dev' : '/sw.js',
+            'ga_enable' : true,
+            'utm_enable' : true,
+            'property' : 'ETimes',
+            'property_toi' : 'TOI',
+            'platform' : 'Web',
+            'defaultIcon' :'https://timesofindia.indiatimes.com/photo/75555693.cms',
+            'defaultIconToi' :'https://timesofindia.indiatimes.com/photo/64095869.cms',
+            'defaultTitle' : 'ETimes',
+            'defaultTitleToi' : 'TOI',
+            'defaultMessage' : 'Thank you for subscribing to ETimes notifications.',
+            'defaultMessageToi' : 'Thank you for subscribing to TOI notifications.',
+            'defaultUrl' : 'https://timesofindia.indiatimes.com/etimes',
+            'defaultUrlToi' : 'https://timesofindia.indiatimes.com',
+            'utmSource' : 'browser_notification',
+            'utmMedium' : '',
+            'utmCampaign' : 'browsernotification',
+            'popup1_ga_cat' : 'PushBrowserSubscription',
+            'popup1_ga_act' : 'Push_Popup_View',
+            'popup1_ga_label_viewed' : 'Push_Popup_Viewed',
+            'popup1_ga_label_notnow' : 'Push_Popup_Notnow',
+            'popup1_ga_label_allow' : 'Push_Popup_Allow',
+            'popup2_ga_cat' : 'PushBrowserSubscription',
+            'popup2_ga_act' : 'Push_Browser_View',
+            'popup2_ga_label_viewed' : 'Push_Browser_Viewed',
+            'popup2_ga_label_block' : 'Push_Browser_Block',
+            'popup2_ga_label_ignore' : 'Push_Browser_Ignore',
+            'popup2_ga_label_allow' : 'Push_Browser_Allow',
+            'location_api' : "https://geoapi.indiatimes.com/?cb=1",
+            'location_api_hit_frequency' : 30
+        };
+        var loadScript = function (src) {
+            return new Promise(function(resolve, reject) {
+                const s = document.createElement('script');
+                let r = false;
+                s.type = 'text/javascript';
+                s.src = src;
+                s.async = true;
+                s.onerror = function(err) {
+                  reject(err, s);
+                };
+                s.onload = s.onreadystatechange = function() {
+                  // console.log(this.readyState); // uncomment this line to see which ready states are called.
+                  if (!r && (!this.readyState || this.readyState == 'complete')) {
+                    r = true;
+                    resolve();
+                  }
+                };
+                const t = document.getElementsByTagName('script')[0];
+                t.parentElement.insertBefore(s, t);
+            });
+        }
+        var getCookie = function (name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        var formatDate = function (date) {
+            const dateObj = new Date(date);
+            return dateObj.getTime() ? dateObj.getTime().toString() : '';
+        }
+        fn = {
+            _loadGrxScript : function(){
+                (function (g, r, o, w, t, h, rx) {
+                    g[t] = g[t] || function () {(g[t].q = g[t].q || []).push(arguments)
+                    }, g[t].l = 1 * new Date();
+                    g[t] = g[t] || {}, h = r.createElement(o), rx = r.getElementsByTagName(o)[0];
+                    h.async = 1;h.src = w;rx.parentNode.insertBefore(h, rx)
+                })(window, document, 'script', 'https://static.growthrx.in/js/v2/web-sdk.js', 'grx');
+                grx_module.triggerGACustom('grx_executed');
+            },
+            _appendUTMs : function(u){
+                if(!config.utm_enable)
+                    return u;
+                var p ="utm_source="+config.utmSource+"&utm_medium="+((config.utmMedium.length) ? config.utmMedium : ntfc_module.getBrowser())+"&utm_campaign="+config.utmCampaign,
+                    pre = (u.indexOf('?')!=-1) ? '&' : '?';
+                return (u + pre + p);
+            },
+            _initNtfcConfig : function(isReact){
+                if(typeof grx != "undefined"){
+                    if(!isReact)
+                    grx('init', config.grx_projectcode);
+                    grx("enableCustompopup");
+                    grx('config','applicationServerKey',config.grx_applicationServerKey);
+                    grx('registerPlugin', 'subscribeToken');
+                    if(config.utm_enable)
+                     grx('config','notification_params',{ utm_source:config.utmSource, utm_medium:((config.utmMedium.length) ? config.utmMedium : ntfc_module.getBrowser()), utm_campaign:config.utmCampaign});
+                    var url = grx_module.appendUTMs(grx_module.getDefaultUrl());
+                    grx('registerPlugin', 'showNotificationWelcomeMessage', {title:grx_module.getDefaultTitle(), content:grx_module.getDefaultMessage(), icon:grx_module.getDefaultIcon, url: url});
+                    grx('addListener', 'notification_permission_allowed', function(){
+                       ntfc_module.triggerGAEvent(grx_module.getconfig().popup2_ga_cat, grx_module.getconfig().popup2_ga_act+'_'+grx_module.getProperty()+'_'+grx_module.getconfig().platform, grx_module.getconfig().popup2_ga_label_allow);
+                       grx('set','location',common_utility.getLocation());
+                       var event = new CustomEvent("Notification",{"detail": "Allow"})
+                       window.dispatchEvent(event);
+                       
+                        if(typeof window.globalCallbackAfterSuscription === "function")
+                       window.globalCallbackAfterSuscription("Allow");
+                    });
+                    grx('addListener', 'notification_permission_blocked', function(){
+                       ntfc_module.triggerGAEvent(grx_module.getconfig().popup2_ga_cat, grx_module.getconfig().popup2_ga_act+'_'+grx_module.getProperty()+'_'+grx_module.getconfig().platform, grx_module.getconfig().popup2_ga_label_block);
+                         var event = new CustomEvent("Notification",{"detail": "Block"})
+                       window.dispatchEvent(event);
+                        if(typeof window.globalCallbackAfterSuscription === "function")
+                       window.globalCallbackAfterSuscription("Block");
+                    });
+                    grx('addListener', 'notification_permission_closed', function(){
+                       ntfc_module.triggerGAEvent(grx_module.getconfig().popup2_ga_cat, grx_module.getconfig().popup2_ga_act+'_'+grx_module.getProperty()+'_'+grx_module.getconfig().platform, grx_module.getconfig().popup2_ga_label_ignore);
+                        var event = new CustomEvent("Notification",{"detail": "Closed"})
+                       window.dispatchEvent(event);
+                        if(typeof window.globalCallbackAfterSuscription === "function")
+                       window.globalCallbackAfterSuscription("Closed");
+                    }); 
+                    var swpath = (window.location.href.indexOf("toispadev") >=0 ) ? config.swjs_path_react_dev : config.swjs_path;
+                    grx('config','service_worker',swpath);
+                    // grx('set','subProject',grx_module.getSubProject());
+                    // if(window.location.href.indexOf("photostory") >= 0 && window.photostoryTitle){
+                    //     grx('set', 'subjectLine', window.photostoryTitle);
+                    //     grx('set', 'template', 'Photostory');
+                    // }
+                    // if(window.location.href.indexOf("articleshow") >=0 && window.articleshowTitle){
+                    //     grx('set', 'subjectLine', window.articleshowTitle);
+                    // }
+                    // if(window.location.href.indexOf("videoshow") >= 0 && window.videoTitle){
+                    //     grx('set', 'subjectLine', window.videoTitle);
+                    // }
+                }
+                
+            },
+            _setArticleRelatedGrxProps: function () {
+                console.log("comes in _setGrxPropsForArticleChange")
+                if(typeof grx != "undefined"){
+                    console.log("comes in grx")
+                    if (typeof window.grxProp != "undefined") {
+                        grx('set', 'template', window.grxProp.template ? window.grxProp.template: 'NA');
+                        grx('set', 'msid', window.grxProp.msid ? window.grxProp.msid: 'NA');   
+                        grx('set', 'primeStory', window.grxProp.primeId ? true: false);   
+                        grx('set', 'storyAgency', window.grxProp.agencyName ? window.grxProp.agencyName: window.grxProp.arTag ? window.grxProp.arTag : 'NA');
+                        grx('set', 'contentType', window.grxProp.contentType ? window.grxProp.contentType: 'NA');
+                        grx('set', 'template', window.grxProp.contentType ? window.grxProp.contentType: 'NA');
+                        grx('set', 'storyTemplate', window.grxProp.contentType ? window.grxProp.contentType: 'NA');
+                        grx('set', 'storyNatureOfContent', window.grxProp.storyNatureOfContent ? window.grxProp.storyNatureOfContent: 'NA');
+                        grx('set', 'storyTopicTree', window.grxProp.storyTopicTree ? window.grxProp.storyTopicTree: 'NA');
+                        grx('set', 'authorName', window.grxProp.authorName ? window.grxProp.authorName: 'NA');
+                        grx('set', 'subjectLine', window.grxProp.subjectLine ? window.grxProp.subjectLine: 'NA');
+                        grx('set', 'title', window.grxProp.subjectLine ? window.grxProp.subjectLine: 'NA');
+                        grx('set', 'onPlatformSource', window.grxProp.onPlatformSource ? window.grxProp.onPlatformSource: 'Click');
+
+                        if (window.grxProp.sections != "undefined") {
+                            let sectionsArray = [];
+                            let denmarkFolderId = '';
+                            if(window.grxProp.sections.section1 && window.grxProp.sections.section1.id){
+                                sectionsArray.push(window.grxProp.sections.section1.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section1.id;
+                            }
+                            if(window.grxProp.sections.section2 && window.grxProp.sections.section2.id){
+                                sectionsArray.push(window.grxProp.sections.section2.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section2.id;
+                            }
+                            if(window.grxProp.sections.section3 && window.grxProp.sections.section3.id){
+                                sectionsArray.push(window.grxProp.sections.section3.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section3.id;
+                            }
+                            if(window.grxProp.sections.section4 && window.grxProp.sections.section4.id){
+                               sectionsArray.push(window.grxProp.sections.section4.name.toLowerCase());
+                               denmarkFolderId = window.grxProp.sections.section4.id;
+                            }
+                            if(window.grxProp.sections.section5 && window.grxProp.sections.section5.id){
+                                sectionsArray.push(window.grxProp.sections.section5.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section5.id;
+                            }
+                            let section = sectionsArray.shift();
+                            let subsection = sectionsArray.join('/');
+                            grx('set', 'storySection', section ? section: 'NA');
+                            grx('set', 'storySubSection', subsection ? subsection: 'NA');
+                            grx('set', 'denmarkFolderId', denmarkFolderId ? denmarkFolderId : 'NA');
+                        }
+
+                        let storyPublishedAt = parseInt(window.grxProp.lastPublishedTs) ? formatDate(parseInt(window.grxProp.lastPublishedTs)) : "NA";
+                        grx('set', 'storyPublishedAt', storyPublishedAt);
+                        let storyUpdatedAt = '';
+                        if (window.grxProp.lastUpdatedDate && window.grxProp.lastUpdatedDate.split('#').length >1 && Date.parse(window.grxProp.lastUpdatedDate.split('#')[1])) {
+                            storyUpdatedAt = formatDate(window.grxProp.lastUpdatedDate.split('#')[1])
+                        } else {
+                            storyUpdatedAt = storyPublishedAt;
+                        }
+                        grx('set', 'storyLastUpdatedAt', storyUpdatedAt);
+
+                    }
+                  }
+            },
+            _getArticleRelatedGrxProps: function () {
+                if(typeof grx != "undefined"){
+                    if (window.grxProp != "undefined") {
+                        let template = window.grxProp.template ? window.grxProp.template: 'NA';
+                        let msid = window.grxProp.msid ? window.grxProp.msid: 'NA';
+                        let primeStory = window.grxProp.primeId ? true: false;
+                        let storyAgency = window.grxProp.agencyName ? window.grxProp.agencyName: window.grxProp.arTag ? window.grxProp.arTag : 'NA';
+                        let contentType = window.grxProp.contentType ? window.grxProp.contentType: 'NA';
+                        let storyTemplate = window.grxProp.contentType ? window.grxProp.contentType: 'NA';
+                        let storyNatureOfContent = window.grxProp.storyNatureOfContent ? window.grxProp.storyNatureOfContent: 'NA';
+                        let storyTopicTree = window.grxProp.storyTopicTree ? window.grxProp.storyTopicTree: 'NA';
+                        let authorName = window.grxProp.authorName ? window.grxProp.authorName: 'NA';
+                        let subjectLine = window.grxProp.subjectLine ? window.grxProp.subjectLine: 'NA';
+                        let title = window.grxProp.subjectLine ? window.grxProp.subjectLine: 'NA';
+                        let onPlatformSource = window.grxProp.onPlatformSource ? window.grxProp.onPlatformSource: 'Click';
+                        let storySection = '', storySubSection = '', denmarkFolderId = '';
+                        
+                        if (typeof window.grxProp.sections != "undefined") {
+                            
+                            let sectionsArray = [];
+                            let denmarkFolderId = '';
+                            if(window.grxProp.sections.section1 && window.grxProp.sections.section1.id){
+                                sectionsArray.push(window.grxProp.sections.section1.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section1.id;
+                            }
+                            if(window.grxProp.sections.section2 && window.grxProp.sections.section2.id){
+                                sectionsArray.push(window.grxProp.sections.section2.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section2.id;
+                            }
+                            if(window.grxProp.sections.section3 && window.grxProp.sections.section3.id){
+                                sectionsArray.push(window.grxProp.sections.section3.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section3.id;
+                            }
+                            if(window.grxProp.sections.section4 && window.grxProp.sections.section4.id){
+                               sectionsArray.push(window.grxProp.sections.section4.name.toLowerCase());
+                               denmarkFolderId = window.grxProp.sections.section4.id;
+                            }
+                            if(window.grxProp.sections.section5 && window.grxProp.sections.section5.id){
+                                sectionsArray.push(window.grxProp.sections.section5.name.toLowerCase());
+                                denmarkFolderId = window.grxProp.sections.section5.id;
+                            }
+                            let section = sectionsArray.shift();
+                            let subsection = sectionsArray.join('/');
+                            storySection = section ? section: 'NA';
+                            storySubSection = subsection ? subsection: 'NA';
+                            denmarkFolderId = denmarkFolderId ? denmarkFolderId : 'NA';
+                        }
+
+                        let storyPublishedAt = parseInt(window.grxProp.lastPublishedTs) ? formatDate(parseInt(window.grxProp.lastPublishedTs)) : "946684800000";
+                        let storyUpdatedAt = '';
+                        if (window.grxProp.lastUpdatedDate && window.grxProp.lastUpdatedDate.split('#').length >1 && Date.parse(window.grxProp.lastUpdatedDate.split('#')[1])) {
+                            storyUpdatedAt = formatDate(window.grxProp.lastUpdatedDate.split('#')[1])
+                        } else {
+                            storyUpdatedAt = storyPublishedAt;
+                        }
+                        let storyLastUpdatedAt = storyUpdatedAt ? storyUpdatedAt : "946684800000";
+                        return {template, msid, primeStory, storyAgency, contentType, storyTemplate, storyNatureOfContent, storyTopicTree, authorName, subjectLine, title,
+                                onPlatformSource, storySection, storySubSection, denmarkFolderId, storyPublishedAt, storyLastUpdatedAt}
+                    }
+                  }
+            },
+            _setGrxProps: async function () {
+                console.log("_setGrxProps")
+                  try {
+                    await loadScript('https://timesofindia.indiatimes.com/platform_js/version-1,minify-1.cms');
+                  } catch(err) {
+                      console.log(err)
+                  }
+                  grx_module.setArticleRelatedGrxProps();
+                  
+                  if(typeof grx != "undefined"){
+                    if (window.platformData != "undefined") {
+                        grx('set', 'deviceManufacturer', window.platformData.manufacturer ? window.platformData.manufacturer: 'NA');
+                        grx('set', 'deviceModel', window.platformData.product ? window.platformData.product: 'NA');
+                        grx('set', 'osVersion', window.platformData.os && window.platformData.os.version ? window.platformData.os.version : 'NA');
+                        grx('set', 'osFamily', window.platformData.os && window.platformData.os.family ? window.platformData.os.family : 'NA');
+                    }
+                    grx('set', 'userId', getCookie("ssoid") ? getCookie("ssoid"): 'NA');
+                    grx('set', 'userLoginStatus', getCookie("ssoid") ? true : false);
+                    grx('set', 'primeStatus', getCookie("prc") ? getCookie("prc").split('#')[0] : '-1');
+                    grx('set', 'userCityFromGeo', getCookie("geolocation") ? getCookie("geolocation"): 'NA');
+                    grx('set', 'userState', getCookie("grxgeostate") ? getCookie("grxgeostate").replace(/%20/g, " "): 'NA');
+                    grx('set', 'userCountryCode', getCookie("geo_country") ? getCookie("geo_country"): 'NA');
+                    grx('set', 'source', document && document.referrer && document.referrer.includes('google') ? 'organic': 'direct');
+                    grx('set', 'platform', 'web');
+                    grx('set', 'signalEventType', 'screen_view');
+                    grx('set', 'deviceCategory', 'desktop');
+                  }
+            },
+            _setGlobalGrxProps: async function () {
+                let mandatoryGlobalGrx = ['userId', 'primeStatus', 'deviceManufacturer', 'deviceModel', 'osVersion', 'osFamily', 'userState', 'userCountryCode', 'primeStory', 'storyPublishedAt', 'storyLastUpdatedAt', 'url'];
+                  try {
+                    await loadScript('https://timesofindia.indiatimes.com/platform_js/version-1,minify-1.cms');
+                  } catch(err) {
+                      console.log(err)
+                  }
+                   window.grxProp=window.grxProp || {};
+                  if(typeof grx != "undefined" && typeof window.grxProp !== "undefined"){
+                    if (window.platformData != "undefined") {
+                        window.grxProp['deviceManufacturer'] = window.platformData.manufacturer ? window.platformData.manufacturer: 'Not Available';
+                        window.grxProp['deviceModel'] = window.platformData.product ? window.platformData.product: 'Not Available';
+                        window.grxProp['osVersion'] = window.platformData.os && window.platformData.os.version ? window.platformData.os.version : 'Not Available';
+                        window.grxProp['osFamily'] = window.platformData.os && window.platformData.os.family ? window.platformData.os.family : 'Not Available';
+                    }
+                    window.grxProp['url'] = window.location.href ? window.location.href : '';
+                    window.grxProp['userId'] = getCookie("ssoid") ? getCookie("ssoid"): 'Not Available';
+                    window.grxProp['userLoginStatus'] = getCookie("ssoid") ? true : false;
+                    window.grxProp['primeStatus'] = getCookie("prc") ? getCookie("prc").split('#')[0] : -1;
+                    window.grxProp['userCityFromGeo'] = getCookie("geolocation") ? getCookie("geolocation"): 'NA';
+                    window.grxProp['userState'] = getCookie("grxgeostate") ? getCookie("grxgeostate").replace(/%20/g, " "): 'Not Available';
+                    window.grxProp['userCountryCode'] = getCookie("geo_country") ? getCookie("geo_country"): 'Not Available';
+                    window.grxProp['source'] = document && document.referrer && document.referrer.includes('google') ? 'organic': 'direct';
+                    window.grxProp['platform'] = 'web';
+                    window.grxProp['signalEventType'] = 'screen_view';
+                    window.grxProp['deviceCategory'] = 'desktop';
+                    window.grxProp['primeStory'] = window.grxProp.primeId ? true : false;
+                    var storyPublishedAt = parseInt(window.grxProp.lastPublishedTs) ? formatDate(parseInt(window.grxProp.lastPublishedTs)) : 946684800000;
+                    window.grxProp['storyPublishedAt'] = storyPublishedAt;
+                    let storyUpdatedAt = '';
+                    if (window.grxProp.lastUpdatedDate && window.grxProp.lastUpdatedDate.split('#').length >1 && Date.parse(window.grxProp.lastUpdatedDate.split('#')[1])) {
+                        storyUpdatedAt = formatDate(window.grxProp.lastUpdatedDate.split('#')[1])
+                    } else {
+                        storyUpdatedAt = storyPublishedAt;
+                    }
+                    window.grxProp['storyLastUpdatedAt'] = storyUpdatedAt ? storyUpdatedAt : 946684800000;
+                    
+                    Object.keys(window.grxProp).map((key) => {
+                        if(mandatoryGlobalGrx.includes(key)) {
+                            grx('set', key, window.grxProp[key]);
+                        }
+                    })
+                    
+                  }
+            },
+            _getGrxObject: function () {
+                if(typeof grx != "undefined"){
+                    if (typeof window.grxProp != "undefined") {
+                        var articleGrxObj = grx_module.getArticleRelatedGrxProps() || {};
+                        
+                        var extraPayload = {
+                            userLoginStatus: window.grxProp['userLoginStatus'],
+                            userCityFromGeo: window.grxProp['userCityFromGeo'],
+                            source: window.grxProp['source'],
+                            platform: window.grxProp['platform'],
+                            signalEventType: window.grxProp['signalEventType'],
+                            deviceCategory: window.grxProp['deviceCategory'],
+                        }
+                        // nonGlobalGrxObject are those which will be sent in page view but not in signals_pageview
+                        var nonGlobalGrxObject = Object.assign(articleGrxObj, extraPayload);
+                        var signalsGrxObj={
+                            ClickFromPositionIntegerWithinSlot: -99,
+                            ClickFromSlotName: 'NA',
+                            ClickFromPersonalizationAlgorithmName: 'NA',
+                            ClickFromPixelsFromTop: -99,
+                            ClickFromTemplate: 'NA',
+                        };
+                        return {nonGlobalGrxObject, signalsGrxObj};
+                    }
+                  }
+            },
+            _isEtimes : function(u){
+                return ((u.indexOf('/recipes') > 0 || u.indexOf('/etbriefs') > 0 || u.indexOf('/entertainment') > 0 || u.indexOf('/etimes') > 0 || u.indexOf('/tv') > 0 || u.indexOf('/life-style') > 0 || u.indexOf('/lifestyle') > 0 || u.indexOf('photogallery') > 0)) ? true : false; 
+            },
+            _getProperty : function(){
+                return (grx_module.isEtimes(window.location.href)) ? grx_module.getconfig().property : grx_module.getconfig().property_toi;
+            },
+            _getSubProject : function(){
+                return (grx_module.isEtimes(window.location.href)) ? grx_module.getconfig().grx_subproject : grx_module.getconfig().grx_subproject_toi;
+            },
+            _getDefaultIcon : function(){
+                return (grx_module.isEtimes(window.location.href)) ? grx_module.getconfig().defaultIcon : grx_module.getconfig().defaultIconToi;
+            },
+            _getDefaultTitle : function(){
+                return (grx_module.isEtimes(window.location.href)) ? grx_module.getconfig().defaultTitle : grx_module.getconfig().defaultTitleToi;
+            },
+            _getDefaultMessage : function(){
+                return (grx_module.isEtimes(window.location.href)) ? grx_module.getconfig().defaultMessage : grx_module.getconfig().defaultMessageToi;
+            },
+            _getDefaultUrl : function(){
+                return (grx_module.isEtimes(window.location.href)) ? grx_module.getconfig().defaultUrl : grx_module.getconfig().defaultUrlToi;
+            },
+            _getSectionFromUrl : function(u){
+                var u = u.replace(".cms","");
+                var section = "toi";
+                    if(u.indexOf("https") >= 0){
+                        var u = (u.indexOf("?") >=0 ) ? u.split("?")[0] : u;
+                        var sourceString = u.replace('http://','').replace('https://','').split(/[/?#]/)[0];
+                        var domain = "https://" + sourceString + "/";
+                        section =  u.replace(domain,"").split("/")[0];
+                    }
+                    else if(u.indexOf("/") == 0){
+                        section =  u.split("/")[1];
+                    }
+                    else{
+                        section =  u.split("/")[0];
+                    }
+                return (section && typeof section != "undefined")? section :"toi";
+            },
+            _getSubSectionFromUrl : function(u){
+                var u = u.replace(".cms","");
+                var subSection = 'home';
+                    if(u.indexOf("https") >= 0){
+                        var u = (u.indexOf("?") >=0 ) ? u.split("?")[0] : u;
+                        var sourceString = u.replace('http://','').replace('https://','').split(/[/?#]/)[0];
+                        var domain = "https://" + sourceString + "/";
+                        subSection =  u.replace(domain,"").split("/")[1];
+                    }
+                    else if(u.indexOf("/") == 0){
+                        subSection =  u.split("/")[2];
+                    }
+                    else{
+                        subSection =  u.split("/")[1];
+                    }
+                    
+                        return (subSection && typeof subSection != "undefined")? subSection :"home";
+                    
+            },
+            removeSignalDataFromLocalStorage :function() {
+              localStorage.removeItem('signalsInfo');
+            },
+            _getSignalDataFromLocalStorage : function(){
+              const data = localStorage.getItem('signalsInfo');
+              this.removeSignalDataFromLocalStorage();
+              return data && JSON.parse(data);
+            },
+
+            
+            _hitGrxPageView : function(url){
+                if (typeof(grx) === "function") {
+                    var signalsWidgetData =  grx_module.getSignalDataFromLocalStorage() || {};
+                    var ClickFromPositionIntegerWithinSlot = signalsWidgetData.ClickFromPositionIntegerWithinSlot>-1? signalsWidgetData.ClickFromPositionIntegerWithinSlot : -99;
+                    var ClickFromSlotName = signalsWidgetData.ClickFromSlotName || 'NA';
+                    var ClickFromPersonalizationAlgorithmName = signalsWidgetData.ClickFromPersonalizationAlgorithmName || 'NA';
+                    var ClickFromPixelsFromTop = signalsWidgetData.ClickFromPixelsFromTop || -99;
+                    var ClickFromTemplate = signalsWidgetData.ClickFromTemplate || 'NA';
+                       var geocity = common_utility.getLocation();
+                       geocity = (typeof geocity != "undefined") ? geocity : "NEWDELHI";
+                       var screen_type = common_utility.getScreenType();
+                       var network = common_utility.getNetwork();
+	                    grx('track', 'page_view', {url: url , subProject:grx_module.getSubProject(), section:grx_module.getSectionFromUrl(url), subSection:grx_module.getSubSectionFromUrl(url), location: geocity, screen_type: screen_type, network: network,ClickFromPositionIntegerWithinSlot,ClickFromSlotName,ClickFromPersonalizationAlgorithmName,ClickFromPixelsFromTop,ClickFromTemplate,});
+                    }
+                
+            },
+            
+            // grx for React pages start
+            signalsObject:function (){
+                var signalsWidgetData =  grx_module.getSignalDataFromLocalStorage() || {};
+                var ClickFromPositionIntegerWithinSlot = signalsWidgetData.ClickFromPositionIntegerWithinSlot>-1? signalsWidgetData.ClickFromPositionIntegerWithinSlot : -99;
+                var ClickFromSlotName = signalsWidgetData.ClickFromSlotName || 'NA';
+                var ClickFromPersonalizationAlgorithmName = signalsWidgetData.ClickFromPersonalizationAlgorithmName || 'NA';
+                var ClickFromPixelsFromTop = signalsWidgetData.ClickFromPixelsFromTop || -99;
+                var ClickFromTemplate = signalsWidgetData.ClickFromTemplate || 'NA';
+                var signalsGrxObject = {
+                    ClickFromPositionIntegerWithinSlot,
+                    ClickFromSlotName,
+                    ClickFromPersonalizationAlgorithmName,
+                    ClickFromPixelsFromTop,
+                    ClickFromTemplate,
+                };
+                return signalsGrxObject;
+            },
+            getGeoLocation : function(currentcity){
+                if(typeof window.geoinfo != "undefined"){
+                    return{
+                        userState:window.geoinfo.city||"NEWDELHI",
+                        userCountryCode:window.geoinfo.CountryCode,
+                    } 
+                    
+                }else{
+                    common_utility.loadDynamicJS(grx_module.location_api)
+                    setTimeout(function() {
+                        return{
+                            userState: window.geoinfo && window.geoinfo.city?window.geoinfo.city:"NEWDELHI",
+                            userCountryCode:window.geoinfo && window.geoinfo.CountryCode?window.geoinfo.CountryCode:"IN",
+                        }
+                    },100);
+                }
+            },
+            getssoid : function(){
+                var ssoid=getCookie('ssoid')|| "Not Available";
+                return ssoid;
+            },
+            getPrimeStatus : function(){
+                var ssoid = getCookie('ssoid');
+                var prc = getCookie("prc")? getCookie("prc").split('#')[0] : '-1';
+                if (typeof window !== 'undefined' && !!ssoid) {
+                    prc = prc || '0';
+            
+                  if (
+                    window.sessionStorage &&
+                    sessionStorage.getItem('inGracePeriod') === 'true'
+                  ) {
+                    prc = '5_grace';
+                  }
+                } else {
+                  prc = '-1';
+                }
+                return prc
+            },
+            getStoryPublishedUpdatedTime: function(isFirstview){
+                var data={};
+                if(isFirstview){
+                    if(window.App?.state?.isArticleshowV2){
+                        var msid = window.App.state?.articleshow_v2?.data && Object.keys(window.App.state?.articleshow_v2.data)[0];
+                        // var msid=window.App.state?.articleshow_v2?.activemsid;
+                        data=window.App.state?.articleshow_v2?.data[msid];
+                    }else if(window.App.state?.isLiveblogV2){
+                        data=window.App.state?.liveblog_v2;
+                    }else if(window.location.href.indexOf('videoshow')>-1){
+                        data=window.App.state?.videoshow?.videoData;
+                    }
+                    var seoInfo = data?.seo || data?.seoData?.data || {};
+                    var datePublished = Date.parse(seoInfo.datePublished)? seoInfo.datePublished: data.datePublishedNew;
+                    var dateModified = Date.parse(seoInfo.dateModified)? seoInfo.dateModified: datePublished;
+                    datepublished=datePublished && formatDate(datePublished);
+                    dateModified=dateModified && formatDate(dateModified);
+                }else{
+                    dateModified=window.grxParams?.storyLastUpdatedAt;
+                    datepublished=window.grxParams?.storyPublishedAt;
+                }
+                return{
+                    dateModified,
+                    datepublished
+                }
+            },
+            setGlobalProperties: function(isFirstview){
+                var primestatus=fn.getPrimeStatus();
+                var ssoid=fn.getssoid();
+                var dateInfo= fn.getStoryPublishedUpdatedTime(isFirstview);
+                var storyLastUpdatedAt=dateInfo.dateModified;
+                var storyPublishedAt=dateInfo.datepublished;
+                var url=window.location.href;
+                var geoInfo=fn.getGeoLocation();
+                var userState = geoInfo.userState;
+                var userCountryCode = geoInfo.userCountryCode;
+                var referrer=document.referrer || 'Not Available';
+                if(window.grxParams){
+                    window.grx('set', 'primeStory', window.grxParams.primeStory); 
+
+                }
+                window.grx('set', 'storyLastUpdatedAt', storyLastUpdatedAt);   
+                window.grx('set', 'storyPublishedAt', storyPublishedAt);   
+                window.grx('set', 'primeStatus', primestatus);
+                window.grx('set', 'userId', ssoid);
+                window.grx('set', 'url', url);
+                window.grx('set', 'userState', userState);
+                window.grx('set', 'userCountryCode', userCountryCode);
+                window.grx('set', 'referrer', referrer);
+                
+            },
+            getcommonPageInfo: function (isFirstview){
+                var globalData = fn.setGlobalProperties(isFirstview);
+                // return data that needs to be sent specific to page view only
+                // return{
+                //     url,
+                //     userState,
+                //     userCountryCode,
+                // }
+            },
+            
+             _hitgrxPageviewReact: function(isFirstview){
+                var signalsGrxObject = fn.signalsObject();
+                var pageInfo = fn.getcommonPageInfo(isFirstview);
+                var pageViewObj = Object.assign(signalsGrxObject,pageInfo);
+                grx('track', 'Signals_PageView', pageViewObj);
+                grx_module.triggerGACustom('pageview_sent');
+                
+            },
+              // grx for React pages end
+              
+            triggerGrx: function(){
+                grx_module.loadGrxScript();
+                grx_module.initNtfcConfig();
+                grx_module.hitgrxPageviewReact('firstview');
+            }, 
+            triggerGACustom : function(action){
+                if(window.location.href.indexOf("/articleshow")>-1 && window.location.href.indexOf("/world")>-1){
+                    if(typeof window.ga ==='function'){
+                        if(!(typeof window.geoinfo != "undefined" && window.geoinfo.hasOwnProperty('Continent') && window.geoinfo.Continent === 'EU')){
+                            window.ga('send', 'event', 'Signals_PageView_v2',action,window.location.href, {
+                                nonInteraction: true,
+                            })
+                        }else {
+                            var actionvalue=action+'_notfired';
+                            window.ga('send', 'event', 'Signals_PageView_v2',actionvalue,window.location.href, {
+                                nonInteraction: true,
+                            })
+                        }
+                    }else{
+                        setTimeout(function() {
+                            if(!(typeof window.geoinfo != "undefined" && window.geoinfo.hasOwnProperty('Continent') && window.geoinfo.Continent === 'EU')){
+                                var actionvalue=action+'_timeout';
+                                window.ga('send', 'event', 'Signals_PageView_v2',actionvalue,window.location.href, {
+                                    nonInteraction: true,
+                                })
+                            }else {
+                                var actionvalue=action+'_notfired_timeout';
+                                window.ga('send', 'event', 'Signals_PageView_v2',actionvalue,window.location.href, {
+                                    nonInteraction: true,
+                                })
+                            }
+                        },2000);
+                    }
+                }
+            },
+              
+              
+            _hitPersonalizeGrxPageView : function(grxinfo){
+                if (typeof(grx) === "function") {
+                    const url = grxinfo.url;
+                    const nonGlobalGrxObject = grxinfo.nonGlobalGrxObject || {};
+                    const signalsGrxObject = grxinfo.signalsGrxObject || {};
+                    const enableSignalsPageView = grxinfo.enableSignalsPageView || false;
+                   var geocity = common_utility.getLocation();
+                   geocity = (typeof geocity != "undefined") ? geocity : "NEWDELHI";
+                   var screen_type = common_utility.getScreenType();
+                   var network = common_utility.getNetwork();
+                   var referrer=document.referrer || 'Not Available';
+                   window.grx('set', 'referrer', referrer);
+                    if(enableSignalsPageView){
+                        var signalsPageViewGrxobj = {
+                            url: url,
+                        }
+                        var pageViewObj = Object.assign(signalsPageViewGrxobj, signalsGrxObject);
+                        grx('track', 'Signals_PageView', pageViewObj);
+                    }else{
+                         var pageViewGrxobj = {
+                            url: url,
+                            subProject:grx_module.getSubProject(),
+                            section:grx_module.getSectionFromUrl(url),
+                            subSection:grx_module.getSubSectionFromUrl(url),
+                            location: geocity,
+                            screen_type: screen_type,
+                            network: network
+                        }
+                        var pageViewObj = Object.assign(pageViewGrxobj, nonGlobalGrxObject,signalsGrxObject);
+                        grx('track', 'page_view', pageViewObj);
+                    }
+                }
+            }
+        }
+        api = {
+            initNtfcConfig : function(isReact) { fn._initNtfcConfig(isReact); }, 
+            appendUTMs : function (u){ return fn._appendUTMs(u); },
+            loadGrxScript : function (){ fn._loadGrxScript(); },
+            getconfig : function (){ return config; },
+            getSectionFromUrl : function (u){ return fn._getSectionFromUrl(u); },
+            getSubSectionFromUrl : function (u){ return fn._getSubSectionFromUrl(u); },
+            hitGrxPageView : function (url){ fn._hitGrxPageView(url); },
+            isEtimes : function (u){ return fn._isEtimes(u); },
+            getProperty :  function (){ return fn._getProperty(); },
+            getSubProject :  function (){ return fn._getSubProject(); },
+            getDefaultIcon :  function (){ return fn._getDefaultIcon(); },
+            getDefaultTitle :  function (){ return fn._getDefaultTitle(); },
+            getDefaultMessage :  function (){ return fn._getDefaultMessage(); },
+            getDefaultUrl :  function (){ return fn._getDefaultUrl(); },
+            getSignalDataFromLocalStorage :  function (){ return fn._getSignalDataFromLocalStorage(); },
+            setGrxProps: fn._setGrxProps,
+            setGlobalGrxProps: fn._setGlobalGrxProps,
+            setArticleRelatedGrxProps: fn._setArticleRelatedGrxProps,
+            getArticleRelatedGrxProps: fn._getArticleRelatedGrxProps,
+            hitPersonalizeGrxPageView : function (grxInfo){ fn._hitPersonalizeGrxPageView(grxInfo); },
+            getGrxObject: fn._getGrxObject,
+            hitgrxPageviewReact:function (isFirstview){fn._hitgrxPageviewReact(isFirstview);},
+            triggerGrx:fn.triggerGrx,
+            triggerGACustom:fn.triggerGACustom,
+            
+        };
+        return api;
+    }());
+//******************************** GRX CONFIG MODULE END ************************************//	    
+//******************************** COOKIE MODULE START ************************************//
+	var ntfc_cookie = (function(){
+		    "use strict";
+		    var fn, api;    
+		        //private functions    
+		        fn = {
+		            _Set_Ckie : function(name, value, expires, path, domain, secure){
+		                try {
+                            var today = new Date()
+                            today.setTime(today.getTime())
+                            if (expires) {
+                                expires = expires * 1000 * 60 * 60 * 24
+                            }
+                            var expires_date = new Date(today.getTime() + (expires))
+                            document.cookie = name + "=" + escape(value) + ((expires) ? ";expires=" + expires_date.toGMTString() : "") + ((path) ? ";path=" + path : "") + ((domain) ? ";domain=" + domain : "") + ((secure) ? ";secure" : "")
+                        } catch (ex) {}
+		            },
+		            _Read_Ckie : function(name){
+		                var nameEQ = name + "=";
+                        var cookies = document.cookie.split(';');
+                        for (var i = 0; i < cookies.length; i++) {
+                            var cokie = cookies[i];
+                            while (cokie.charAt(0) == ' '){
+                                cokie = cokie.substring(1, cokie.length);
+                                
+                            }
+                            if (cokie.indexOf(nameEQ) == 0){ 
+                                return cokie.substring(nameEQ.length, cokie.length);
+                                
+                            }
+                        }
+                        return undefined;
+		            },
+		            _Del_Ckie : function(name, path, domain){
+		                try {
+                                if (readCookieVal(name)) {
+                                    document.cookie = name + "=" + ((path) ? ";path=" + path : "") + ((domain) ? ";domain=" + domain : "") + ";expires=Thu, 01-Jan-1970 00:00:01 GMT";
+                                }
+                            } catch (ex) {}
+		            },
+		            _splitHostname : function () {
+                            var result = {};
+                            var regexParse = new RegExp('([a-z\-0-9]{2,63})\.([a-z\.]{2,5})$');
+                            var urlParts = regexParse.exec(window.location.hostname);
+                            result.domain = urlParts[1];
+                            result.type = urlParts[2];
+                            result.subdomain = window.location.hostname.replace(result.domain + '.' + result.type, '').slice(0, -1);;
+                            return result;
+                    }
+		        };   
+                        
+            api = {
+		        //public functions
+		        set_cookie : function(name, value, expires, path, domain, secure){
+		           fn._Set_Ckie(name, value, expires, path, "."+fn._splitHostname().domain+".com", secure);
+		        },
+		        get_cookie : function(name){
+		            return fn._Read_Ckie(name);
+		        },
+		        del_cookie : function(name, path, domain){
+		            fn._Del_Ckie(name, path, "."+fn._splitHostname().domain);
+		        }
+		    };      
+		    return api;
+		    
+		}());
+		
+//******************************** COOKIE MODULE END ************************************//
+//******************************** COMMON UTILITY MODULE START ************************************//
+	var common_utility = (function(){
+		    "use strict";
+		    var fn, api;
+		    fn = {
+		        _checkGdprAndCall : function(callback, callbackForEu, checkForUserConsent){
+            	    try{
+                        window.TimesGDPR = window.parent.TimesGDPR;
+                    }catch(e){}
+                      
+                    if ( 
+                        window.TimesGDPR && TimesGDPR.common.consentModule.gdprCallback
+                    ){
+                        TimesGDPR.common.consentModule.gdprCallback(function(data){
+                            if(data && data.isEUuser && typeof callbackForEu == "function" ){
+                                callbackForEu();
+                            }else if( !data.isEUuser && typeof callback == "function" ){
+                                callback();
+                            }
+                        });
+                    }else if(typeof callbackForEu == "function"){
+                        callbackForEu();
+                    }          
+                },
+                _getMobileOperatingSystem : function() {
+                  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                
+                      // Windows Phone must come first because its UA also contains "Android"
+                    if (/windows phone/i.test(userAgent)) {
+                        return "Windows Phone";
+                    }
+                
+                    if (/android/i.test(userAgent)) {
+                        return "Android";
+                    }
+                
+                    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+                    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+                        return "iOS";
+                    }
+                
+                    return "unknown";
+                },
+                _isAndroid : function(){
+                    return (common_utility.getMobileOperatingSystem().toLowerCase().trim() == "android");    
+                },
+                _isIOS : function(){
+                    return (common_utility.getMobileOperatingSystem().toLowerCase().trim() == "ios");     
+                },
+                _loadDynamicJS : function(file) {
+                    var jsElm = document.createElement("script");
+                    jsElm.type = "application/javascript";
+                    jsElm.src = file;
+                    document.body.appendChild(jsElm);
+                },
+                _loadDynamicCSS : function(file){
+                  var element = document.createElement("link");
+                    element.setAttribute("rel", "stylesheet");
+                    element.setAttribute("type", "text/css");
+                    element.setAttribute("href", file);
+                    document.getElementsByTagName("head")[0].appendChild(element);  
+                },
+                _ajaxGetSync : function(url){
+    	            return $.ajax({
+                            type: "GET",
+                            async: false,
+                            url: url
+                    });
+                },
+                _hitLocationApi : function(currentcity){
+                    if(typeof window.geoinfo != "undefined"){
+                        return window.geoinfo.city;
+                    }else{
+                          common_utility.loadDynamicJS(grx_module.getconfig().location_api)
+                          setTimeout(function() {
+                               return (window.geoinfo) ? window.geoinfo.city : "NEWDELHI"
+                          }, 100);
+                    }
+                },
+                _addDays : function(theDate, days) {
+                    return new Date(theDate.getTime() + days*24*60*60*1000);
+                },
+                _getLocation : function(){
+                    var geocity = "--"; 
+                    geocity = common_utility.hitLocationApi();
+                    return geocity;
+                },
+                _getScreenType : function(){
+                    var screen_type = "--";
+                    if(domainsArray.includes(window.location.href)){
+	                            screen_type=eventCategory['home'];
+	                        }
+	                     else{
+    	                    categoryArray.forEach(function(key){
+    	                       if(window.location.pathname.match(key)){
+    	                           screen_type=eventCategory[key];
+    	                       }
+    	                    })
+	                  
+	                    }
+	               screen_type= (screen_type != "--" )? screen_type : defaultCategory;
+	               return screen_type;    
+                },
+                _getNetwork : function(){
+                    var network = "--";
+                    network = (typeof navigator != "undefined" && typeof navigator.connection != "undefined" && typeof navigator.connection.effectiveType != "undefined") ? navigator.connection.effectiveType : network;
+                    return network;
+                }
+		    };
+		    api = {
+		        checkGdprAndCall : function(callback, callbackForEu, checkForUserConsent){ fn._checkGdprAndCall(callback, callbackForEu, checkForUserConsent); },
+		        getMobileOperatingSystem : function(){ return fn._getMobileOperatingSystem(); },
+		        isAndroid : function (){ return fn._isAndroid(); },
+		        isIOS : function (){ return fn._isIOS(); },
+		        loadDynamicJS : function (file){  fn._loadDynamicJS(file); },
+		        loadDynamicCSS : function (file){  fn._loadDynamicCSS(file); },
+		        ajaxGetSync : function (url){ return fn._ajaxGetSync(url); },
+		        hitLocationApi : function (adCodeCity){ return fn._hitLocationApi(adCodeCity); },
+		        addDays : function (theDate, days){ return fn._addDays(theDate, days); },
+		        getLocation : function (){ return fn._getLocation(); },
+		        getScreenType : function (){ return fn._getScreenType(); },
+		        getNetwork : function (){ return fn._getNetwork(); }
+		    }
+		    return api;
+	}());
+//******************************** COMMON UTILITY MODULE END ************************************//
+
+//******************************** NOTIFICATION MODULE START ************************************//	  
+
+var ntfc_module = (function(){
+    var fn,api,config;
+    config = {
+        'ntfc_close_frequency' : 3,
+        'ntfc_disable_pages' : ['toierrorfound.cms'],
+        'ntfc_dom' : '<div class="ntfc_overlay"></div><div class="ntfc_popup"> <div class="ntfc_logo"> <img src="https://timesofindia.indiatimes.com/photo/75621173.cms" /> </div> <div class="ntfc_content"> <h4>Stay updated with the latest Entertainment &amp; Lifestyle News</h4> <span class="ntfc_buttongroup"> <a href="javascript://" class="ntfc_dactive" data-plugin="ntfc-close">Remind me later</a> <a href="javascript://" class="ntfc_active" data-plugin="ntfc-enable">Enable</a> </span> <p class="tnc">You can manage them anytime using browser settings</p> </div> </div>',
+        'ntfc_dom_toi': '<div class="ntfc_overlay"></div><div class="ntfc_popup"> <div class="ntfc_logo"> <img src="https://timesofindia.indiatimes.com/photo/54312174.cms" /> </div> <div class="ntfc_content"> <h4>The latest news and updates...</h4> <p>Get instant notifications as they happen</p> <span class="ntfc_buttongroup"> <a href="javascript://" class="ntfc_dactive ntfc_dactive_toi" data-plugin="ntfc-close">Not Now</a> <a href="javascript://" class="ntfc_active ntfc_active_toi" data-plugin="ntfc-enable">Enable</a> </span> <p class="tnc">You can manage them anytime using browser settings</p> </div> </div>',
+        'jquery_path' :'https://timesofindia.indiatimes.com/videos/jquery_1_11_0_min/version-13,minify-1.cms',
+        'ntfc_css_path' :'https://timesofindia.indiatimes.com/notificationcss/version-2,minify-1.cms'
+        
+    };
+    fn = {
+        _isChrome : function(){
+            return /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+        },
+        _isMozilla : function(){
+            return /firefox/i.test(navigator.userAgent);
+        },
+        _isSafari : function(){
+            if(common_utility.isIOS()){
+                var ua = window.navigator.userAgent;
+                var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+                var webkit = !!ua.match(/WebKit/i);
+                var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+                return iOSSafari;
+            }
+            else{
+                 return (/^((?!chrome|android).)*safari/i.test(navigator.userAgent));
+            }
+        },
+        _close : function(){
+            document.querySelector(".ntfc_overlay").remove();
+            document.querySelector(".ntfc_popup").remove();
+            ntfc_cookie.set_cookie("_grxntfcskip", "true" , config.ntfc_close_frequency, "/", "", false);
+        },
+        _allow : function(){
+            document.querySelector(".ntfc_overlay").remove();
+            document.querySelector(".ntfc_popup").remove();
+            ntfc_cookie.set_cookie("_grxntfcproceed", "true" , config.ntfc_close_frequency, "/", "", false);
+        },
+        _triggerGAEvent : function(catg, action, label){
+            if(typeof ga!="undefined" && grx_module.getconfig().ga_enable){
+                ga('send', 'event', catg, action, label, {'nonInteraction': 1});
+            }
+        },
+        _getBrowser : function(){
+            if(ntfc_module.isChrome()){
+                return 'chrome';
+            }else if(ntfc_module.isMozilla()){
+                return 'mozilla';
+            }else if(ntfc_module.isSafari()){
+                return 'safari';
+            }
+            return 'unknown';
+        },
+        _events : function(){
+            document.querySelector('[data-plugin="ntfc-close"]').addEventListener("click", function(){
+                ntfc_module.triggerGAEvent(grx_module.getconfig().popup1_ga_cat, grx_module.getconfig().popup1_ga_act+'_'+grx_module.getProperty()+'_'+grx_module.getconfig().platform, grx_module.getconfig().popup1_ga_label_notnow);
+                ntfc_module.close();
+                return false;
+            });
+            document.querySelector('[data-plugin="ntfc-enable"]').addEventListener("click", function(){
+                ntfc_module.triggerGAEvent(grx_module.getconfig().popup1_ga_cat, grx_module.getconfig().popup1_ga_act+'_'+grx_module.getProperty()+'_'+grx_module.getconfig().platform, grx_module.getconfig().popup1_ga_label_allow);
+                ntfc_module.allow();
+                
+                common_utility.checkGdprAndCall(function(){
+                        if( typeof ntfc_module!= "undefined" && ntfc_module ) ntfc_module.initBrowserPopup();
+                        return false;
+                    }, function(){
+                        window.addEventListener('load', function() {
+                           if ('serviceWorker' in navigator) {
+                               try{
+                                    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            		                   	for(var registration in registrations) {  
+            		                   	    registrations.hasOwnProperty('registration') && registration.unregister();
+            		                   	}
+                       	            });   
+                               }catch(e){}
+                           }
+                        });
+                    });
+                
+                return false;
+            });
+            
+        },
+        _registerSW : function(){
+            ntfc_module.triggerGAEvent(grx_module.getconfig().popup2_ga_cat, grx_module.getconfig().popup2_ga_act+'_'+grx_module.getProperty()+'_'+grx_module.getconfig().platform, grx_module.getconfig().popup2_ga_label_viewed);
+            // grx('enablePush');
+            grx("enableCustompopup");
+        },
+        _initBrowserPopup : function(callback){
+            if(typeof grx != "undefined"){
+                ntfc_module.registerSW();
+                if(typeof callback === "function"){
+                    window.globalCallbackAfterSuscription = callback;
+                }
+            }
+        },
+        _callInhousePopup : function(){
+            common_utility.loadDynamicCSS(config.ntfc_css_path);
+             if(typeof grx != "undefined"){
+                if(typeof Notification === "function" && ntfc_module.valid() && !ntfc_module.isBlocked() && ('serviceWorker' in navigator)){
+                    if(Notification.permission === 'default'){}
+                }
+                else{
+                    console.log("Browser doesn't support Notification")
+                }
+            }
+            else{
+                grx_module.loadGrxScript();
+                setTimeout(function() {
+                    ntfc_module.init();
+                }, 1000);
+            }
+        },
+        _init : function(){
+           if ( 
+                window.TimesGDPR 
+                && TimesGDPR.common.consentModule.gdprCallback
+            ){
+                TimesGDPR.common.consentModule.gdprCallback(function(data){
+                    if(!data.isEUuser){
+                        ntfc_module.callInhousePopup();
+                    }
+                });
+            }
+        },
+        _isBlocked : function(){
+            for(idx=0; idx < config.ntfc_disable_pages.length; idx++){
+                if(window.location.href.indexOf(config.ntfc_disable_pages[idx])!=-1){
+                    return true;
+                }
+            }
+            return false;
+        },
+        _isFrmAppYes : function(){
+            if(window.location.href.indexOf("frmapp")!=-1){
+                return true;
+            }
+            return false;
+        },
+        _valid : function(){
+            if((ntfc_module.isChrome() || ntfc_module.isMozilla() || ntfc_module.isSafari()) && !ntfc_cookie.get_cookie('_grxntfcproceed') && !ntfc_cookie.get_cookie('_grxntfcskip') && !ntfc_cookie.get_cookie('_grxntfcblock') && !ntfc_cookie.get_cookie('_grxntfcallow') && !ntfc_module.isFrmAppYes()){
+                if(typeof tempname != "undefined" && tempname == "photostory" && typeof isEtimesProperty != "undefined" && isEtimesProperty == "no"){
+                    return false;
+                }
+                if(typeof tname != "undefined" && tname == "entphotostory" && typeof isEtimesProperty != "undefined" && isEtimesProperty == "no"){
+                    return false;
+                }
+               return true;
+            }
+            return false;
+        }
+        
+    };
+    api = {
+        isChrome : function (){ return fn._isChrome(); },
+        isMozilla : function (){ return fn._isMozilla(); },
+        isSafari : function (){ return fn._isSafari(); },
+        close : function (){ fn._close(); },
+        allow : function (){ fn._allow(); },
+        triggerGAEvent : function (catg, action, label){ fn._triggerGAEvent(catg, action, label); },
+        getBrowser : function (){ return fn._getBrowser(); },
+        events : function (){ fn._events(); },
+        registerSW : function (){ fn._registerSW(); },
+        initBrowserPopup : function (callback){ fn._initBrowserPopup(callback); },
+        callInhousePopup : function (){ fn._callInhousePopup(); },
+        init : function (){ fn._init(); },
+        isBlocked : function (){ return fn._isBlocked(); },
+        isFrmAppYes : function (){ return fn._isFrmAppYes(); },
+        valid : function (){ return fn._valid(); },
+    };
+    return api;
+}());
+   common_utility.hitLocationApi();
+                     
+//******************************** NOTIFICATION MODULE END ************************************//	
+
+   if(fromreact){
+       if(!(typeof window.geoinfo != "undefined" && window.geoinfo.hasOwnProperty('Continent') && window.geoinfo.Continent === 'EU')){
+          if (typeof window.requestIdleCallback ==='function'){
+                window.requestIdleCallback(grx_module.triggerGrx)
+          }else{
+                grx_module.triggerGrx();
+          }
+       }else{
+           grx_module.triggerGACustom('script_executed_eu');
+       }
+      
+   }
+    grx_module.triggerGACustom('script_executed');
+    
+	    
+		
+	

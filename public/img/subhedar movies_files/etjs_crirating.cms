@@ -1,0 +1,28 @@
+
+				var allrv = {"sec":[{"msid":"","cntval":"NaN"},{"msid":"104214397","cntval":"4.6"},{"msid":"104234439","cntval":"1.2"},{"msid":"","cntval":"NaN"},{"msid":"","cntval":"NaN"},{"msid":"103286355","cntval":"2.0"},{"msid":"","cntval":"NaN"},{"msid":"103305776","cntval":"4.0"},{"msid":"103062959","cntval":"4.5"},{"msid":"103285803","cntval":"2.5"},{"msid":"","cntval":"NaN"},{"msid":"101719802","cntval":"5.0"},{"msid":"102012790","cntval":"2.5"},{"msid":"101784547","cntval":"2.2"},{"msid":"","cntval":"NaN"},{"msid":"101393992","cntval":"4.0"},{"msid":"","cntval":"NaN"},{"msid":"","cntval":"NaN"},{"msid":"","cntval":"NaN"},{"msid":"","cntval":"NaN"},{"msid":"100680433","cntval":"3.0"},{"msid":"100127359","cntval":"4.4"},{"msid":"100529916","cntval":"4.2"},{"msid":"","cntval":"NaN"},{"msid":"","cntval":"NaN"},{"msid":"100505824","cntval":"5.0"},{"msid":"100247260","cntval":"4.0"},{"msid":"","cntval":"NaN"},{"msid":"100707156","cntval":"3.5"},{"msid":"100038587","cntval":"1.0"},{"msid":"100017005","cntval":"3.3"},{"msid":"100010385","cntval":"2.0"},{"msid":"","cntval":"NaN"},{"msid":"99850259","cntval":"2.7"},{"msid":"99850379","cntval":"3.5"},{"msid":"99402936","cntval":"4.5"},{"msid":"99498258","cntval":"1.0"},{"msid":"99552873","cntval":"3.0"},{"msid":"99234551","cntval":"5.0"},{"msid":"99498215","cntval":"3.5"},{"msid":"99313273","cntval":"2.3"},{"msid":"99319082","cntval":"3.8"},{"msid":"98945805","cntval":"3.3"},{"msid":"","cntval":"NaN"},{"msid":"98392801","cntval":"3.5"},{"msid":"98392430","cntval":"2.5"},{"msid":"97687966","cntval":"3.5"},{"msid":"97690720","cntval":"5.0"},{"msid":"97813811","cntval":"1.5"},{"msid":"97813601","cntval":"3.4"}]};	
+
+						var _readerRatingDiv = $('div[data-plugin="readerrating"]');
+						$(_readerRatingDiv).each(function(i){
+						    if(allrv.sec[i] && allrv.sec[i].cntval && !isNaN(allrv.sec[i].cntval)  )
+						    {
+						        $(this).find('.star_count').text(allrv.sec[i].cntval);
+						        if($(this).find('.big_blue_star_sprite').length > 0)
+    						    $(this).find('.big_blue_star_sprite').css('width',(allrv.sec[i].cntval)*20+'%');
+    						    else
+    						    $(this).find('.blue_star').css('width',(allrv.sec[i].cntval)*20+'%');
+    						    $(this).removeAttr('data-plugin');
+						    }
+						    else
+						    {
+						        $(this).removeAttr('data-plugin');
+						        $(this).find('.big_star_sprite').hide();
+						        $(this).find('.star_count').hide();
+						        var elem = '<span class="no_userrating">Not available</span>'
+						        $(this).append(elem);
+						    }
+						    
+						});
+						
+					//}
+					
+		

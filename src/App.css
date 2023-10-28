@@ -23,7 +23,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: white; 
 }
 
 .App-link {
@@ -270,9 +270,15 @@ textarea {
 
 button {
   padding: 10px;
+
+  background-color: red;
+   color: #fff;  
+
   background-color: rgb(231, 7, 52);
   color: #fff;
+  
   border: none;
+
   border-radius: 8px;
   cursor: pointer;
   margin: 5px;
