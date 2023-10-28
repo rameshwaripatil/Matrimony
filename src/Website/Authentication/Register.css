@@ -1,0 +1,98 @@
+/* Global styles */
+/* body {
+  font-family: Arial, sans-serif;
+} */
+
+/* Container styles */
+.contact__form--label{
+  font-size: large;
+  background-color: red;
+}
+.contact__form--input
+{
+  color: black;
+}
+.otpdata{
+  color: black;
+}
+.login__section
+{
+  background-color: aqua;
+}
+.registration-page{
+  background-image: url("https://images.pexels.com/photos/2060240/pexels-photo-2060240.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: 5%;
+  background-size: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Form container styles */
+.registration-container {
+  background-color: black;
+  padding: 20px;
+  margin-top: 5%;
+margin-left: 35%;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 30%;
+  height: 40%;
+}
+
+/* Form section styles */
+.form-section {
+  margin-bottom: 20px;
+}
+
+/* Input field styles */
+.registration-input input,
+.form-input {
+  width: 100%;
+  padding: 10px;
+  background-color: #EE0B42;
+  margin-bottom: 10px;
+  border: 1px solid #EE0B42;
+  border-radius: 5px;
+}
+
+/* Form label styles */
+.form-label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Select styles */
+.form-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Button styles */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #00ff00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: red;
+}
+
+.btn-block {
+  width: 100%;
+}

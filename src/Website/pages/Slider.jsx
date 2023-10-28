@@ -27,8 +27,8 @@ const Slider = () => {
     </div>
     <div className="main-text hidden-xs clearfix">
       <div className="col-md-12 text-center">
-        <h1>Best Matrimonial Website</h1>
-        <p>Vestibulum lacinia arcu eget nulla ad litora torquent per conubia nostra.</p>
+        <h1>Your Life Partner is Here</h1>
+        <p>Your Successful Life Partner is Our Responsibility...!</p>
       </div>
     </div>
   </section>

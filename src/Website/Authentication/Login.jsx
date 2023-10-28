@@ -1,22 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
+import { useNavigate } from "react-router-dom";
+import Authuser from "./Authuser";
+import { toast } from "react-toastify";
 const Login = () => {
+  const notify = (M) => toast.error(M);
+
+  const { http, setToken, token } = Authuser();
+  const [btnDiseble, setDisebale] = useState(0);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (token != null) {
+      navigate("/");
+    }
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, [navigate, token]);
+  
+  const [Login, SetLogin] = useState({email: '',password: '' });
+
+  const OninputChange = (e) => {
+    SetLogin({ ...Login, [e.target.name]: e.target.value });
+  }
+
+
+  const onSubmit=(e) => {
+  e.preventDefault();
+ 
+
+    http.post("/user/login", Login)
+      .then((res) => {
+        console.log(res.data.user_data);
+        if (res.data.token) {
+          setToken(res.data.user_data, res.data.token);
+          
+          navigate("/");
+        } else {
+          notify(res.data.message);
+        }
+        setDisebale(0);
+      })
+      .catch((error) => {
+        // notify("The provided credentials are invalid");
+        setDisebale(0);
+      });
+};
   return (
     <div>
       <div className="all-title-bol">
         <div className="container">
-          {/* <div className="row">
-            <div className="col-lg-12">
-              <form>
-              <h5 style={{ color: 'white', fontWeight: 'bold' }}>Login</h5>
-              <ul className="row ">
-                <li className="breadcrumb-item"><a style={{ color: 'white', fontWeight: 'bold' }} href="#">Home</a></li>
-                <li className="breadcrumb-item active" style={{ color: 'white', fontWeight: 'bold' }}>Contact</li>
-              </ul>
-              </form>
-              
-            </div>
-          </div> */}
+         
 
           <div className="row row-cols-md-2 row-cols-1 d-flex justify-content-center">
             <div className="col">
@@ -31,24 +66,14 @@ const Login = () => {
                 </div>
                 <div className="account__login--inner">
                   <div className="row">
-                    <label>
-                      <input
-                        className="account__login--input"
-                        placeholder="Enter Email Address"
-                        type="email"
-                        name="email"
-                       
-                      />
-                    </label>
-                    <label>
-                      <input
-                        className="account__login--input"
-                        placeholder="Enter your Password"
-                        type="password"
-                        name="password"
-                        
-                      />
-                    </label>
+                  <div className="form-group"><input name='email' type='text' onChange={(e) => OninputChange(e)}className="form-control" placeholder="Enter your User Id | Mobile Numbar | Email Id " />
+              </div>
+              <div className="form-group"><input name='password' type='password' onChange={(e) => OninputChange(e)} className="form-control" placeholder="Enter your password" />
+              </div>
+              <div className="form-check mb-3"><input className="form-check-input" type="checkbox" defaultValue id="check" /><label className="form-check-label" htmlFor="check">Remember Me</label></div>
+              <div className="form-button"><button type="submit" onClick={(e) => onSubmit(e)} >login</button>
+                <p >Forgot your password?<a href="/forgot-password">reset here</a></p>
+              </div>
                   </div>
                   <div className="account__login--remember__forgot mb-15 d-flex justify-content-between align-items-center">
                     <div className="account__login--remember position__relative">

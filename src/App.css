@@ -270,8 +270,13 @@ textarea {
 
 button {
   padding: 10px;
+<<<<<<< HEAD
   background-color: red;
    color: #fff;  
+=======
+  background-color: rgb(231, 7, 52);
+  color: #fff;
+>>>>>>> 2f2eeaac6e2ce0d7b535d33f99aad1e08d391e20
   border: none;
   border-radius: 8px;
   cursor: pointer;

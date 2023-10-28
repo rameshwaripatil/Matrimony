@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
 import "./Grooms.css";
+
 import AliceCarousel from 'react-alice-carousel';
 
 
@@ -22,6 +23,38 @@ const Grooms = () => {
     http.get(`get_member_detail_bride`)
       .then((response) => {
         setBrides(response.data.data.data);
+import AliceCarousel from 'react-alice-carousel'; // Import the library
+import 'react-alice-carousel/lib/alice-carousel.css'; // Import the default styles
+
+
+
+
+
+
+const Grooms = () => {
+  const { http, token } = Authuser();
+const [cast,setCast]=useState([])
+  const [groom, setGroom] = useState([]);
+  const items = cast.map((cast, index) => (
+    <div
+      key={`item${index}`} // Add a unique key for each item using the index
+      className="bg-danger text-center text-white"
+      style={{
+        height: '80px',
+        width: '80px',
+        borderRadius: '50%',
+        paddingTop: '29px',
+        fontSize: '12px',
+      }}
+    >
+      {cast.caste}
+    </div>
+  ));
+  const Brides = () => {
+    http.get(`get_member_detail_groom`)
+      .then((response) => {
+        setGroom(response.data.data.data);
+  f2eeaac6e2ce0d7b535d33f99aad1e08d391e20
         console.log(response.data.data.data);
       })
       .catch((error) => {
@@ -48,6 +81,40 @@ const Grooms = () => {
       </div>
 <div className="container-fluid " style={{marginTop: 10, marginBottom: 10,background:"red"}}><div className="row"><div className="col-md-9 offset-md-2  "><div className="alice-carousel"><div><div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}><ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1904.95px, 0px, 0px)'}}><li className="alice-carousel__stage-item _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _active _target" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _active" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item _active _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item _active _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _active _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item _cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li></ul></div></div></div></div></div></div>
 <AliceCarousel mouseTracking items={items} />
+     
+
+<div className="container-fluid " style={{marginTop: 100, marginBottom: 10,paddingTop:100,background:"green"}}><div className="row"><div className="col-md-9 offset-md-2  "><div className="alice-carousel"><div><div className="alice-carousel__wrapper" style={{paddingLeft: 0, paddingRight: 0}}><ul className="alice-carousel__stage" style={{transition: 'transform 1000ms ease 0ms', transform: 'translate3d(-1904.95px, 0px, 0px)'}}><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active __target" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white" href="/view_by_cast/1/1/Not Assign" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Not Assi..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/2/Brahmin - Audichya" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __active __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/3/Brahmin - Anaviln Desai" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/4/Brahmin - Anavil" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmin ..</a></li><li className="alice-carousel__stage-item __cloned" style={{width: '238.119px'}}><a className="bg-danger text-center text-white  " href="/view_by_cast/1/5/Brahmbatt" style={{height: 90, width: 90, borderRadius: '50%', paddingTop: 38, fontSize: 14}}> Brahmbat..</a></li></ul></div></div></div></div></div></div>
+
+<AliceCarousel
+  autoPlay
+  autoPlayInterval={3000}
+/>
+
+<div style={{ marginLeft: '80px' }}>
+
+          <AliceCarousel
+            items={items}
+
+            responsive={{
+              0: { items: 2 },
+              600: { items: 3 },
+              1024: { items: 5 },
+            }}
+            autoPlay={true}
+            disableDotsControls={true}
+            disableButtonsControls={true}
+          />
+        </div>
+
+
+
+
+
+
+
+
+
+   
       <section id="about_last">
         <div className="container">
           <div className="row">
@@ -58,7 +125,11 @@ const Grooms = () => {
               </div>
             </div>
             <div className="team col-sm-12  clearfix">
+
               {bri.map((el) => (
+
+              {groom.map((el) => (
+              
 
                 <div className="col-sm-4  col-lg-4">
 
@@ -123,5 +194,6 @@ const Grooms = () => {
     </div>
   )
 }
-
 export default Grooms
+
+
