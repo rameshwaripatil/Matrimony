@@ -1,13 +1,14 @@
 import React from 'react'
 import { useEffect } from 'react'
 import AliceCarousel from 'react-alice-carousel'
+import AuthUser from '../../auth/Authuser'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import Authuser from '../Authentication/Authuser'
+import CircularScaler from './CircularScaler'
 
-const CastSlider = () => {
+const CastCard = () => {
     const [Loader, setLoader] = useState(true);
-    const { http } = Authuser();
+    const { http } = AuthUser();
     const [cast, Setcast] = useState([]);
     useEffect(() => {
         http.get(`/get_curd_all_imformation/for_fillter`).then((res) => {
@@ -57,11 +58,11 @@ const CastSlider = () => {
     ]
     const Skeleton = [
 
-        // <CircularScaler />,
-        // <CircularScaler />,
-        // <CircularScaler />,
-        // <CircularScaler />,
-        // <CircularScaler />,
+        <CircularScaler />,
+        <CircularScaler />,
+        <CircularScaler />,
+        <CircularScaler />,
+        <CircularScaler />,
     ]
     return (
         <div>
@@ -118,4 +119,4 @@ const CastSlider = () => {
         </div>
     )
 }
-export default CastSlider
+export default CastCard
