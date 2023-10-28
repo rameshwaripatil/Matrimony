@@ -58,7 +58,7 @@ const [cast,setCast]=useState([])
       {cast.caste}
     </div>
   ));
-  const Brides = () => {
+  const Grooms = () => {
     http.get(`get_member_detail_groom`)
       .then((response) => {
         setGroom(response.data.data.data);
@@ -86,7 +86,7 @@ const [cast,setCast]=useState([])
 
 
   useEffect(() => {
-    Brides();
+    Grooms();
     getCasts();
 
   }, [token])
