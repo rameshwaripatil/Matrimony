@@ -1,232 +1,169 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
-import Authuser from "./Authuser";
+import React, { useEffect, useState } from 'react';
+import './Register.css';
 
 function Register() {
-  const { http,setToken, token } = Authuser();
-  const [btnDiseble, setDisebale] = useState(0);
-  const [OtpDiseble, setOtp] = useState(0);
-  const notify = (M) => toast(M);
-  const notifys = (M) => toast.error(M);
-  const navigate = useNavigate();
-  if (token != null) {
-    navigate("/");
-  }
-
-  let [formData, SetformData] = useState({
+  const [mother, setMother] = useState([]);
+  const [profile, setProfile] = useState([]);
+  const [otpshow, setOtp] = useState(0);
+  const [otpValues, setOtpValues] = useState(["", "", "", ""]);
+  const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
     gender: '',
     mobile_no: '',
     marital_status: '',
     date_of_birth: '',
-    age:'',
+    age: '',
     profile_created_by: '',
-    mother_toungue: '',
+    mother_tongue: '',
     email: '',
     password: '',
   });
+  const [btnDisable, setBtnDisable] = useState(false); // Assuming 'btnDisable' is used for button disabling
 
-
-  const OninputChange = (e) => {
-    SetformData({ ...formData, [e.target.name]: e.target.value });
-  }
-  const MobileNumber = (e) => {
-    if (e.target.value.length != 10) {
-      let errormsg = "mobile number contains 10 digits";
-      document.getElementById('error').innerText = errormsg;
-      setDisebale(1);
+  const MobileDigit = (e) => {
+    if (e.target.value.length !== 10) {
+      const errorMsg = "Mobile number should contain 10 digits";
+      document.getElementById('error').innerText = errorMsg;
+      setBtnDisable(true);
+    } else {
+      document.getElementById('error').innerText = "";
+      setBtnDisable(false);
     }
-    else if (e.target.value.length == 10) {
-      let errormsg = "";
-      setDisebale(0);
-      document.getElementById('error').innerText = errormsg;
-    }
-  }
-  const SendMassage=(e)=>{
-    e.preventDefault();
-    setDisebale(1)
-    http.post("/front_user_register/send/massage", formData).then((res) => {
-      setOtp(1);
-      setDisebale(0)
-    })
+  };
 
-
-
-
-
-
-
+  function calculateAge(date_of_birth) {
+    const dob = new Date(date_of_birth);
+    const currentDate = new Date();
+    let age = currentDate.getFullYear() - dob.getFullYear();
     
-    setDisebale(0)
+    if (
+      currentDate.getMonth() < dob.getMonth() ||
+      (currentDate.getMonth() === dob.getMonth() && currentDate.getDate() < dob.getDate())
+    ) {
+      age--;
+    }
+    return age;
   }
 
-  const UserData = () => {
-    setDisebale(1)
-  const dob = new Date(formData.date_of_birth);
-  const today = new Date();
-  let age = today.getFullYear() - dob.getFullYear();
-
-  if (today.getMonth() < dob.getMonth() || (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) {
-    age--;
-  }
-
-  formData.age = age;
-  
-      http.post("/front_user_register", formData).then((res) => {
-        if (res.data.access_token) {
-          setToken(res.data.user_data, res.data.access_token);
-          navigate("/profile");
-        } else {
-          notify(res.data.message);
-        }
-        setDisebale(0);
-      }).catch((e) => {
-        setDisebale(0);
-      });
-      setDisebale(0);
-  };
-  const [Mother_Tounge, SetMother_Tounge] = useState([]);
-  const Mother_Toungee = () => {
-    http.get("/get/mother_tounge")
-      .then((res) => {
-        SetMother_Tounge(res.data.data);
-      }).catch((e) => {
-        console.log(e);
+  const OnSubmit = (e) => {
+    e.preventDefault();
+    setBtnDisable(true);
+    fetch("http://marriagebureau.ajspire.com/api/front_user_register/send/massage", {
+      method: "POST",
+      body: JSON.stringify(formData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setOtp(1);
+        setBtnDisable(false);
+        console.log("register data", data);
+        alert("OTP sent successfully");
       })
-  }
-  const [Profiles, Set_profile] = useState([]);
-  const Profile = () => {
-    http.get("/get/profile_created_by").then((res) => {
-      Set_profile(res.data.data);
-    }).catch((e) => {
-      console.log(e);
-    });
+      .catch((error) => {
+        console.log("Error", error);
+      });
   };
 
+  const oninputChange = (e) => {
+    if (e.target.name === "date_of_birth") {
+      const age = calculateAge(e.target.value);
+      setFormData({ ...formData, [e.target.name]: e.target.value, age });
+    } else {
+      setFormData({ ...formData, [e.target.name]: e.target.value });
+    }
+  };
 
-  useEffect(() => {
-    Profile();
-    Mother_Toungee();
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+  const handleOtpChange = (index, value) => {
+    let tempOtpValues = [...otpValues];
+    tempOtpValues[index] = value;
+    setOtpValues(tempOtpValues);
+  };
 
-const NewOTP = (event) => {
-let combinedValue = '';
-  const MAX_LENGTH = 1;
-  const input = event.target;
-  const value = input.value;
+  const verifyOtp = () => {
+    const otp = otpValues.join('');
+    console.log(otp);
 
-  if (value.length === MAX_LENGTH) {
-    const form = input.form;
-    const inputs = form.querySelectorAll('input[type="text"]');
-    const values = [];
-    inputs.forEach(input => {
-      values.push(input.value);
-    });
-    combinedValue = values.join('');
     const updatedFormData = {
       ...formData,
-      otp: combinedValue,
+      otp: otp,
     };
-    SetformData(updatedFormData);
-    const currentIndex = Array.from(inputs).indexOf(input);
-    const nextIndex = (currentIndex + 1) % inputs.length;
-    inputs[nextIndex].focus();
-  }
-};
+    console.log("Updated Data", updatedFormData);
+
+    fetch('http://marriagebureau.ajspire.com/api/front_user_register', {
+      method: 'POST',
+      body: JSON.stringify(updatedFormData),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((res) => res.json())
+      .then((otp) => {
+        setOtp(1);
+        console.log("register data", otp);
+        alert("Verification Successful");
+      })
+      .catch((error) => {
+        console.log("Error", error);
+      });
+  };
+
+  const getMotherData = () => {
+    fetch("http://marriagebureau.ajspire.com/api/get/mother_tounge")
+      .then((Response) => {
+        return Response.json();
+      })
+      .then((data) => {
+        console.log(data.data);
+        setMother(data.data);
+      });
+  };
+
+  const getProfileData = () => {
+    fetch("http://marriagebureau.ajspire.com/api/get/profile_created_by")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data.data);
+        setProfile(data.data);
+      });
+  };
+
+  useEffect(() => {
+    getMotherData();
+    getProfileData();
+  }, []);
   return (
-    <>
- {
-  OtpDiseble ? (
-    <div className="container">
-  <div className="row justify-content-md-center">
-    <div className="col-12 text-center ">
-      <div className="row">
-        <div className="col-12 mt-5">
-          <h2 className="title">
-            Verify OTP
-          </h2>
-          <form className="m-5 skjfksjdf">
-            <input className="m-1" type="text" onKeyUp={NewOTP} maxLength={1} />
-            <input className="m-1" type="text" onKeyUp={NewOTP} maxLength={1} />
-            <input className="m-1" type="text" onKeyUp={NewOTP} maxLength={1} />
-            <input className="m-1" type="text" onKeyUp={NewOTP} maxLength={1} />
-          </form>
-          <hr className="mt-4" />
-          <button className="banner__video--btn primary__btn m-2" onClick={UserData} disabled={btnDiseble} style={{backgroundColor:"green"}}>Verify</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-  ) : <div className="mt-5">
-  <section className="breadcrumb__section breadcrumb__bg " style={{height:"800px"}}>
+    <div className="con">
+      {otpshow ? (
         <div className="container">
-
-  <div className="login__section section--padding">
-    <div className="container">
-      <div className="login__section--inner">
-        <div className="row row-cols-md-2 row-cols-1 d-flex justify-content-center">
-          <div className="col">
-            <div className="account__login register">
-              <div className="account__login--header mb-25">
-                <h2 className="account__login--header__title h3 mb-10">
-                  Create an Account
-                </h2>
-                <p className="account__login--header__desc">
-                  Register Here If You Are a New Customer
-                </p>
-              </div>
-              <div className="account__login--inner">
-                <div className="row">
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        First Name
-                        <span className="contact__form--label__star">
-                          *
-                        </span>
-                      </label>
+          <div className="row justify-content-md-center">
+            <div className="col-12 text-center ">
+              <div className="row">
+                <div className="col-12 mt-5">
+                  <h2 className="title">Verify OTP</h2>
+                  <form className="m-5 ">
+                    {otpValues.map((value, index) => (
                       <input
                         className="contact__form--input"
-                        placeholder="Your First Name"
-                        name="first_name"
-                        onChange={(e) => OninputChange(e)}
-                        onInput={(e) => (e)}
+                        key={index}
                         type="text"
+                        onChange={(e)=>handleOtpChange(index,e.target.value)}
                       />
-                    </div>
-                  </div>
-
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        Last Name
-                        <span className="contact__form--label__star">
-                          *
-                        </span>
-                      </label>
-                      <input
-                        className="contact__form--input"
-                        placeholder="Your Last Name"
-                        name="last_name"
-                        onChange={(e) => OninputChange(e)}
-                        type="text"
-                      />
-                    </div>
-                  </div>
-
+                    ))}
+                    <hr className="mt-4" />
+                  </form>
+                  <button
+                    className="banner__video--btn primary__btn m-2"
+                    style={{ backgroundColor: "green" }}
+                    onClick={verifyOtp}
+                  >
+                    Verify
+                  </button>
                 </div>
-                <div className="row">
+                {/* <div className="row">
                   <div className="col-lg-6 col-md-6">
                     <div className="contact__form--list mb-20">
                       <label
@@ -425,23 +362,279 @@ let combinedValue = '';
                   >
                     Submit &amp; Free Register
                   </button>
-                </label>
+                </label> */}
 
               </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="container co">
+          <div className="row justify-content-center">
+            <div className="col-md-6 col-sm-8 col-xs-12">
+              <div className="register-main-box text-center">
+                <h2 style={{ color: "rgb(192, 57, 57)", fontWeight: "bold" }}>
+                  Register
+                </h2>
+                <h5 style={{ fontWeight: "bold" }}>Create an Account</h5>
+                <p style={{ fontWeight: "bold" }}>
+                  Register Here If You Are a New Customer
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="account__login--inner">
+            <div className="row d-flex">
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    First Name
+                    <input
+                      className="contact__form--input"
+                      name="first_name"
+                      onChange={(e) => oninputChange(e)}
+                      placeholder="First Name"
+                    />
+                  </label>
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Last Name
+                    <input
+                      className="contact__form--input"
+                      type="text"
+                      name="last_name"
+                      onChange={(e) => oninputChange(e)}
+                      placeholder="Last Name"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div className="row d-flex">
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Gender:
+                  </label>
+                  <select
+                    class="contact__form--input"
+                    name="gender"
+                    onChange={(e) => oninputChange(e)}
+                    defaultValue="haa"
+                  >
+                    <option value={""}>Choose...</option>
+                    <option value={1}>Male</option>
+                    <option value={2}>Female</option>
+                    <option value={3}>Other</option>
+                  </select>
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Martial Status
+                  </label>
+                  <select
+                    class="contact__form--input"
+                    name="marital_status"
+                    onChange={(e) => oninputChange(e)}
+                    defaultValue="haa"
+                  >
+                    <option value={""}>Choose...</option>
+                    <option value={1}>Unmarried </option>
+                    <option value={2}>Divorced</option>
+                    <option value={3}> Widowed</option>
+                    <option value={4}>Separated</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div className="row d-flex">
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    class="contact__form--label"
+                    name="age"
+                    onChange={(e) => oninputChange(e)}
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Date of Birth<span class=""></span>
+                  </label>
+                  <input
+                    class="contact__form--input"
+                    onChange={(e) => oninputChange(e)}
+                    placeholder=""
+                    name="date_of_birth"
+                    type="date"
+                  />
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Profile Created By:{" "}
+                  </label>
+                  <select
+                    class="contact__form--input"
+                    name="profile_created_by"
+                    onChange={(e) => oninputChange(e)}
+                    defaultValue="haa"
+                  >
+                    <option value={""}>Choose...</option>
+                    {profile.map((Profile) => (
+                      <>
+                        <option value={Profile.profile_created_id}>
+                          {Profile.profilecreated}{" "}
+                        </option>
+                      </>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div className="row d-flex">
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Mobile Number:
+                    <input
+                      className="contact__form--input"
+                      name="mobile_no"
+             
+                      onChange={(e) => oninputChange(e)}
+                      placeholder="mobile number"
+                    />
+                  </label>
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Mother Tounge:
+                  </label>
+
+                  <select
+                    class="contact__form--input"
+                    defaultValue="haa"
+                    onChange={(e) => oninputChange(e)}
+                    name="mother_toungue"
+                  >
+                    <option>choose..</option>
+                    {mother.map((Mother) => (
+                      <>
+                        <option value={Mother.mother_tounges_id}>
+                          {Mother.mothertounge}
+                        </option>
+                      </>
+                    ))}
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div className="row d-flex">
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Email:<br></br>
+                    <input
+                      className="contact__form--input"
+                      name="email"
+                      onChange={(e) => oninputChange(e)}
+                      placeholder="email"
+                    />
+                  </label>
+                </div>
+              </div>
+              <div className="col-lg-6 col-md-6">
+                <div className="contact__form--list mb-20">
+                  <label
+                    className="contact__form--label"
+                    style={{ fontWeight: "bold" }}
+                  >
+                    Password:<br></br>
+                    <input
+                      className="contact__form--input"
+                      type="password"
+                      name="password"
+                      onChange={(e) => oninputChange(e)}
+                      placeholder="password"
+                    />
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div className="row d-flex">
+              <div class="account__login--remember">
+                <input
+                  class="checkout__checkbox--input"
+                  id="check2"
+                  type="checkbox"
+                />
+                <label
+                  class="checkout__checkbox--label login__remember--label"
+                  for="check2"
+                >
+                  I have read and agree to the terms &amp; conditions
+                </label>
+              </div>
+              <div>
+              {/* <form className="m-5">
+                {otpValues.map((value, index) => (
+                  <input
+                    className="contact__form--input"
+                    key={index}
+                    type="text"
+                    value={value}
+                    onChange={(e) => handleOtpChange(index, e.target.value)}
+                    maxLength="1"
+                  />
+                ))}
+                <hr className="mt-4" />
+              </form> */}
+              <button
+                className="banner__video--btn primary__btn m-2"
+                style={{ backgroundColor: "green" }}
+                onClick={(e)=>OnSubmit(e)}
+              >
+                Register
+              </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-  </div>
-  </div>
-  </section>
-</div>
-}
-
-      
-    </>
   );
-}
 
+            }
 export default Register;
