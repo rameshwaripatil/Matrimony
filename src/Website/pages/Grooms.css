@@ -1,47 +1,156 @@
-/* Add this CSS to your Grooms.css or a separate CSS file */
-
-/* Define a class for the box shadow animation */
-.card-hover {
-  transition: box-shadow 0.3s ease-in-out;
+/* Styles for the top section */
+.all-title-box {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
 }
 
-/* Define keyframes for the animation */
-@keyframes shadow-pulse {
-  0% {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-  }
-  100% {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  }
+.page-title {
+  font-size: 36px;
+  font-weight: bold;
 }
 
-/* Apply the animation on hover */
-.card-hover:hover {
-  animation: shadow-pulse 1s infinite;
+.breadcrumb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Style the container of your cards to add spacing and adjust the layout */
-.team__container {
+.breadcrumb-item {
+  display: inline;
+  margin-right: 10px;
+}
+
+/* Styles for the "Our Grooms" section */
+.text-danger {
+  color: #dc3545;
+}
+
+.team-section {
+  margin-top: 20px;
+}
+
+.cast-title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Styles for the Cast Carousel */
+/* You might need to adjust these styles to match your design */
+.carousel-root {
+  width: 100%;
+}
+
+.carousel .slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .thumbs-wrapper {
+  display: none; /* Hide the thumbnail navigation */
+}
+
+.carousel .thumbs {
+  padding: 10px;
+}
+
+.carousel .slide {
+  margin: 0 10px;
+}
+
+/* Styles for the "View All" and "Go Back" buttons */
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+}
+
+/* Styles for the Cast Filter section */
+.containerff {
+  padding: 20px;
+}
+
+/* Styles for the Cast cards */
+.bg-danger {
+  background-color: #dc3545;
+}
+
+.text-white {
+  color: white;
+}
+
+.m-auto {
+  margin: auto;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.p-4 {
+  padding: 20px;
+}
+
+/* Styles for the View More/View Less buttons */
+.btn-outline-danger {
+  color: #dc3545;
+  border-color: #dc3545;
+  margin: 10px;
+}
+
+/* Styles for the "Our Grooms" section */
+.containergroom {
+  margin-top: 50px;
+}
+
+.sectionheading {
+  text-align: center;
+}
+
+.teamcontainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
+/* Styles for the individual Groom cards */
 .custom-col {
-  width: calc(33.33% - 1rem);
-  margin-right: 1rem;
-  margin-bottom: 2rem;
+  width: 100%; /* Full width on extra small screens */
+  margin: 10px 0;
 }
 
-/* Style your cards */
-.card {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  transition: box-shadow 0.3s ease-in-out;
+.cardshadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
-.card:hover {
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+.cardbody {
+  padding: 20px;
+}
+
+.teamcard {
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.teamcard--thumbnail {
+  text-align: center;
+}
+
+.teamcard--thumbnail__img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Styles for the View Profile button */
+.btn-success {
+  background-color: #28a745;
+  color: white;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 576px) {
+  .col-md-6 {
+    width: 100%;
+  }
 }
