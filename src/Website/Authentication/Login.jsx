@@ -36,20 +36,11 @@ const Login = () => {
         console.log(res.data);
         if (res.data.token) {
           setToken(res.data.user_data, res.data.token);
-<<<<<<< HEAD
-=======
-          console.log("login sucessfully logged in")
->>>>>>> e53dc9c869ff7979c76e4e9e2fbff2144988b50b
           navigate("/");
         } else {
           notify(res.data.message);
         }
-<<<<<<< HEAD
         setDisable(false); // Re-enable the button after the request is completed
-=======
-        setDisebale(0);
-
->>>>>>> e53dc9c869ff7979c76e4e9e2fbff2144988b50b
       })
       .catch((error) => {
         // Handle error here
