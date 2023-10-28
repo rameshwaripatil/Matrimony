@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import Authuser from "./Authuser";
 import { toast } from "react-toastify";
 
-
 const Login = () => {
   const notify = (message) => toast.error(message);
 
@@ -17,30 +16,28 @@ const Login = () => {
       navigate("/");
     }
   }, [navigate, token]);
-  
-  const [Login, SetLogin] = useState({email: '',password: '' });
+
+  const [Login, SetLogin] = useState({ email: "", password: "" });
 
   const OninputChange = (e) => {
     SetLogin({ ...Login, [e.target.name]: e.target.value });
-  }
+  };
 
+  const onSubmit = (e) => {
+    e.preventDefault();
 
-  const onSubmit=(e) => {
-  e.preventDefault();
- 
-
-    http.post("/user/login", Login)
+    http
+      .post("/user/login", Login)
       .then((res) => {
         console.log(res.data.user_data);
         if (res.data.token) {
           setToken(res.data.user_data, res.data.token);
-          console.log("login sucessfully logged in")
+          console.log("login sucessfully logged in");
           navigate("/");
         } else {
           notify(res.data.message);
         }
         setDisebale(0);
-
       })
       .catch((error) => {
         // notify("The provided credentials are invalid");
@@ -52,8 +49,6 @@ const Login = () => {
     <div>
       <div className="all-title-bol">
         <div className="container">
-         
-
           <div className="row row-cols-md-2 row-cols-1 d-flex justify-content-center">
             <div className="col">
               <div className="account__login">
@@ -61,20 +56,50 @@ const Login = () => {
                   <h2 className="account__login--header__title h3 mb-10">
                     Login
                   </h2>
-                  <a className="account__login--header__desc" >
+                  <a className="account__login--header__desc">
                     <b>Login if you area a returning customer.</b>
                   </a>
                 </div>
                 <div className="account__login--inner">
                   <div className="row">
-                  <div className="form-group"><input name='email' type='text' onChange={(e) => OninputChange(e)}className="form-control" placeholder="Enter your User Id | Mobile Numbar | Email Id " />
-              </div>
-              <div className="form-group"><input name='password' type='password' onChange={(e) => OninputChange(e)} className="form-control" placeholder="Enter your password" />
-              </div>
-              <div className="form-check mb-3"><input className="form-check-input" type="checkbox" defaultValue id="check" /><label className="form-check-label" htmlFor="check">Remember Me</label></div>
-              <div className="form-button"><button type="submit" onClick={(e) => onSubmit(e)} >login</button>
-                <p >Forgot your password?<a href="/forgot-password">reset here</a></p>
-              </div>
+                    <div className="form-group">
+                      <input
+                        name="email"
+                        type="text"
+                        onChange={(e) => OninputChange(e)}
+                        className="form-control"
+                        placeholder="Enter your User Id | Mobile Numbar | Email Id "
+                      />
+                    </div>
+                    <div className="form-group">
+                      <input
+                        name="password"
+                        type="password"
+                        onChange={(e) => OninputChange(e)}
+                        className="form-control"
+                        placeholder="Enter your password"
+                      />
+                    </div>
+                    <div className="form-check mb-3">
+                      <input
+                        className="form-check-input"
+                        type="checkbox"
+                        defaultValue
+                        id="check"
+                      />
+                      <label className="form-check-label" htmlFor="check">
+                        Remember Me
+                      </label>
+                    </div>
+                    <div className="form-button">
+                      <button type="submit" onClick={(e) => onSubmit(e)}>
+                        login
+                      </button>
+                      <p>
+                        Forgot your password?
+                        <a href="/forgot-password">reset here</a>
+                      </p>
+                    </div>
                   </div>
                   <div className="account__login--remember__forgot mb-15 d-flex justify-content-between align-items-center">
                     <div className="account__login--remember position__relative">
@@ -114,7 +139,7 @@ const Login = () => {
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
@@ -122,9 +147,6 @@ const Login = () => {
 };
 
 export default Login;
-
-
-
 
 // import React, { useEffect, useState } from "react";
 // import { Link, useNavigate } from "react-router-dom";
@@ -190,14 +212,14 @@ export default Login;
 //         {/* Start breadcrumb section */}
 //         <section className="breadcrumb__section breadcrumb__bg" style={{height:"600px"}}>
 //         <div className="container">
-       
+
 //         {/* Start login section  */}
 //         <div className="login__section section--padding">
 //           <div className="container">
 //             <form onSubmit={(e) => sessIon_start(e)}>
 //               <div className="login__section--inner">
 //                 <div className="row row-cols-md-2 row-cols-1 d-flex justify-content-center">
-              
+
 //                   <div className="col">
 //                     <div className="account__login">
 //                       <div className="account__login--header mb-25 text-center">
@@ -271,7 +293,7 @@ export default Login;
 //                           >
 //                             &nbsp;&nbsp;Create New Account
 //                           </Link>
-                          
+
 //                         </p>
 //                       </div>
 //                     </div>
@@ -290,4 +312,3 @@ export default Login;
 // }
 
 // export default Login;
-

@@ -50,17 +50,7 @@ const Groom = () => {
       {cast.caste}
     </div>
   ));
-  const Grooms = () => {
-    http.get(`get_member_detail_groom`)
-      .then((response) => {
-        setCards(response.data.data.data);
-        console.log(response.data.data.data);
-      })
-      .catch((error) => {
-        // Handle errors
-        console.error('Error adding bride data:', error);
-      });
-  };
+  
 
 
   const getCasts = () => {
@@ -84,7 +74,6 @@ const Groom = () => {
   }
 
   useEffect(() => {
-    Grooms();
     getCasts();
     getCards();
   }, []);

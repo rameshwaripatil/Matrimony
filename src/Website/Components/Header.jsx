@@ -3,11 +3,6 @@ import { Link } from 'react-router-dom';
 
 
 const Header = () => {
-<<<<<<< HEAD
-
-=======
-   
->>>>>>> a1026a35959e84ff64f130c27fc5ffd51c696c26
   return (
     <div>
       <section id="top">
