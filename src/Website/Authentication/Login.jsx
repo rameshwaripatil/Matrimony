@@ -27,13 +27,13 @@ const Login = () => {
     e.preventDefault();
 
     http
-      .post("/user/login", Login)
+      .post("/front_user_login", Login)
       .then((res) => {
         console.log(res.data.user_data);
         if (res.data.token) {
           setToken(res.data.user_data, res.data.token);
           console.log("login sucessfully logged in");
-          navigate("/");
+          navigate("/dashboard");
         } else {
           notify(res.data.message);
         }
