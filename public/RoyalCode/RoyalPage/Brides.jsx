@@ -66,12 +66,6 @@ function Brides() {
         }
         <div className="container">
           <div className="section__heading text-center mb-50 ">
-
-
-            {/* <p className="section__heading--desc">
-              Beyond more stoic this along goodness this sed wow manatee mongos
-              flusterd impressive man farcrud opened.
-            </p> */}
           </div>
           <div className="team__container">
             <div className="row row-cols-md-2 row-cols-sm-2 row-cols-2 mb--n30" >

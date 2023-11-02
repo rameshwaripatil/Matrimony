@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './Register.css';
+import { Navigate } from 'react-router-dom';
 
 function Register() {
   const [mother, setMother] = useState([]);
@@ -59,6 +60,7 @@ function Register() {
       .then((res) => res.json())
       .then((data) => {
         setOtp(1);
+        Navigate("/profile")
         setBtnDisable(false);
         console.log("register data", data);
         alert("OTP sent successfully");
@@ -103,6 +105,7 @@ function Register() {
       .then((res) => res.json())
       .then((otp) => {
         setOtp(1);
+
         console.log("register data", otp);
         alert("Verification Successful");
       })
@@ -163,206 +166,7 @@ function Register() {
                     Verify
                   </button>
                 </div>
-                {/* <div className="row">
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        Gender
-                        <span className="contact__form--label__star">
-                          *
-                        </span>
-                      </label>
-                      <select
-                        className="contact__form--input"
-                        name="gender"
-                        onChange={(e) => OninputChange(e)}
-                      >
-                          <option value=''>Choose...</option>
-                        <option value='2'>Male</option>
-                        <option value='1'>Female</option>
-                        <option value='3'>Other</option>
-                      </select>
-                    </div>
-                  </div>
-
-
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        Martial Status
-                        <span className="contact__form--label__star">
-                          *
-                        </span>
-                      </label>
-                      <select className="contact__form--input" name="marital_status" onChange={OninputChange}
-                      >
-                          <option value=''>Choose...</option>
-                        <option value='1' key={1}>UnMarried</option>
-                        <option value='2' key={2}>Divorced</option>
-                        <option value='3' key={3}>Widowed</option>
-                        <option value='4' key={4}>Separated</option>
-                      </select>
-                    </div>
-                  </div>
-
-                </div>
-                <div className="row">
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        Date of Birth
-                        <span className="contact__form--label__star">
-                          *
-                        </span>
-                      </label>
-                      <input
-                        className="contact__form--input"
-                        placeholder=""
-                        name="date_of_birth"
-                        type="date"
-                        onChange={(e) => OninputChange(e)}
-                      />
-                    </div>
-                  </div>
-
-
-
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        Profile Created By
-                        <span className="contact__form--label__star">
-                          *
-                        </span>
-                      </label>
-                      <select className="contact__form--input" name="profile_created_by" onChange={OninputChange}>
-                        <option value=''>Choose...</option>
-                        {
-                          Profiles.map((item, index) => (
-
-                            <option value={item.profile_created_id} key={index}>{item.profilecreated}</option>
-                          ))
-                        }
-                      </select>
-                    </div>
-                  </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="contact__form--list mb-20">
-                        <label
-                          className="contact__form--label"
-                         >
-                          Mobile Number
-                          <span className="contact__form--label__star">
-                            *
-                          </span>
-                        </label>
-                        <input
-                          className="contact__form--input"
-                          onInput={(e) => MobileNumber(e)}
-                          name="mobile_no"
-                          placeholder="Enter Mobile Number"
-                          type="number"
-                          onChange={(e) => OninputChange(e)}
-                        />
-                        <p id="error" style={{ color: "red", fontSize: "11px", marginLeft: "5px" }}></p>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6">
-                      <div className="contact__form--list mb-20">
-                        <label
-                          className="contact__form--label"
-                        >
-                          Mother Tounge
-                          <span className="contact__form--label__star">
-                            *
-                          </span>
-                        </label>
-                        <select className="contact__form--input" name="mother_toungue" onChange={OninputChange}>
-                          <option value="">Choose...</option>
-
-                          {
-                            Mother_Tounge.map((item, index) => (
-                              <option value={item.mother_tounges_id} key={index}>{item.mothertounge}</option>
-                            ))
-                          }
-                        </select>
-                      </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        Email
-                        <span className="contact__form--label__star" >
-                          *
-                        </span>
-                      </label>
-                      <input
-                        className="contact__form--input"
-                        placeholder="Enter Email Address"
-                        name="email"
-                        type="email"
-                        onChange={(e) => OninputChange(e)}
-                      />
-                    </div>
-                  </div>
-                  <div className="col-lg-6 col-md-6">
-                    <div className="contact__form--list mb-20">
-                      <label
-                        className="contact__form--label"
-                      >
-                        Password
-                        <span className="contact__form--label__star">
-                          *
-                        </span>
-                      </label>
-                      <input
-                        className="contact__form--input"
-                        placeholder="Create New Password"
-                        name="password"
-                        type="password"
-                        onChange={(e) => OninputChange(e)}
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                </div>
-                <div className="account__login--remember position__relative mb-3">
-                  <input
-                    className="checkout__checkbox--input"
-                    id="check2"
-                    type="checkbox"
-                  />
-                  <span className="checkout__checkbox--checkmark" />
-                  <label
-                    className="checkout__checkbox--label login__remember--label"
-                    htmlFor="check2"
-                  >
-                    I have read and agree to the terms &amp; conditions
-                  </label>
-                </div>
-                <label className="d-flex justify-content-center  text-center ">
-                  <button
-                    className="account__login--btn primary__btn mb-10"
-                    type="submit"
-                    disabled={btnDiseble}
-                    onClick={(e) => SendMassage(e)}
-                  >
-                    Submit &amp; Free Register
-                  </button>
-                </label> */}
+               
 
               </div>
             </div>

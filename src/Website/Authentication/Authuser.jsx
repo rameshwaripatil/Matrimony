@@ -1,9 +1,9 @@
 import axios from 'axios';
 import  { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Authuser = () => {
-    const navigate = useNavigate();
+    const Navigate = useNavigate();
     const getToken = () => {
       const tokenString = sessionStorage.getItem("token");
       const userToken = JSON.parse(tokenString);
@@ -35,7 +35,7 @@ const Authuser = () => {
         sessionStorage.clear();
         setToken(null);
         setUser(null);
-        navigate("/");
+        Navigate("/");
     
       };
       return {

@@ -33,17 +33,7 @@ function Login() {
       .post("/front_user_login", login)
       .then((res) => {
         if (res.data.access_token) {
-          setToken(res.data.user_data, res.data.access_token);
-          // const total_fields = Object.keys(res.data.userrr).length;
-          // const nonNullFields = Object.values(res.data.userrr).filter(value => value !== null).length;
-          // const percentage = Math.floor((nonNullFields / total_fields) * 100);
-          // if (percentage >= 90) {
-          //   navigate("/dashboard");
-          //   window.location.reload();
-          // } else {
-          //   navigate("/profile");
-          //   window.location.reload();
-          // }
+         
           navigate("/dashboard");
           window.location.reload();
         } else {
