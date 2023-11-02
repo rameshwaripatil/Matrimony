@@ -110,7 +110,7 @@ const Groom = () => {
           </div>
           <div className="containerss mt-3 mb-3">
             <div className="row ">
-              <div className="col-12 col-md-9 offset-md-2">
+              <div className="col-12 col-md-9 offset-md-2" style={{padding:"20%",width:"100%"}}>
                 <Carousel
                   showArrows={false}
                   showStatus={false}
@@ -128,7 +128,7 @@ const Groom = () => {
                       <a
                         href="#"
                         className="btn btn-danger circle-button rounded-circle"
-                        style={{ paddingTop: "8%" }}
+                        style={{ height: "150px",width:"300px",borderRadius:"50%",paddingTop:"9%" }}
                       >
                         {el.caste}
                       </a>
@@ -213,7 +213,7 @@ const Groom = () => {
           ) : (
             ""
           )}
-          <div className="containergroom mt-5">
+          <div className="containergroom mt-5 d-flex" style={{borderRadius:"20%"}}>
             <div className="sectionheading text-center mb-4" />
             <div className="teamcontainer">
               <div className="row row-cols-md-3 row-cols-sm-2 row-cols-1 mb--n30">
@@ -223,8 +223,11 @@ const Groom = () => {
                       className="container"
                       style={{ height: "600px", width: "220px" }}
                     >
-                      <div className="cardshadow">
-                        <div className="cardbody">
+                      <div
+                        className="cardshadow"
+                        style={{ background: "black" }}
+                      >
+                        <div className="cardbody ">
                           <article className="teamcard">
                             <div key={index}>
                               <div className="teamcard--thumbnail mx-auto">
@@ -244,7 +247,10 @@ const Groom = () => {
                                   />
                                 )}
                               </div>
-                              <table className="mt-4 mx-auto">
+                              <table
+                                className="mt-4 mx-auto"
+                                style={{ background: "red" }}
+                              >
                                 <tbody>
                                   <TableRow
                                     label="Birth Date"
