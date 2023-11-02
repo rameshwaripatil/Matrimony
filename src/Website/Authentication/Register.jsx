@@ -60,6 +60,7 @@ function Register() {
       .then((res) => res.json())
       .then((data) => {
         setOtp(1);
+        Navigate("/profile")
         setBtnDisable(false);
         console.log("register data", data);
         alert("OTP sent successfully");
@@ -104,7 +105,6 @@ function Register() {
       .then((res) => res.json())
       .then((otp) => {
         setOtp(1);
-      Navigate("/profile");
 
         console.log("register data", otp);
         alert("Verification Successful");

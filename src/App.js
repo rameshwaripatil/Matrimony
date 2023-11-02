@@ -13,6 +13,7 @@ import Membarship from './Website/pages/Membarship'
 import Login from './Website/Authentication/Login'
 import Profile from './Website/pages/Profile'
 import Dashboard from './Website/pages/Dashboard'
+import View_by_cast from './Website/pages/View_by_cast'
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
       <Route path="/login"  element={<Master Rcf={Login}/>} />
       <Route path="/profile"  element={<Master Rcf={Profile}/>} />
       <Route path="/dashboard"  element={<Master Rcf={Dashboard}/>} />
+      <Route path="/view_by_cast" element={<Master Rcf={View_by_cast}/>} />
 
 
 

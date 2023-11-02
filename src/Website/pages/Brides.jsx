@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import Authuser from '../Authentication/Authuser';
 import "./Brides.css"; 
+import { Link } from 'react-router-dom/dist';
 
 
 
 const Brides = () => {
   const { http, token } = Authuser();
-  const[cast,setCast]=useState([]);
+  const [Loading, SetLoading] = useState(false);
+  const [toggleCast, settoggleCast] = useState(0);
+  const value = 2;
+  const HandleToggle = () => {
+    settoggleCast(1);
+  }
+  const GobackToggle = () => {
+    settoggleCast(0);
+  }
+
 
   const [bri, setBrides] = useState([]);   
 
@@ -14,6 +24,7 @@ const Brides = () => {
     http.get(`get_member_detail_bride`)
       .then((response) => {
         setBrides(response.data.data.data);
+        SetLoading(true);
         console.log(response.data.data.data);
       })
       .catch((error) => {
@@ -45,6 +56,22 @@ const Brides = () => {
         </div>
       </div>
      
+      <section className="team__section my-4">
+        {
+          toggleCast === 0 ? (
+            <>
+              <div className="text-center mt-4 ml-2">
+                <Link onClick={HandleToggle} className="btn btn-outline-danger btn-lg">View all</Link>
+              </div>
+            </>
+          ) : (<>
+            <div className="text-center mt-4 ml-2">
+              <Link onClick={GobackToggle} className="btn btn-outline-danger btn-lg">Go Back</Link>
+            </div>
+          </>
+          )
+        }
+        </section>
       
       <section id="about_last">
         <div className="container">
@@ -52,11 +79,14 @@ const Brides = () => {
             <div className="col-sm-12">
               <div className="about_last">
                 <h1 className="text-center" ><span>Our Brides..!</span> </h1>
+                
                 <p><b>देखा जो तुझे यार ..दिल में बजी गिटार...!</b></p>
               </div>
             </div>
             <div className="team col-sm-12  clearfix">
-              {bri.map((el) => (
+            {Loading ? (
+              <>
+              { bri.map((el) => (
 
                 <div className="col-sm-4  col-lg-4">
 
@@ -113,6 +143,21 @@ const Brides = () => {
                 </div>
 
               ))}
+              </>
+              ) : (
+                <>
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(
+                    (iteam, index) => (
+                      <div
+                        className="col-md-6 col-lg-3 custom-col mb-30"
+                        key={index}
+                      >
+                       
+                      </div>
+                    )
+                  )}
+                </>
+              )}
 
             </div>
           </div>
