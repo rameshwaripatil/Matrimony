@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Authuser from "./Authuser";
 import { toast } from "react-toastify";
 
@@ -27,17 +27,19 @@ const Login = () => {
     e.preventDefault();
 
     http
-      .post("/user/login", Login)
+      .post("/front_user_login", Login)
       .then((res) => {
-        console.log(res.data.user_data);
-        if (res.data.token) {
-          setToken(res.data.user_data, res.data.token);
+        console.log(res.data);
+        if (res.data.access_token) {
+          setToken(res.data.user_data, res.data.access_token);
           console.log("login sucessfully logged in");
-          navigate("/");
+          navigate('/dashboard');
         } else {
           notify(res.data.message);
+          console.log("something is missing");
+          navigate('/dashboard');
         }
-        setDisebale(0);
+        setDisebale();
       })
       .catch((error) => {
         // notify("The provided credentials are invalid");
@@ -92,7 +94,7 @@ const Login = () => {
                       </label>
                     </div>
                     <div className="form-button">
-                      <button type="submit" onClick={(e) => onSubmit(e)}>
+                      <button type="submit" path="/dashboard" onClick={(e) => onSubmit(e)}>
                         login
                       </button>
                       <p>
@@ -120,12 +122,15 @@ const Login = () => {
                     </div>
                     <a className="text-danger">&nbsp;&nbsp; Forgot Password</a>
                   </div>
-                  <button
+                 <Link  path="/dashboard"> 
+                 <a
                     className="account__login--btn primary__btn"
                     type="submit"
+                    path="/dashboard"
                   >
                     Login
-                  </button>
+                  </a>
+                 </Link>
                   <div class="account__login--divide">
                     <hr class="account__login--middle-line" />
                     <span class="account__login--divide__text">OR</span>

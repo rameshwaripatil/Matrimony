@@ -2,7 +2,7 @@ import React from "react";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="dashboarddiv">
       <main className="main__content_wrapper">
         <div className="row">
           <section className="breadcrumb__section breadcrumb__bg">
@@ -32,9 +32,9 @@ const Dashboard = () => {
           </section>
           <div className="col-md-10 offset-md-1">
             <div className="section--padding">
-              <div className="card m-2 mb-5">
+              <div className="carddd m-2 mb-5">
                 <ul className="mb-3 nav nav-tabs" role="tablist">
-                  <li className="nav-item" role="presentation">
+                  <li className="nav-itemrr" role="presentation">
                     <button
                       type="button"
                       id="uncontrolled-tab-example-tab-home"
