@@ -103,29 +103,9 @@ const Header = () => {
                     <li> <Link to="/search"><a className="color_1" href="services">Search</a> </Link></ li>
                     <li> <Link to="/membarship"><a className="color_1" href="services">Membership</a> </Link></li>
                     <li> <Link to="/contact"> <a className="color_1" href="contact">Contact Us</a> </Link></li>
-<<<<<<< HEAD
 
                     <li> <button className='button'> <Link to="/login"> <a className="color_1" href="/login">Login</a> </Link></button> </li>
                     <li> <button className='button'> <Link to="/register"> <a className="color_1" href="/register">Register</a> </Link></button> </li>
-=======
-                    { token ? (
-  <ul>
-    <li><Link to="/dashboard">Dashboard</Link></li>
-    <li><Link to="/profile">Profile</Link></li>
-  </ul>
-) : (
-  <ul>
-    <li>
-      <button className='button'><Link to="/login" className="color_1">Login</Link></button>
-    </li>
-    <li>
-      <button className='button'><Link to="/register" className="color_1">Register</Link></button>
-    </li>
-  </ul>
-)}
-
-                 
->>>>>>> 634d74138f518f55b8a2760d38bdd5f925c9abd7
                   </ul>
                 </div>
               </nav>
